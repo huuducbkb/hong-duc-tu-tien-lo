@@ -12,3 +12,6 @@
    - GĐ4: Chương 1 hoàn chỉnh.
    - GĐ5: Mở rộng.
 4. Đang chờ chủ kho gửi danh sách 11 nút chương 1.
+## 01/11/2026 - Ban mau giao dien
+
+Đã dựng bản mẫu giao diện đầu tiên (6 màn hình + bảng màu), dùng trước khi thiết kế 11 nút chương 1 để thống nhất phong cách. Đang chờ chủ kho mở thử trên iPhone 11 và duyệt.
