@@ -2,6 +2,35 @@
 
 File này là báo cáo bàn giao chi tiết, giúp chủ kho và bất kỳ ai tiếp nhận hiểu tình trạng dự án và tiếp tục công việc. Mỗi lần cập nhật, hãy viết thêm báo cáo cho ngày mới và đặt báo cáo mới nhất ở trên cùng.
 
+## BÁO CÁO NGÀY 02/11/2026 (mới nhất)
+
+### 1. Quyết định đã chốt của chủ kho
+
+- Nút xương sống không hiện thông báo cho người chơi: AI kể tự nhiên, code game tương lai âm thầm ép cốt truyện theo các nút. Bản mẫu chưa thực hiện logic game này.
+- Bỏ hẳn chế độ kể chuyện offline dự phòng và công tắc tương ứng. Game thật khi không có mạng hoặc khóa sẽ báo lỗi, không có chế độ kể thay thế. Các quyết định ngày 02/11 thay thế thông tin cũ mâu thuẫn bên dưới; báo cáo cũ vẫn được giữ nguyên để lưu lịch sử.
+- Dựng lại theo ảnh bìa sách cổ đã duyệt: giấy ngả nâu, mép xém, chữ dọc thư pháp, mục lục kiểu sách với chấm đỏ son.
+- Mục lục có 15 mục: Truyện, Nhân Vật, Cài Đặt hoạt động; Thế Giới và 10 mục khác chưa có nội dung. Quy tắc cho AI chỉ có vài dòng mẫu minh họa, danh sách thật sẽ chốt sau.
+
+### 2. Việc đã làm và kiểm tra
+
+- Ảnh gốc JPEG được đưa vào `Art/anh-bia/anh-bia.jpg`; quy ước để tư liệu mỹ thuật trong `Art/`, các thư mục con đặt tên không dấu. Commit upload `34cbc6c4ce7269700059b4619f60284196b32185`, đổi tên `96d0aee939e6fd6a76b1f420e24f3cf66c7a6120`. HTML dùng đường dẫn tương đối `../Art/anh-bia/anh-bia.jpg`.
+- Dựng bản mẫu v2 tự chứa trong `thiet-ke/mau-giao-dien.html`: commit `e42ca30da042c33adbec4c012c6ca530ae5a1566`; phục hồi CSS `150ee3126adad3d6eaae38c38ecaa12fa4254bdc`; thu gọn khối nút để lộ dấu triện `da091c92f6d867e89d4b6860cbfa21e2c64e2ac9`. Chọn nguyên ảnh, giữ đúng tỷ lệ thay vì crop trang trái; ảnh tiêu đề và dấu triện rõ trong ảnh chụp cột 414px.
+- LIVE: https://huuducbkb.github.io/hong-duc-tu-tien-lo/thiet-ke/mau-giao-dien.html . GitHub Pages build thành công. SHA-256 raw ảnh: `ae882386df2ff9f3d0dec18042d8398a1e2f31a112d57590ace99ca2271dc5af`; SHA-256 raw HTML và bản Pages giống nhau: `b77e25cc0843701bd40ad554e586bad830387c6fb563e58483ad9b8bb25015c3`.
+- Kiểm tra trong trình duyệt: chữ Việt có dấu; Bắt đầu → Khởi thân → Truyện; ba tab Truyện, Nhân Vật, Mục Lục; mục lục đủ 15 mục; thử Thế Giới trống và Quy tắc cho AI minh họa; Cài Đặt hiển thị kết nối mô phỏng, công tắc thu gọn bật, không có công tắc offline; không có thông báo xương sống trong màn Truyện. Kiểm tra cột nội dung 414px và chụp màn bìa; chưa kiểm tra trên iPhone 11 thật hay viewport 414×896 thật.
+
+### 3. Việc còn chờ
+
+- Chờ chủ kho mở bản mẫu v2 trên iPhone 11 thật và duyệt lại.
+- Chờ danh sách 11 nút xương sống của chương 1.
+- Chờ chốt danh sách quy tắc cho AI; các câu đang hiện chỉ là mẫu minh họa. Đây chưa phải game và nút kết nối chưa gọi Gemini.
+
+### 4. Lỗi và cách xử lý
+
+- CSS từng bị cắt khi khôi phục từ văn bản hiển thị trong editor GitHub; đã phục hồi từ raw, chia dòng CSS, commit sửa và đối chiếu SHA-256. Ghi thêm bài học trong `GHI-CHU-LOI-GITHUB.md` (commit `07b8ba0f623ed57d46829e3ea5db7e17e8daf0c9`).
+- Trang upload không sửa được tên ảnh trong danh sách; đã upload tên gốc rồi đổi tên bằng trang sửa file của GitHub. Ảnh sau đổi tên có cùng SHA-256.
+
+---
+
 ## BÁO CÁO NGÀY 01/11/2026 (mới nhất)
 
 ### **1. TỔNG QUAN DỰ ÁN**
