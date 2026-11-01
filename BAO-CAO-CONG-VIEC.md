@@ -13,6 +13,8 @@ File này là báo cáo bàn giao chi tiết, giúp chủ kho và bất kỳ ai 
 
 - Chủ kho phản đối dùng nguyên ảnh ba trang; đã sửa màn tiêu đề để crop riêng trang bìa trái, cắt trang giữa và trang phải (commit `0d93559fb801b445d54c74338c8efa4508440d0c`). Cách dùng nguyên ảnh ghi ở phần lịch sử bên dưới không còn áp dụng.
 
+- Chủ kho làm rõ thiết kế sách hai trang: bên trái là trò chuyện, bên phải là mục lục thông tin. Khi vào game mục lục thu thành nút mở bảng phủ, thay thanh điều hướng ba mục dưới đáy. Tính năng nav tự ẩn từng được commit `b191f904c2b6333ab46ad7d10e0ab19bb049fd8c` do hiểu sai; đã gỡ thanh nav và mã tự ẩn trong commit `1e3f857ff31c252aa2db252e7538a5a2e3c51bfb`. Thông tin về nav tự ẩn ở phần lịch sử bên dưới không còn áp dụng. SHA-256 HTML hiện tại: `96b1c08414ffe8a8465bb79e2d2b93ce9c4157732c40060924afd0e2d8253c8a`.
+
 ### 2. Việc đã làm và kiểm tra
 
 - Ảnh gốc JPEG được đưa vào `Art/anh-bia/anh-bia.jpg`; quy ước để tư liệu mỹ thuật trong `Art/`, các thư mục con đặt tên không dấu. Commit upload `34cbc6c4ce7269700059b4619f60284196b32185`, đổi tên `96d0aee939e6fd6a76b1f420e24f3cf66c7a6120`. HTML dùng đường dẫn tương đối `../Art/anh-bia/anh-bia.jpg`.
