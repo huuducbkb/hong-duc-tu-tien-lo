@@ -20,6 +20,8 @@ File này là báo cáo bàn giao chi tiết, giúp chủ kho và bất kỳ ai 
 - LIVE: https://huuducbkb.github.io/hong-duc-tu-tien-lo/thiet-ke/mau-giao-dien.html . GitHub Pages build thành công. SHA-256 raw ảnh: `ae882386df2ff9f3d0dec18042d8398a1e2f31a112d57590ace99ca2271dc5af`; SHA-256 raw HTML và bản Pages giống nhau: `b77e25cc0843701bd40ad554e586bad830387c6fb563e58483ad9b8bb25015c3`.
 - Kiểm tra trong trình duyệt: chữ Việt có dấu; Bắt đầu → Khởi thân → Truyện; ba tab Truyện, Nhân Vật, Mục Lục; mục lục đủ 15 mục; thử Thế Giới trống và Quy tắc cho AI minh họa; Cài Đặt hiển thị kết nối mô phỏng, công tắc thu gọn bật, không có công tắc offline; không có thông báo xương sống trong màn Truyện. Kiểm tra cột nội dung 414px và chụp màn bìa; chưa kiểm tra trên iPhone 11 thật hay viewport 414×896 thật.
 
+- Thanh điều hướng cố định tự trượt ẩn khi cuộn xuống, hiện lại khi cuộn lên; chuyển màn sẽ hiện lại thanh (commit `b191f904c2b6333ab46ad7d10e0ab19bb049fd8c`). SHA-256 raw HTML sau thay đổi: `527cac6e958e333957992d0a77fa0f17f479e0af45c57937cb727fe356403432`; mã HTML nêu ở trên là của bản trước khi sửa.
+
 ### 3. Việc còn chờ
 
 - Chờ chủ kho mở bản mẫu v2 trên iPhone 11 thật và duyệt lại.
