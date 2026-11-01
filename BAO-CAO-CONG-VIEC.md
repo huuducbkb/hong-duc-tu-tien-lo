@@ -11,6 +11,8 @@ File này là báo cáo bàn giao chi tiết, giúp chủ kho và bất kỳ ai 
 - Dựng lại theo ảnh bìa sách cổ đã duyệt: giấy ngả nâu, mép xém, chữ dọc thư pháp, mục lục kiểu sách với chấm đỏ son.
 - Mục lục có 15 mục: Truyện, Nhân Vật, Cài Đặt hoạt động; Thế Giới và 10 mục khác chưa có nội dung. Quy tắc cho AI chỉ có vài dòng mẫu minh họa, danh sách thật sẽ chốt sau.
 
+- Chủ kho phản đối dùng nguyên ảnh ba trang; đã sửa màn tiêu đề để crop riêng trang bìa trái, cắt trang giữa và trang phải (commit `0d93559fb801b445d54c74338c8efa4508440d0c`). Cách dùng nguyên ảnh ghi ở phần lịch sử bên dưới không còn áp dụng.
+
 ### 2. Việc đã làm và kiểm tra
 
 - Ảnh gốc JPEG được đưa vào `Art/anh-bia/anh-bia.jpg`; quy ước để tư liệu mỹ thuật trong `Art/`, các thư mục con đặt tên không dấu. Commit upload `34cbc6c4ce7269700059b4619f60284196b32185`, đổi tên `96d0aee939e6fd6a76b1f420e24f3cf66c7a6120`. HTML dùng đường dẫn tương đối `../Art/anh-bia/anh-bia.jpg`.
