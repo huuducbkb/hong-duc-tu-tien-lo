@@ -2,6 +2,14 @@
 
 File này là báo cáo bàn giao chi tiết, giúp chủ kho và bất kỳ ai tiếp nhận hiểu tình trạng dự án và tiếp tục công việc. Mỗi lần cập nhật, hãy viết thêm báo cáo cho ngày mới và đặt báo cáo mới nhất ở trên cùng.
 
+## BỔ SUNG NGÀY 02/11/2026: KHUNG MỰC VÀ TRIỆN VIỀN SON
+- Đã dọn giao diện: bỏ khối bảng màu khỏi HTML hiển thị (giữ biến màu); bìa chỉ hiện Tiếp tục khi có khóa `hongduc-save` trong localStorage, chuyển “Luật hardcore: chết là mất save” vào Cài Đặt. Khi ẩn mục lục, khung chuyện rộng 414px ở cột 414px, chữ 16px giãn dòng; thêm định nghĩa `.anh-minh-hoa` cho hình và chú thích, chưa chèn ảnh minh họa.
+- Chất tu tiên: khung chuyện và mục lục dùng nét mực nhiều lớp có loang nhẹ, khung mục lục nhẹ hơn; ô nhập có nét kẻ dưới; mục lục chấm mực và vệt son cho mục hiện tại; khối nội dung bỏ viền hộp, dùng khoảng thở và đường mực nhạt.
+- Theo phản hồi chủ kho: nút phụ chữ mực gạch chân → toàn bộ nút triện nền đỏ đặc bị chê loè loẹt → khung viền son, nền giấy, chữ son lấy cảm hứng triện VÀO GAME trong tranh. Chủ kho duyệt bản viền son và cho phép commit.
+- Các bản xem trước đã dùng: [bản khung nét mực](https://boba.page/6-rkwP99JB_km1_IqKRZSw/index.html), [bản triện đỏ đặc](https://boba.page/xsf0XsRCg_il78btFnZXLg/index.html), [bản triện viền son được duyệt](https://boba.page/sZcZpT90uzDB4xMWnsNKvg/index.html). Đây là các link tạm thời, có thể hết hạn.
+- HTML chuẩn commit `thiet-ke/mau-giao-dien.html`: commit `d420237f5a5f6b3ed50ffc24e0f562b39610a462`; SHA-256 raw sau commit `8f9b6577acb3f8e03d5c816bf5050724e50bc43d9d07826552781b7d9029a8a0`. Ảnh dùng đường dẫn tương đối; không có nhãn xem trước trong file main.
+- Việc còn treo: chưa có hệ lưu game thật; nút Tiếp tục hiện theo khóa localStorage dự kiến, chưa chứng minh có save có thể chơi tiếp. Màu son `#a42c1d` chỉ lấy cảm hứng, chưa khớp chính xác từng điểm ảnh triện trên bìa. Chưa kiểm tra trên iPhone thật; ảnh viewport 414×~588px bị cắt bìa theo tỷ lệ.
+
 ## BỔ SUNG NGÀY 02/11/2026: BÌA MỚI VÀ MỰC LOANG
 
 - Đã làm: thay màn tiêu đề bằng ảnh `anh-bia-moi.jpg` phủ theo tỷ lệ ảnh; nút trong suốt trên triện có viền sáng và gợi ý; thêm chuyển cảnh mực loang sang Khởi thân. Ảnh cũ vẫn làm nền truyện. Commit tính năng `4c02252681a4108477849f185016d7ee2cbdd3b2`; sau khi xem ảnh thật đã căn lại nút triện bằng commit `2102f7eec8c8d4ba47b86ee8fe4d947bb7ef2a9a`.
