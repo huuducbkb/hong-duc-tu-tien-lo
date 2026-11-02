@@ -2,6 +2,13 @@
 
 File này là báo cáo bàn giao chi tiết, giúp chủ kho và bất kỳ ai tiếp nhận hiểu tình trạng dự án và tiếp tục công việc. Mỗi lần cập nhật, hãy viết thêm báo cáo cho ngày mới và đặt báo cáo mới nhất ở trên cùng.
 
+## BỔ SUNG NGÀY 02/11/2026: BÌA MỚI VÀ MỰC LOANG
+
+- Đã làm: thay màn tiêu đề bằng ảnh `anh-bia-moi.jpg` phủ theo tỷ lệ ảnh; nút trong suốt trên triện có viền sáng và gợi ý; thêm chuyển cảnh mực loang sang Khởi thân. Ảnh cũ vẫn làm nền truyện. Commit tính năng `4c02252681a4108477849f185016d7ee2cbdd3b2`; sau khi xem ảnh thật đã căn lại nút triện bằng commit `2102f7eec8c8d4ba47b86ee8fe4d947bb7ef2a9a`.
+- Kiểm tra mã: raw theo commit cuối có SHA-256 `e75667555475ce8876483e3a72385874d6f6064f4b55bc6636bccee12946a79b`, khớp bản soạn và chỉ có một tài liệu HTML. Khi ghi báo cáo này Pages còn chờ phiên bản căn chỉnh cuối; cần đối chiếu lại sau khi build.
+- Lỗi và xử lý: Control+A trong phiên editor không chọn toàn bộ, dán đầu tiên chèn vào tài liệu cũ; phát hiện trước commit và thay lại bằng Meta+A, đối chiếu toàn bộ nội dung. Đã ghi chi tiết trong GHI-CHU-LOI-GITHUB.md.
+- Chưa làm: kiểm tra bìa và chuyển cảnh trên iPhone 11 thật hoặc viewport 414×896. Trình duyệt kiểm tra có cột 414px và chiều cao viewport 588px, làm ảnh cover bị cắt phần trên/dưới; cần xem lại trên máy thật. Chủ kho còn cung cấp danh sách 11 nút chương 1 và chốt quy tắc AI thật.
+
 ## BÁO CÁO NGÀY 02/11/2026 (mới nhất)
 
 ### 1. Quyết định đã chốt của chủ kho
