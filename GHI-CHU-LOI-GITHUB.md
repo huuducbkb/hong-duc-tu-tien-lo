@@ -1,3 +1,6 @@
+## Loi thay noi dung tren trinh soan ngay 02/11/2026
+Khi dung thao tac thay toan bo file HTML, trinh soan chen noi dung moi sau noi dung cu thay vi thay the. Khong commit ban loi; dung tim va thay the bieu thuc chinh quy de xoa phan cu, kiem tra chi con mot tai lieu HTML va doi chieu SHA-256 raw voi noi dung da soan sau commit. Can kiem tra ky chon toan bo theo he dieu hanh, khong tin Preview.
+
 # Ghi chú lỗi GitHub
 
 ## Mat nap khi chinh sua file tren trinh soan GitHub
