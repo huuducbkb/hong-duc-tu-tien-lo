@@ -26,3 +26,6 @@ Khi sửa bản mẫu v2 trong trình soạn thảo, thao tác thay toàn bộ n
 ## Lỗi trình soạn thảo khi chốt cách xem B
 
 Thao tác thay toàn bộ nội dung lại nối bản mới vào sau bản cũ. Đã xóa phần dư bằng tìm và thay thế trước khi commit, kiểm tra chỉ còn một tài liệu HTML và đối chiếu bản raw sau commit. Không dùng Preview để xác nhận nội dung dài.
+
+## Lỗi chọn toàn bộ editor ngày 02/11/2026
+Trong phiên trình duyệt này Control+A không chọn toàn bộ editor; khi dán, bản mới bị chèn vào bản cũ. Đã phát hiện trước commit, dùng Meta+A chọn toàn bộ và kiểm tra vùng chọn bằng sao chép, dán lại rồi đối chiếu toàn bộ nội dung và SHA-256. Không commit bản lỗi. Sau commit, raw theo SHA khớp bản dự kiến; raw theo main có thể chậm cập nhật cache.
