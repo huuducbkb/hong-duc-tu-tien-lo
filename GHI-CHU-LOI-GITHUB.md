@@ -1,3 +1,7 @@
+## Lỗi tên tệp khi tải HTML lên ngày 02/11/2026
+
+Tệp HTML đã duyệt có SHA-256 01c6a4ee7941986ddafaf6adf7a9bded176ebf6b25621cacd4a207f11bb3b2c2 nhưng công cụ tải lên chọn tệp tên mau-giao-dien-rong-noi-dung.html; trang GitHub không hiện điều khiển đổi tên. Tệp đã được gỡ khỏi hàng tải lên, chưa commit HTML để tránh tạo nhầm tệp. Cần đổi tên thành mau-giao-dien.html mà giữ nguyên byte, đối chiếu SHA-256 rồi mới upload thay đúng tệp trong thiet-ke/ trên main và kiểm tra SHA bản raw sau commit.
+
 ## Lỗi thay HTML ngày 02/11/2026
 
 Trong phiên này Ctrl+A/Ctrl+V không thay nội dung; thử Meta+A/Meta+V thì bản mới bị chèn vào bản cũ. Đã phát hiện trước commit và rời bản nháp lỗi, chưa cập nhật HTML. Tệp đã duyệt có SHA-256 01c6a4ee7941986ddafaf6adf7a9bded176ebf6b25621cacd4a207f11bb3b2c2. Cần thay toàn bộ bằng phương tiện hỗ trợ, kiểm tra chỉ còn một tài liệu và đối chiếu SHA-256 raw sau commit.
