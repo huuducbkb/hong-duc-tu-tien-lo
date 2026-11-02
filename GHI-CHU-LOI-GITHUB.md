@@ -1,3 +1,7 @@
+## Lỗi thay HTML ngày 02/11/2026
+
+Trong phiên này Ctrl+A/Ctrl+V không thay nội dung; thử Meta+A/Meta+V thì bản mới bị chèn vào bản cũ. Đã phát hiện trước commit và rời bản nháp lỗi, chưa cập nhật HTML. Tệp đã duyệt có SHA-256 01c6a4ee7941986ddafaf6adf7a9bded176ebf6b25621cacd4a207f11bb3b2c2. Cần thay toàn bộ bằng phương tiện hỗ trợ, kiểm tra chỉ còn một tài liệu và đối chiếu SHA-256 raw sau commit.
+
 ## Loi thay noi dung tren trinh soan ngay 02/11/2026
 Khi dung thao tac thay toan bo file HTML, trinh soan chen noi dung moi sau noi dung cu thay vi thay the. Khong commit ban loi; dung tim va thay the bieu thuc chinh quy de xoa phan cu, kiem tra chi con mot tai lieu HTML va doi chieu SHA-256 raw voi noi dung da soan sau commit. Can kiem tra ky chon toan bo theo he dieu hanh, khong tin Preview.
 
