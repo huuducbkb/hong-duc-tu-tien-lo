@@ -1,3 +1,12 @@
+## BỔ SUNG TỐI 02/11/2026: BÌA VÀ KHUNG TRUYỆN
+
+- iPhone 11 thực: màn Safari thấp hơn 896px khiến chữ HỒNG bị cắt, nhãn đỏ che chữ ĐỨC. Bản mới neo đỉnh ảnh bìa dưới nhãn và dùng JS tính hình học ảnh, đặt overlay triện và gợi ý theo độ cao thực. Cần chủ kho kiểm lại bìa trên iPhone thật ở dải cao 700–896px sau LIVE.
+- Nền khung Truyện đổi từ ảnh thủy mặc `Art/anh-bia/anh-bia.jpg` (file vẫn giữ) sang tranh chủ kho `Art/anh-nen-truyen/IMG_3136.jpeg`; lớp giấy phủ khoảng 90%. Sau khi so demo A sepia/B nguyên màu chủ kho chốt B. Ảnh upload khác byte và giữ tên IMG_3136.jpeg; nguyên nhân nén chưa xác minh, đã ghi GHI-CHU-LOI-GITHUB.md.
+- Nền giấy và ảnh căng tới khung nét mực; lề ngang mỗi bên 12→6px; vùng chữ mở mục lục 119→131px, ẩn mục lục 342→354px theo phép đo bản xem trước. `.anh-minh-hoa` có khung ảnh mẫu giữa đoạn chuyện. Khi tích hợp ảnh thật: chỉ sinh khối ảnh khi có ảnh, không có thì chữ nối liền; quy tắc này là việc cần triển khai, mẫu hiện có ảnh tĩnh.
+- Preview đã dùng (link tạm có thể hết hạn): https://boba.page/9_b73msZl-DkzHLNRX70HQ/index.html và https://boba.page/PhSVO-FeFvZ8TEqmp-7FYg/index.html.
+- Trình soạn thảo không thay toàn bộ nội dung đúng cách (a721a6e5). Upload giữ tên workspace; sau upload tạm c3844b29a524b0dbb6534324e902f9fdf89045b8, GitHub từ chối đổi tên vì trùng. Đổi file cũ sang tên tạm 254e2c764c3d489e875d23566d5cfe64cb2b646d; đổi bản mới sang tên đích aee77d9748208486dfc9af03132c19a719f1eb1c; dọn file cũ tạm b5e8fcf81c3666adf9866601794a52c8a079585c. Ghi lỗi dd14bf6f1641d289d84657c57cf3528dac77ba39. SHA-256 raw HTML mới khớp bản duyệt: `01c6a4ee7941986ddafaf6adf7a9bded176ebf6b25621cacd4a207f11bb3b2c2`.
+- Việc còn treo: chưa có hệ save thật (Tiếp tục chỉ dựa khóa localStorage); kiểm bìa trên iPhone sau LIVE; danh sách 11 nút xương sống chương 1; bộ quy tắc AI thật (hiện mẫu); quyết định mặc định mở/đóng mục lục.
+
 # BÁO CÁO CÔNG VIỆC - HỒNG ĐỨC TU TIÊN LỘ
 
 File này là báo cáo bàn giao chi tiết, giúp chủ kho và bất kỳ ai tiếp nhận hiểu tình trạng dự án và tiếp tục công việc. Mỗi lần cập nhật, hãy viết thêm báo cáo cho ngày mới và đặt báo cáo mới nhất ở trên cùng.
