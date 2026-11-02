@@ -29,3 +29,7 @@ Thao tác thay toàn bộ nội dung lại nối bản mới vào sau bản cũ.
 
 ## Lỗi chọn toàn bộ editor ngày 02/11/2026
 Trong phiên trình duyệt này Control+A không chọn toàn bộ editor; khi dán, bản mới bị chèn vào bản cũ. Đã phát hiện trước commit, dùng Meta+A chọn toàn bộ và kiểm tra vùng chọn bằng sao chép, dán lại rồi đối chiếu toàn bộ nội dung và SHA-256. Không commit bản lỗi. Sau commit, raw theo SHA khớp bản dự kiến; raw theo main có thể chậm cập nhật cache.
+
+## Lỗi đổi tên tệp ảnh tải lên ngày 02/11/2026
+
+Khi chuẩn bị tải ảnh nền Truyện, bản sao được lưu lại với tên mới có 205.371 byte và SHA-256 925695da811aa07a1d39be17712e2071975c6fc00d6d73030cce532ca21ffc92, khác ảnh gốc 205.225 byte, SHA-256 481f5fe15b4ed33c7109ec24b7593e950512f8c545d8439137638d8539bcf883. Đã gỡ bản sao khỏi hàng tải lên, chưa commit ảnh hoặc HTML mới. Cần đổi tên ảnh gốc mà vẫn giữ nguyên byte, đối chiếu SHA-256 trước và sau upload; sau đó mới tiếp tục phát hành và kiểm tra Pages.
