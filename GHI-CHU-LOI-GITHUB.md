@@ -22,3 +22,7 @@ Lỗi: Trang upload GitHub chỉ nhận file đính kèm thật; bản văn bả
 ## Loi sua file CSS dai ngay 02/11/2026
 
 Khi sửa bản mẫu v2 trong trình soạn thảo, thao tác thay toàn bộ nội dung không thay đúng như mong đợi; khi khôi phục từ văn bản hiển thị của editor, một dòng CSS rất dài bị cắt. Commit ban đầu vì vậy thiếu CSS. Cách xử lý: lấy nội dung đầy đủ từ bản raw, khôi phục CSS, chia CSS thành các dòng ngắn, commit sửa và đối chiếu SHA-256 bản raw với nội dung dự kiến. Không dựa vào Preview hay văn bản editor bị rút gọn để xác nhận file dài.
+
+## Lỗi trình soạn thảo khi chốt cách xem B
+
+Thao tác thay toàn bộ nội dung lại nối bản mới vào sau bản cũ. Đã xóa phần dư bằng tìm và thay thế trước khi commit, kiểm tra chỉ còn một tài liệu HTML và đối chiếu bản raw sau commit. Không dùng Preview để xác nhận nội dung dài.
