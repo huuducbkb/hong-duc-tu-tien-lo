@@ -1,3 +1,8 @@
+## 02/11/2026 — Ảnh iPhone và tên file khi upload
+
+- Ảnh chat gốc 205.225 byte; ảnh chủ kho tự tải lên GitHub là `Art/anh-nen-truyen/IMG_3136.jpeg`, 193.689 byte, khác byte nhưng cùng tranh. Có thể iPhone Photos đã nén lại khi xuất; nguyên nhân chưa được xác minh. Tên được giữ là IMG_3136.jpeg thay vì anh-nen-truyen.jpg. Chủ kho chấp nhận ảnh và tên thực tế; HTML trỏ tới tên đó. Lỗi mã lại của công cụ task được ghi ở commit 71c3f1e4.
+- Trang upload giữ tên file workspace, không thấy điều khiển đổi tên. Đã upload `mau-giao-dien-rong-noi-dung.html` (c3844b29), kiểm SHA. Đổi trực tiếp sang tên đích bị GitHub từ chối vì tên đã tồn tại. Theo phương án chủ kho duyệt: đổi file cũ sang `mau-giao-dien-cu-tam.html` (254e2c76), đổi file mới sang `mau-giao-dien.html` (aee77d97), xóa file cũ tạm (b5e8fcf8). SHA file đích sau cùng khớp bản duyệt: `01c6a4ee7941986ddafaf6adf7a9bded176ebf6b25621cacd4a207f11bb3b2c2`. Lỗi thay toàn bộ nội dung ở editor đã ghi tại a721a6e5.
+
 ## Lỗi tên tệp khi tải HTML lên ngày 02/11/2026
 
 Tệp HTML đã duyệt có SHA-256 01c6a4ee7941986ddafaf6adf7a9bded176ebf6b25621cacd4a207f11bb3b2c2 nhưng công cụ tải lên chọn tệp tên mau-giao-dien-rong-noi-dung.html; trang GitHub không hiện điều khiển đổi tên. Tệp đã được gỡ khỏi hàng tải lên, chưa commit HTML để tránh tạo nhầm tệp. Cần đổi tên thành mau-giao-dien.html mà giữ nguyên byte, đối chiếu SHA-256 rồi mới upload thay đúng tệp trong thiet-ke/ trên main và kiểm tra SHA bản raw sau commit.
