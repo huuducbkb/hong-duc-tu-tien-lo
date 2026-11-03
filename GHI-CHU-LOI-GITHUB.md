@@ -1,3 +1,7 @@
+## 04/11/2026 — Phát hành G1 trong trình duyệt task
+
+Công cụ không lưu được trực tiếp các tệp HTML/CSS/JS; đã dùng các tệp văn bản .txt đã lưu. Trình soạn thảo GitHub từng không hiển thị và phần đổi tên tại trang upload không dùng được trong trình duyệt task; github.dev từng bỏ qua thao tác dán. iPhone của chủ kho hiển thị upload bình thường theo báo cáo của chủ kho. Phương án thành công: tải tám tệp .txt vào main, xác nhận editor có nội dung rồi đổi tên sang đúng đường dẫn; sau cùng xóa placeholder index và đổi tên index G1. Bản backup ở eef5dfa21f46fb2589e8157d8ffcd2466cfee976. Đối chiếu SHA-256 raw với tám tệp .txt đã lưu sau đổi tên.
+
 ## 02/11/2026 — Ảnh iPhone và tên file khi upload
 
 - Ảnh chat gốc 205.225 byte; ảnh chủ kho tự tải lên GitHub là `Art/anh-nen-truyen/IMG_3136.jpeg`, 193.689 byte, khác byte nhưng cùng tranh. Có thể iPhone Photos đã nén lại khi xuất; nguyên nhân chưa được xác minh. Tên được giữ là IMG_3136.jpeg thay vì anh-nen-truyen.jpg. Chủ kho chấp nhận ảnh và tên thực tế; HTML trỏ tới tên đó. Lỗi mã lại của công cụ task được ghi ở commit 71c3f1e4.
