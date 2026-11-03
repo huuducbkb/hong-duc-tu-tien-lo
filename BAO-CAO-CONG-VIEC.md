@@ -1,3 +1,10 @@
+## 04/11/2026 — BÀN GIAO PHÁT HÀNH G1
+- Đã đưa tám file G1 lên main qua upload tạm .txt và đổi tên. Không tải lại ảnh, không sửa thiet-ke/mau-giao-dien.html. Backup trước phát hành: eef5dfa21f46fb2589e8157d8ffcd2466cfee976. Commit đổi tên index: d0ea0552f56110d46b00f8bb943f1ac7714382f3. SHA-256 raw từng file khớp tệp .txt tương ứng đã lưu; đối chiếu với tài liệu gốc được kiểm tra theo các đoạn.
+- GitHub Pages build G1 thành công; bìa với đường dẫn ảnh tương đối hiển thị, chạm triện vào Khởi thân và tạo nhân vật thử. Mục lục mặc định đóng, có 15 mục, Xuất nhật ký ở vị trí thứ 5.
+- Khi đóng mục lục khung truyện rộng 414px trong phép đo. Nút mục lục position:fixed nhưng hàng menu vẫn giữ khoảng 50,5px chiều cao; mở mục lục khung truyện còn 191px trong phép đo và nút Đóng che một phần tiêu đề mục lục. Chưa sửa nguồn đã duyệt.
+- Không dùng khóa thật: kiểm tra kết nối và gửi hai hành động đều báo thiếu khóa bằng tiếng Việt; IndexedDB hongduc-so-nhat-ky ghi nguyên văn hai hành động, tải lại và Tiếp tục giữ save hongduc-save. File nhật ký xuất có nguyên văn trước tóm tắt trước log và khóa được che ***. Chưa kiểm phản hồi AI hoặc hardcore chết; chủ kho cần thử AI thật trên iPhone bằng khóa của mình.
+- Còn chờ duyệt: bản thảo A 11 nút, bản thảo B quy tắc AI + trường trang_thai, và hướng đường đi tự do 3 mức. Các lỗi và cách xử lý ghi trong GHI-CHU-LOI-GITHUB.md.
+
 ## BỔ SUNG TỐI 02/11/2026: BÌA VÀ KHUNG TRUYỆN
 
 - iPhone 11 thực: màn Safari thấp hơn 896px khiến chữ HỒNG bị cắt, nhãn đỏ che chữ ĐỨC. Bản mới neo đỉnh ảnh bìa dưới nhãn và dùng JS tính hình học ảnh, đặt overlay triện và gợi ý theo độ cao thực. Cần chủ kho kiểm lại bìa trên iPhone thật ở dải cao 700–896px sau LIVE.
