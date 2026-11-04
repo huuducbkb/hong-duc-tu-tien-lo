@@ -1,3 +1,9 @@
+## 04/11/2026 — G3: đường ghi tệp và lỗi mới
+- Lỗi mới: chọn hết rồi dán thay toàn bộ trong editor web chèn lệch vào giữa mã cũ; phát hiện trước commit, bản hỏng không commit. Không dùng cách này để thay cả file; chỉ đổi tên hoặc sửa nhỏ đã kiểm tra kỹ.
+- Đường thành công: tải Blob .txt từ trình duyệt, lưu tệp tải xuống, upload g3-work, đổi tên trên trang edit, đối chiếu raw nguyên văn. Bài thử ba dòng tiếng Việt và ký tự đặc biệt khớp từng ký tự; SHA-256 b40b2feab4e9a693c02368477256ad9ddb4824595f1da307f42b19a5fa71f077. File thử đã xóa.
+- Đổi tên đè bị lỗi nguyên văn: “There was an error committing your changes: A file with the same name already exists. Please choose a different name and try again.” Đổi file cũ sang tên tạm, đổi file mới sang đường dẫn chính, so raw từng byte rồi xóa file tạm. Raw theo tên nhánh có thể cache cũ; dùng hash commit. Mọi commit main cần thẻ duyệt.
+- Ảnh Diêm Vương lần này upload nguyên file gốc một lần rồi đổi tên qua GitHub. Cả sau upload lẫn sau đổi tên đều 216.076 byte và SHA-256 8e8fe7dc8005be9755cc68d0f68052977ae6c498e17fd3dac3f174c70b1a88da khớp ảnh gốc; luôn kiểm lại ảnh sau mỗi bước, không suy từ lần thành công này rằng mọi ảnh đều an toàn.
+
 ## 04/11/2026 — Phát hành G1 trong trình duyệt task
 
 Công cụ không lưu được trực tiếp các tệp HTML/CSS/JS; đã dùng các tệp văn bản .txt đã lưu. Trình soạn thảo GitHub từng không hiển thị và phần đổi tên tại trang upload không dùng được trong trình duyệt task; github.dev từng bỏ qua thao tác dán. iPhone của chủ kho hiển thị upload bình thường theo báo cáo của chủ kho. Phương án thành công: tải tám tệp .txt vào main, xác nhận editor có nội dung rồi đổi tên sang đúng đường dẫn; sau cùng xóa placeholder index và đổi tên index G1. Bản backup ở eef5dfa21f46fb2589e8157d8ffcd2466cfee976. Đối chiếu SHA-256 raw với tám tệp .txt đã lưu sau đổi tên.

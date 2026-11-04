@@ -1,3 +1,12 @@
+## 04/11/2026 — G3: XƯƠNG SỐNG VÀ QUY TẮC KỂ CHUYỆN (NHÁNH THỬ)
+- Chủ repo duyệt bản thảo A 11 nút chương 1; bản thảo B kèm thẻ nhân vật, thiện cảm và nội tâm; ba mức TRỰC TIẾP, GIÁN TIẾP, ĐI QUA cho nút 2–11; nút 1 bắt buộc gặp mặt trực tiếp Hàn Lập.
+- Đã làm trên g3-work: 11 sự kiện ẩn, luật cứng, thẻ NPC, thiện cảm và JSON ẩn; save mới và mặc định cho save cũ. Màn chết xóa save, điếu văn và nút về bìa; ảnh Điện Diêm Vương chủ repo chọn là Art/anh-am-phu/dien-diem-vuong.jpg, phủ đen 50%, background-size cover. Ảnh raw 216.076 byte, SHA-256 8e8fe7dc8005be9755cc68d0f68052977ae6c498e17fd3dac3f174c70b1a88da khớp ảnh gốc. Đã gửi ảnh chụp màn chết thực tế trong khung 414×896 CSS pixel; tỷ lệ có thể khác iPhone thật.
+- Với NPC quan trọng mới, bước chọn cảnh tạo hồ sơ; mỗi lượt từ nút 2 cần một yêu cầu chọn cảnh và một yêu cầu kể, có thể tăng độ trễ và hạn mức Gemini. Không có bảo đảm AI thật luôn tuân thủ quy tắc prompt.
+- Kiểm thử không gọi AI thật: bộ giả lập commit cf23f5f 87 PASS/0 FAIL, test riêng NPC mới 10 PASS/0 FAIL. Với trang thử commit 214a63c: tạo nhân vật, save, tải lại và Tiếp tục; save cũ thử thiếu hai trường vẫn mở, tự mặc định nút 1 và thiện cảm 0; prompt gồm luật cứng, thẻ, bảng, nút và ba mức. Phản hồi chết giả lập xóa save thử, hiện điếu văn và nút về bìa. Đây không phải kết quả thử LIVE hoặc AI thật; không cộng gộp các bộ có thể trùng lặp thành tổng duy nhất.
+- Đang dở/chưa làm tại thời điểm ghi: duyệt gộp lên main, chờ Pages build và kiểm tra lại LIVE; chủ repo chưa thử AI thật bằng khóa riêng trên LIVE.
+- Nợ cần nhắc: vá lỗi mất save sau 5 phút bằng hộp thoại “Một kiếp chưa dứt” để sau theo lời chủ repo; theo dõi nút Đóng đè tiêu đề Mục Lục ở màn hẹp.
+- Lỗi và cách xử lý: editor thay toàn bộ chèn lệch, bản hỏng chưa commit; GitHub không cho đổi tên đè file cũ, đổi file cũ sang tên tạm, đổi file mới, đối chiếu raw theo hash commit rồi dọn tạm. Xem GHI-CHU-LOI-GITHUB.md.
+
 ## 04/11/2026 — BÀN GIAO PHÁT HÀNH G1
 - Đã đưa tám file G1 lên main qua upload tạm .txt và đổi tên. Không tải lại ảnh, không sửa thiet-ke/mau-giao-dien.html. Backup trước phát hành: eef5dfa21f46fb2589e8157d8ffcd2466cfee976. Commit đổi tên index: d0ea0552f56110d46b00f8bb943f1ac7714382f3. SHA-256 raw từng file khớp tệp .txt tương ứng đã lưu; đối chiếu với tài liệu gốc được kiểm tra theo các đoạn.
 - GitHub Pages build G1 thành công; bìa với đường dẫn ảnh tương đối hiển thị, chạm triện vào Khởi thân và tạo nhân vật thử. Mục lục mặc định đóng, có 15 mục, Xuất nhật ký ở vị trí thứ 5.
