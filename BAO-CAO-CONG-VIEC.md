@@ -7,6 +7,13 @@
 - Nợ cần nhắc: vá lỗi mất save sau 5 phút bằng hộp thoại “Một kiếp chưa dứt” để sau theo lời chủ repo; theo dõi nút Đóng đè tiêu đề Mục Lục ở màn hẹp.
 - Lỗi và cách xử lý: editor thay toàn bộ chèn lệch, bản hỏng chưa commit; GitHub không cho đổi tên đè file cũ, đổi file cũ sang tên tạm, đổi file mới, đối chiếu raw theo hash commit rồi dọn tạm. Xem GHI-CHU-LOI-GITHUB.md.
 
+## 04/11/2026 — Bàn giao bộ hồi quy mới
+
+- Đã thêm bộ hồi quy mới tự viết gồm 45 phép tại `test/bo-hoi-quy.js`, thay cho bộ 94 phép cũ đã mất; bộ này chưa phủ đầy đủ.
+- Chưa phủ: thao tác bấm giao diện thật, hiệu ứng mực, nội dung file xuất, thử lại 503, nén lịch sử, nhắc sao lưu 30 lượt/3 ngày, nhánh chọn cảnh, NPC mới và kiểm tra kết nối.
+- Cách chạy: mở LIVE, mở DevTools Console, dán toàn bộ file rồi Enter; đợi bảng PASS/FAIL và dọn kho thử, sau đó tự tải lại trang. Chạy lại bộ này trước mỗi lần vá lớn.
+
+
 ## 04/11/2026 — BÀN GIAO PHÁT HÀNH G1
 - Đã đưa tám file G1 lên main qua upload tạm .txt và đổi tên. Không tải lại ảnh, không sửa thiet-ke/mau-giao-dien.html. Backup trước phát hành: eef5dfa21f46fb2589e8157d8ffcd2466cfee976. Commit đổi tên index: d0ea0552f56110d46b00f8bb943f1ac7714382f3. SHA-256 raw từng file khớp tệp .txt tương ứng đã lưu; đối chiếu với tài liệu gốc được kiểm tra theo các đoạn.
 - GitHub Pages build G1 thành công; bìa với đường dẫn ảnh tương đối hiển thị, chạm triện vào Khởi thân và tạo nhân vật thử. Mục lục mặc định đóng, có 15 mục, Xuất nhật ký ở vị trí thứ 5.
