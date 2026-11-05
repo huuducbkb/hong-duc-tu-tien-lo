@@ -1,3 +1,10 @@
+## 05/11/2026 — BÀN GIAO: MỘT KIẾP CHƯA DỨT
+
+- Đã bổ sung hộp thoại tại triện cửa vào khi có save hợp lệ. Người chơi có thể tiếp tục kiếp cũ qua luồng đọc và dựng truyện hiện có, hoặc chọn bắt đầu kiếp mới để vào Khởi thân. Khi không có save, cửa vào giữ hiệu ứng mực và vào Khởi thân như trước.
+- Lựa chọn kiếp mới không xóa hay ghi đè save cũ ngay. Save cũ chỉ được thay khi việc tạo nhân vật mới thành công; nút Tiếp tục sẵn có vẫn dùng luồng cũ.
+- Đã thử các luồng trên bản xem trước cách ly với save thử, không gọi Gemini thật: không save, có save và nội dung hộp thoại, tiếp tục, chọn kiếp mới mà save cũ còn, tạo nhân vật và thay save, khung giả lập 414×896, đóng/mở hộp thoại và nút Tiếp tục cũ.
+- Chưa kiểm trên iPhone thật; chủ repo cần tự kiểm trên máy. Các kiểm tra LIVE và bộ hồi quy sau commit phải thực hiện sau khi được duyệt và Pages dựng xong.
+
 ## 04/11/2026 — G3: XƯƠNG SỐNG VÀ QUY TẮC KỂ CHUYỆN (NHÁNH THỬ)
 - Chủ repo duyệt bản thảo A 11 nút chương 1; bản thảo B kèm thẻ nhân vật, thiện cảm và nội tâm; ba mức TRỰC TIẾP, GIÁN TIẾP, ĐI QUA cho nút 2–11; nút 1 bắt buộc gặp mặt trực tiếp Hàn Lập.
 - Đã làm trên g3-work: 11 sự kiện ẩn, luật cứng, thẻ NPC, thiện cảm và JSON ẩn; save mới và mặc định cho save cũ. Màn chết xóa save, điếu văn và nút về bìa; ảnh Điện Diêm Vương chủ repo chọn là Art/anh-am-phu/dien-diem-vuong.jpg, phủ đen 50%, background-size cover. Ảnh raw 216.076 byte, SHA-256 8e8fe7dc8005be9755cc68d0f68052977ae6c498e17fd3dac3f174c70b1a88da khớp ảnh gốc. Đã gửi ảnh chụp màn chết thực tế trong khung 414×896 CSS pixel; tỷ lệ có thể khác iPhone thật.
