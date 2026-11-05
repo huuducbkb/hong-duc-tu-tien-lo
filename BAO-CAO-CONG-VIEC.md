@@ -155,3 +155,15 @@ Chưa có báo cáo cũ hơn; nội dung file `GHI-CHU-CONG-VIEC.md` bản trư�
 - Kiểm thử trước commit trên bản xem trước cách ly, không dùng khóa hay gọi Gemini thật: khung 414×896 hiển thị tiêu đề và nút không chồng nhau, không tràn ngang; Mục lục có 15 mục, Xuất nhật ký đứng thứ 5; luồng bìa, Khởi thân, truyện, Cài Đặt và đóng/mở đã được kiểm; bộ ghi nhận lỗi JavaScript không ghi nhận lỗi. Kiểm thêm khung 1024×896, tiêu đề và nút không chồng nhau.
 - Cần kiểm sau phát hành: đối chiếu LIVE và chạy bộ hồi quy 45 phép trên kho thử cách ly, khôi phục và đối chiếu dữ liệu gốc.
 - Chưa kiểm trên iPhone thật; chủ repo sẽ tự kiểm trên iPhone 11.
+
+
+## 05/11/2026 — BÀN GIAO: RÈN HỆ THỐNG VÀ CHUYỂN MÀN
+
+- Trạng thái khi lập báo cáo: đã kiểm trên bản thử cách ly; chờ duyệt, commit và kiểm tra LIVE. Không dùng khóa Gemini thật hay dữ liệu chơi thật.
+- (a) Đã có nén sau 12 mục, giữ sáu mục gần và sổ nguyên văn. Bản thử giữ lịch sử khi ghi sổ thất bại và gửi toàn bộ lịch sử còn trong save khi tắt thu gọn; dữ liệu từng được nén trước đó không thể tự khôi phục từ save.
+- (b) Đã có ba lượt thử 503 và bốn model. Bản thử mở rộng retry cho 429, 5xx và lỗi mạng, chờ 2 giây rồi 5 giây, chuyển model dự phòng, giới hạn thời gian các bước nhận và đọc phản hồi; lỗi mạng khi đọc thân phản hồi cũng thử lại, JSON sai vẫn báo đúng; giữ thông báo Đang dệt chuyện.
+- (c) Bộ đếm nhắc 30 lượt/3 ngày và đặt lại sau xuất đã có, không làm lại. Nhắc thử không hiển thị tại 29 lượt, có tại 30 lượt hoặc 3 ngày và ẩn khi đọc sổ lỗi; đã tải bản nhật ký thử, xác nhận nguyên văn và mốc đặt lại 0 sau xuất; font lời nhắc được đưa về bộ font chuẩn.
+- (d) Đã có thông báo tiếng Việt; bản thử khóa nút khi đang kiểm và giới hạn tổng 60 giây cho phép kiểm kết nối.
+- Bản thử bổ sung chuyển mực khi vào truyện, mở/đóng Mục lục, vào/ra Cài Đặt và vào/ra màn chết; mực không nhận sự kiện trỏ. Giữ sáu biến màu yêu cầu, thống nhất font màn chết với font sách.
+- Hồi quy trong sandbox với chốt origin chỉ thay trong bộ nhớ: 45 phép gốc và 9 phép mới đều PASS (54 PASS / 0 FAIL); Gemini và khóa đều giả lập, kho thử riêng. Nút kiểm kết nối được khóa khi chờ và mở lại sau thành công giả. Đã mở bìa, Khởi thân, truyện, Mục lục 15 mục với Xuất nhật ký ở vị trí 5, Cài Đặt, màn chết; đã xem một số trạng thái ở 414×896 và 1024×896.
+- Ở 414×896 đã xác nhận màn chết phủ đúng khung, font chuẩn, trở về bìa và bấm nhanh hai lần Mục lục đều xử lý; các lỗi console được ghi nhận trong các thao tác thử là 0. Còn phải đối chiếu SHA-256 sau từng lần lưu, duyệt trước commit, xác minh Pages/hash và hồi quy trên LIVE sau commit. Chưa kiểm trên iPhone 11 thật.
