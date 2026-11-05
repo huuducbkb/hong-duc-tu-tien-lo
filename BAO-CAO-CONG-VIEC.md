@@ -147,3 +147,11 @@ File này là báo cáo bàn giao chi tiết, giúp chủ kho và bất kỳ ai 
 ## LỊCH SỬ BÁO CÁO CŨ HƠN
 
 Chưa có báo cáo cũ hơn; nội dung file `GHI-CHU-CONG-VIEC.md` bản trước đã gộp vào báo cáo ngày 01/11/2026 ở trên.
+
+## 05/11/2026 — BÀN GIAO: NÚT ĐÓNG CHE TÊN MỤC LỤC
+
+- Nguyên nhân: nút Mục lục/Đóng được đặt cố định ở góc trên, z-index cao và nằm đè lên vùng đầu bảng Mục lục; vùng tiêu đề chưa dành khoảng trống cho nút trên khung hẹp.
+- Đã sửa: bổ sung padding phía trên cho giấy của thanh Mục lục khi mở, tính cả safe-area; giữ nguyên kiểu sách cũ, các mục và hành vi đóng/mở; không sửa JavaScript. Ghi lịch sử thay đổi trong CSS.
+- Kiểm thử trước commit trên bản xem trước cách ly, không dùng khóa hay gọi Gemini thật: khung 414×896 hiển thị tiêu đề và nút không chồng nhau, không tràn ngang; Mục lục có 15 mục, Xuất nhật ký đứng thứ 5; luồng bìa, Khởi thân, truyện, Cài Đặt và đóng/mở đã được kiểm; bộ ghi nhận lỗi JavaScript không ghi nhận lỗi. Kiểm thêm khung 1024×896, tiêu đề và nút không chồng nhau.
+- Cần kiểm sau phát hành: đối chiếu LIVE và chạy bộ hồi quy 45 phép trên kho thử cách ly, khôi phục và đối chiếu dữ liệu gốc.
+- Chưa kiểm trên iPhone thật; chủ repo sẽ tự kiểm trên iPhone 11.

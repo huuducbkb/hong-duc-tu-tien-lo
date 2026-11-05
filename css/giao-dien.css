@@ -51,3 +51,6 @@
 /* Mục lục nổi trên bố cục gốc, không thu hẹp truyện. */
 .menu-row::before{content:"✥ Mở Mục Lục";visibility:hidden;display:block;box-sizing:border-box;min-height:44px;padding:10px 12px;border:7px solid transparent;font-size:14px;line-height:normal}.menu-toggle.seal-button{position:fixed;top:max(8px,env(safe-area-inset-top,0px));right:max(8px,calc((100vw - 414px)/2 + 8px));z-index:90;background-color:#E8D7B2;width:64px;min-height:44px;padding:4px 2px;font-size:12px;line-height:1.2}.game-layout[hidden] .menu-toggle{display:none}
 /* LỊCH SỬ THAY ĐỔI: 02/11/2026 — giữ bản mẫu đã duyệt, bổ sung G1. */
+/* Chừa khoảng cho nút cố định, tránh che tiêu đề mục lục. */
+.game-layout:not(.toc-hidden) .sidebar .paper{padding-top:calc(60px + env(safe-area-inset-top,0px));}
+/* LỊCH SỬ THAY ĐỔI: 05/11/2026 — chừa khoảng cho nút Đóng không che tiêu đề Mục lục. */
