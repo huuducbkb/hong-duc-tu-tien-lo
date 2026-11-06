@@ -1,3 +1,13 @@
+## 06/11/2026 — BÀN GIAO CẬP NHẬT CUỐI
+
+- Đã làm: nội tâm theo thiện cảm, nhánh 0 với 11 mốc và tuyến ẩn, phân loại xuất thân và lưu nhánh, cảnh bắt buộc 5/9, bối cảnh đại chiến nhánh 1, xuất/nạp JSON có xác nhận, đổi tên Lệ Phi Vũ và chuyển thiện cảm save cũ. Giữ màn chết xóa save, cho phép nạp file cũ. Không làm Chương 2, không đổi thuật nén lịch sử hay file mẫu và ảnh Art.
+- Sửa bổ sung bc8c641: trước mốc 5, Hàn Lập bị loại khỏi NPC hiện diện; mốc 8/10 chỉ đưa tin gián tiếp. Giữ nguyên mức cảnh được AI chọn và ép gặp ở mốc 5/9. Prompt nhắc ràng buộc; AI thật vẫn có thể không tuân hoàn toàn lời kể.
+- Bộ test commit 0a93c5c thêm sáu phép cho các mốc 1–4, 8, 10. Runner cách ly https://boba.page/pWmLWBkC-6YRv69T33el7g/index.html hết hạn 13/11/2026, dùng mã tại commit 0a93c5c, chặn mạng thật bằng CSP, bộ nhớ giả và IndexedDB riêng. Chạy liên tiếp: Gemini lần 1 110 PASS / 0 FAIL, lần 2 110 PASS / 0 FAIL; OpenRouter lần 1 110 PASS / 0 FAIL, lần 2 110 PASS / 0 FAIL. Mỗi lượt đã xóa kho thử. Runner đặt nhà mặc định trước mỗi phép; test chuyên một nhà vẫn tự chọn nhà đó, test chung không nhất thiết gửi request; phân loại dùng stub, nội tâm có kiểm mạng giả cho cả hai nhà. Không dùng API, key hay save thật.
+- Lỗi đã khắc phục: selector xác nhận sai; nạp khi truyện đang chạy có nguy cơ bị lượt cũ ghi đè; runner OpenRouter ban đầu thiếu khóa/model giả; tên cũ và xung đột khóa thiện cảm được chuyển hợp lý. Kết quả 104 phép ở các mục cũ là lịch sử và được thay bằng kết quả 110 phép ở đây.
+- Giới hạn/chưa kiểm: Safari iPhone thật và chất lượng phản hồi AI thật chưa được kiểm; không thể bảo đảm AI luôn tuân prompt. Đang đợi Pages cập nhật file truyện và phải đối chiếu lại SHA-256 với commit cuối sau báo cáo. Các ghi chú cũ về việc chưa chặn gặp sớm, chưa chạy đủ và hướng dẫn thử trên LIVE đã lỗi thời; tuyệt đối không chạy test trên LIVE.
+
+---
+
 ## BỔ SUNG 06/11/2026 — KẾT QUẢ THEO NHÀ CUNG CẤP
 
 Bổ sung này thay thế trạng thái hồi quy còn chờ ở mục ngay dưới. Trên mã bb70e83, sandbox độc lập chặn mạng thật, dùng bộ nhớ và IndexedDB thử riêng, chạy bộ 104 phép lần lượt với nhà mặc định và những phép riêng của từng nhà:
