@@ -1,3 +1,13 @@
+# Tiếp nối 06/11/2026 — bản thử V7 và editor GitHub
+
+- Runner V6: https://boba.page/njtsE1S5rr266KtpmSCdUQ/index.html ; Gemini hai lượt và OpenRouter hai lượt mỗi lượt 130 PASS/0 FAIL, fixture metadata chỉ cấp cho bốn test cần nó, không dùng Proxy toàn cục. Có test tự chọn Gemini nên không coi toàn bộ phép thử là chạy riêng từng nhà.
+- Runner V7: https://boba.page/Ie3U-NGF-H4upGvrWq1EeQ/index.html ; Gemini lần 1 132 PASS/0 FAIL, lần 2 132/0; OpenRouter lần 1 132/0, lần 2 132/0. Bổ sung test native_finish_reason MAX_TOKENS không bị finish_reason stop che, và cache fallback chưa xác minh không ngăn nạp lại metadata. Đây là bản thử RAM cách ly, chưa phải mã trên main. V7 phụ thuộc V6, V4, V3, V2, V1 và commit nền 67ad11b; link hết hạn 13/11/2026.
+- V7 vẫn từ chối gửi OpenRouter JSON nếu không biết giới hạn output; chưa kiểm chứng metadata thực do cấm gọi API AI, có thể gây hồi quy người chơi. Metadata top_provider có thể không đại diện provider khác và context trừ prompt cũng là giới hạn. Không phát hành nguyên trạng mà chưa giải quyết rõ. Trang nhà cung cấp model https://openrouter.ai/google/gemma-4-31b-it:free cho thấy context 262K, nhưng không xác nhận max output; không suy ra hai giới hạn giống nhau.
+- Đã thử chuẩn bị js/openrouter.js bằng set_code trong GitHub web editor nhưng công cụ dán bản mới thêm trước bản cũ thay vì thay toàn bộ; đã phát hiện ngay, không commit mã hỏng. Phím chọn toàn bộ/xóa không đáng tin cậy; đã rời editor, không lưu. Cần cách sửa an toàn, kiểm preview/diff và so SHA-256 sau mỗi commit. Chưa sửa mã game, test repo hoặc BAO-CAO; chưa phát hành hoặc kiểm LIVE bản vá. Chỉ commit ghi chú.
+- Kế tiếp: sửa an toàn metadata thiếu, test mạng giả cả hai backend thật sự, cập nhật mã/test/report trên main, kiểm từng commit và LIVE. Giữ mọi cấm của yêuêu cầu gốc; không gọi AI/key/save thật, không sửa logic nén, prompt/schema, nhánh 1, Chương 2, Art hay mẫu giao diện.
+
+---
+
 # Tiếp nối 06/11/2026 — giới hạn token bản thử V4
 
 - Runner V3 https://boba.page/B6akIOoR5EuKSQByvvgMzw/index.html thêm maxOutputTokens 32768 cho JSON của bốn model Gemini; bốn lượt 127 PASS/0 FAIL, nhưng có test chuyên Gemini và chưa phải bản commit.
