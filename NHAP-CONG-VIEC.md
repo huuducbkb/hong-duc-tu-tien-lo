@@ -1,3 +1,11 @@
+# Cập nhật 06/11/2026 20:52 — kết quả theo nhà
+
+Mục 20:48 bên dưới về chưa chạy theo từng nhà đã được thay thế: runner sandbox tạm https://boba.page/vQ2eXtvc-Gk-dalQyWXMdg/index.html chạy chế độ mặc định Gemini hai lần và OpenRouter hai lần, mỗi lần 104 PASS / 0 FAIL. Test chung chạy theo nhà mặc định, test chuyên nhà tự đặt nhà; một số test Gemini cũ được cố định Gemini, không phải 104 yêu cầu mạng đến mỗi nhà. Bản test repo dùng trong sandbox đã đổi trong bộ nhớ phần khởi tạo nhà cho mỗi phép; xem BAO-CAO-CONG-VIEC.md commit 21d39a9 để biết các giới hạn và lỗi test trước khi sửa cấu hình giả. Không gọi AI thật hay dùng save thật.
+
+Còn: rà ràng buộc nhánh 0 gặp Hàn Lập lần đầu mốc 5, mốc 8/10 gián tiếp; bổ sung/kiểm thử nếu cần, rồi chạy lại hồi quy và đối chiếu LIVE so với commit cuối. iPhone Safari thực tế chưa được kiểm. Mục tiếp nối 20:48 ghi lại hash lúc trước, không phải trạng thái mới hơn của mã nếu có sửa sau này.
+
+---
+
 # Trạng thái tiếp nối — 06/11/2026, 20:48 (Asia/Saigon)
 
 Thông tin bên dưới mục này là trạng thái cũ lúc bắt đầu, KHÔNG còn đúng về những việc chưa làm.
