@@ -1,3 +1,9 @@
+# Xác nhận Pages — 06/11/2026, 21:05 (Asia/Saigon)
+
+GitHub Actions lượt 84 triển khai thành công. Đã so SHA-256 byte của chín file chính LIVE với commit a67791cea19044d8bcbfebfb64c921d7db909a7b: tất cả khớp. Tám hash không đổi ở bảng lịch sử phía dưới; riêng js/truyen-ke.js nay là 	`ffcd9a206d0eb931a4d7bb9c36bf55f56f0dcd7c45d9b037157472ef9bcb1eb9`. Mục dưới ghi trạng thái chờ Pages lúc 20:59 đã được thay thế bởi xác nhận này. Mã thử 0a93c5c vẫn cho 110 PASS / 0 FAIL ở mỗi bốn lượt cách ly; chi tiết ở BAO-CAO-CONG-VIEC.md. Chưa kiểm iPhone Safari thực tế hoặc AI thật.
+
+---
+
 # Cập nhật 06/11/2026 — đã sửa mốc gặp và chạy lại
 
 - Commit bc8c641 lọc Hàn Lập khỏi NPC hiện diện trước mốc 5 và tại mốc 8/10 của nhánh 0; nhắc AI lần gặp đầu ở mốc 5, tin mốc 8/10 chỉ gián tiếp. Vẫn giữ ba mức và bắt buộc gặp ở 5/9. Commit 0a93c5c bổ sung sáu test; SHA-256 file truyện ffcd9a206d0eb931a4d7bb9c36bf55f56f0dcd7c45d9b037157472ef9bcb1eb9; file test 82b6b1f2307d866f6264bf760c9cb670ff11c8335d9c32c9e2eaff9e4808344e, đối chiếu raw sau lưu đều khớp.
