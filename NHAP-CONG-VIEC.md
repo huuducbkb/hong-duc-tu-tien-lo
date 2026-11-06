@@ -1,3 +1,11 @@
+# Cập nhật 06/11/2026 — khắc phục thao tác editor
+
+- Đã tìm được cách thay toàn bộ nội dung an toàn trong GitHub editor: tập trung vào textbox, bấm Meta+A (không phải Control+A), rồi dùng type. Đã thử trên bản openrouter.js chưa lưu: chọn được toàn bộ 4.558 ký tự, gõ chuỗi thử thì chỉ còn chuỗi đó; Meta+Z khôi phục và rời trang, không commit thử nghiệm. Vẫn phải xem diff và kiểm SHA-256 sau từng lần lưu; không tin mù quáng set_code.
+- Commit 60316edae690d48e395260ebb4812386b9b7ca67 ghi bản bàn giao V6/V7, SHA-256 NHAP-CONG-VIEC.md raw tại commit này đúng như mong đợi: 11a0cf557a852a887257de6f7378337978247648d0efa9de9a89784da4383845. Trong phần cũ có lỗi gõ “yêuêu cầu”, không thay đổi ý nghĩa.
+- Chưa có mã game, test hay báo cáo mới trên main. Bản V7 vẫn chưa an toàn để phát hành do metadata output OpenRouter thiếu hoặc không đại diện các provider. Cần hoàn thiện và test lại trước khi đưa mã lên main; các giới hạn yêu cầu gốc không thay đổi.
+
+---
+
 # Tiếp nối 06/11/2026 — bản thử V7 và editor GitHub
 
 - Runner V6: https://boba.page/njtsE1S5rr266KtpmSCdUQ/index.html ; Gemini hai lượt và OpenRouter hai lượt mỗi lượt 130 PASS/0 FAIL, fixture metadata chỉ cấp cho bốn test cần nó, không dùng Proxy toàn cục. Có test tự chọn Gemini nên không coi toàn bộ phép thử là chạy riêng từng nhà.
