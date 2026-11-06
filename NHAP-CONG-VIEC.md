@@ -1,3 +1,12 @@
+# Bổ sung điều tra nhật ký thật — 06/11/2026
+
+- Chủ repo tóm tắt nhật ký Gemini gemini-3.1-flash-lite: bốn lỗi JSON có log và bốn lần một HTTP 200 không có truyện, không có log JSON. Không có response thô hay finishReason nên chưa chứng minh bị cắt, hoặc model cụ thể là nguyên nhân.
+- chooseScene gọi AI trước khi kể, JSON.parse hoặc kiểm tra cấu trúc thất bại thì catch ném badjson mà KHÔNG log; catch ngoài story.turn hiển thị thông báo lỗi tiếng Việt. Đây là đường đi khớp triệu chứng một HTTP 200 và thiếu dòng Lỗi JSON, chưa xác nhận từng lần; còn await H.so.record trước try/finally có thể để busy kẹt nếu thực sự ném exception. Cần kiểm thử cả hai đường, log và thông báo mọi lỗi, giải phóng busy.
+- Hai HTTP 200 có thể là chọn cảnh + kể truyện; không mặc định là nén. Một số mốc bắt buộc bỏ qua gọi chọn cảnh. compact chỉ chạy khi bật thu gọn, lichsu.length > 12, không có so_thieu_du_lieu; khi thành công gán s.tomtat=t, rút lịch sử còn sáu mục và lưu. Sổ xuất s?.tomtat; chưa có bằng chứng nén đã chạy hay tóm tắt bị vứt ở phiên thực. Khi đủ điều kiện có thể thêm một request thứ ba. Không đổi thiết kế nén.
+- Chưa vá hoặc chạy test mới. Cần kiểm tra finishReason/stopReason, thử JSON sai một lần và ghi response thô qua cơ chế che khóa nếu an toàn; thêm test đường chọn cảnh, lỗi ngoài try và lý do hết token. Không khẳng định hạn mức 15/phút 1500/ngày vì phụ thuộc model và tài khoản. Yêu cầu gốc, các hạn chế và bốn lượt test vẫn nguyên.
+
+---
+
 # Tiếp nối vá lỗi JSON — 06/11/2026
 
 - Chưa vá, chưa chạy test mới, chưa phát hành. Mã nền main ba11a1b7706f698b538a80471acfd80a2a7c1dd3. Không gọi AI thật, không dùng key hoặc save thật.
