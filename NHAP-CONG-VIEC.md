@@ -1,3 +1,13 @@
+# Tiếp nối vá lỗi JSON — 06/11/2026
+
+- Chưa vá, chưa chạy test mới, chưa phát hành. Mã nền main ba11a1b7706f698b538a80471acfd80a2a7c1dd3. Không gọi AI thật, không dùng key hoặc save thật.
+- Gemini không đặt maxOutputTokens; OpenRouter không đặt max_tokens. Đây là mặc định của nhà/model, không đủ bằng chứng khẳng định bị cắt. Không có phản hồi thô của lượt iPhone lỗi nên nguyên nhân thực tế chưa xác định. OpenRouter ghi rõ tham số thiếu được chuyển theo mặc định upstream: https://openrouter.ai/docs/api_reference/parameters
+- js/truyen-ke.js: chooseScene và story.turn đều JSON.parse trực tiếp và xác thực cấu trúc; sai thì badjson, chưa thử lại định dạng. js/gemini.js: mạng/timeout, HTTP 429 và 5xx thử tối đa ba lần, chờ 2 và 5 giây, rồi luân chuyển theo logic model/key hiện có; không sửa logic này.
+- Còn toàn bộ phần vá, test mới, chạy đủ hai lần từng nhà với mạng và storage/IndexedDB cách ly, báo cáo bàn giao và SHA LIVE so với commit cuối. Lưu ý JSON sai cấu trúc cũng cần thử lại, cả chọn cảnh và kể chuyện; không thay schema, prompt truyện, nén lịch sử, ba mức hoặc 11 nút. Kiểm giới hạn theo model trước khi đặt vì hiện không có giới hạn tường minh, tránh đặt thấp hơn mặc định.
+- Runner cũ https://boba.page/pWmLWBkC-6YRv69T33el7g/index.html chạy commit 0a93c5c, không phải bản vá này; 110 PASS cũ không phải kết quả test mới. Một số test chuyên nhà tự chọn nhà, không đồng nghĩa toàn bộ test gửi qua mỗi nhà.
+
+---
+
 # Xác nhận Pages — 06/11/2026, 21:05 (Asia/Saigon)
 
 GitHub Actions lượt 84 triển khai thành công. Đã so SHA-256 byte của chín file chính LIVE với commit a67791cea19044d8bcbfebfb64c921d7db909a7b: tất cả khớp. Tám hash không đổi ở bảng lịch sử phía dưới; riêng js/truyen-ke.js nay là 	`ffcd9a206d0eb931a4d7bb9c36bf55f56f0dcd7c45d9b037157472ef9bcb1eb9`. Mục dưới ghi trạng thái chờ Pages lúc 20:59 đã được thay thế bởi xác nhận này. Mã thử 0a93c5c vẫn cho 110 PASS / 0 FAIL ở mỗi bốn lượt cách ly; chi tiết ở BAO-CAO-CONG-VIEC.md. Chưa kiểm iPhone Safari thực tế hoặc AI thật.
