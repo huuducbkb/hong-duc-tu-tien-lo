@@ -1,3 +1,14 @@
+## 06/11/2026 — BÀN GIAO NỘI TÂM, NHÁNH RIÊNG VÀ LƯU/NẠP
+
+- Đã commit trực tiếp main: nội tâm trong JSON, prompt theo thiện cảm và lịch sử; khối nghiêng thụt lề riêng; nhánh 0 có 11 mốc, tuyến ẩn, phân loại khởi thân 0/1 thử lại một lần, mặc định 1 khi lỗi hoặc save cũ, ép gặp Hàn Lập ở 5 và 9; bổ sung bối cảnh đại chiến; xuất/nạp JSON thay Công Pháp; đổi Lê Phi Vũ thành Lệ Phi Vũ và chuyển khóa thiện cảm cũ âm thầm. Không làm chương 2, không sửa nén lịch sử, không chạm mẫu giao diện hay ảnh Art.
+- Nạp JSON sai hoặc đang dệt chuyện không ghi đè; có xác nhận cổ trang trước khi ghi, tải lại giao diện. Chết vẫn xóa save; file cũ vẫn được phép nạp. Chưa kiểm thực tế trên Safari iPhone.
+- Đã mở rộng test/bo-hoi-quy.js, không tham chiếu từ index. Bản mã bb70e83: bộ hỗn hợp chạy bốn lần liên tiếp mỗi lần 104 PASS / 0 FAIL trong môi trường cách ly, có kiểm tra riêng cả Gemini và OpenRouter bằng mạng/khóa giả. Đây là bốn lượt bộ hỗn hợp, KHÔNG chứng minh đủ bộ chạy độc lập hai lần cho từng nhà: còn phải hoàn tất yêu cầu này. Phân loại được test bằng stub lời gọi; luồng nội tâm từng nhà có kiểm thử mạng giả. Không chạy test trên LIVE hoặc truy cập key/save thật; chỉ chạy trong sandbox. Chỉ dẫn lịch sử bên dưới về chạy test trên LIVE đã lỗi thời, KHÔNG làm theo.
+- Đối chiếu lúc 20:45 ngày 06/11/2026 (Asia/Saigon): 9 file chính LIVE trùng SHA-256 với commit bb70e83. Bảng hash chi tiết ghi trong NHAP-CONG-VIEC.md; hãy đối chiếu lại sau commit cuối.
+- Lỗi gặp: hộp xác nhận có selector test cũ không đúng, đã sửa test; nạp save trong lúc truyện đang chạy có thể bị ghi đè bởi lượt cũ, đã thêm chặn và test. Mỗi lần sửa qua editor đã tính SHA-256 và đối chiếu raw sau commit, tránh lỗi lệch/lặp.
+- Việc còn: chạy đúng đủ bộ riêng Gemini hai lần và OpenRouter hai lần với dữ liệu/mạng giả; rà ràng buộc lần gặp đầu mốc 5 (hiện prompt ghi lần đầu nhưng bộ chọn cảnh trước đó chưa có rào cứng); xem lại các điều kiện khác và kiểm tra iPhone thực tế nếu có thiết bị. AI thật có thể không tuyệt đối tuân prompt; không gọi AI thật trong nhiệm vụ. Khi tiếp tục phải bảo toàn tất cả ràng buộc ban đầu.
+
+---
+
 ## 05/11/2026 — BÀN GIAO: MỘT KIẾP CHƯA DỨT
 
 - Đã bổ sung hộp thoại tại triện cửa vào khi có save hợp lệ. Người chơi có thể tiếp tục kiếp cũ qua luồng đọc và dựng truyện hiện có, hoặc chọn bắt đầu kiếp mới để vào Khởi thân. Khi không có save, cửa vào giữ hiệu ứng mực và vào Khởi thân như trước.
