@@ -1,3 +1,11 @@
+# Tiếp nối 06/11/2026 — bổ sung bản thử V2
+
+- Runner tạm V2 https://boba.page/ja38YHZm9FjgFz6NjBokxw/index.html (hết hạn 13/11/2026) nạp và bổ sung bản thử trước, vẫn chỉ chạy trong iframe cách ly, fetch giả, storage/IndexedDB riêng. Đã thêm log lỗi tổng quát tại story.turn, thử H.so.record ném lỗi để kiểm tra thoát busy và thông báo; test bằng fetch giả đi qua từng backend thực sự cho MAX_TOKENS/length và JSON cắt ngang rồi retry, xét nội tâm.
+- V2 chạy Gemini 123 PASS/0 FAIL hai lần và OpenRouter 123 PASS/0 FAIL hai lần; mỗi lượt có một số test cũ ép Gemini, không suy ra toàn bộ 123 phép chạy riêng cho từng backend. Đây là sandbox CHƯA hoàn chỉnh, không phải test mã đã commit. V2 phụ thuộc runner V1 https://boba.page/RqePH-S3DwTgNrG8E_I3yQ/index.html và commit nền 67ad11b. V2 chưa đặt giới hạn token, chưa bổ sung test vào repo, chưa phát hành hoặc đối chiếu LIVE bản vá.
+- Commit 2bd7a5f0c7bbc9922a02242f797900a6ae742116 chỉ ghi bàn giao V1; SHA-256 file NHAP tại commit đó khớp nội dung dự kiến: 8fe646977ac9ff5e01877d28187f5ae6bb24b5264e65cab37eb5f2b9f68971a3. Các yêu cầu và giới hạn của chủ repo vẫn nguyên.
+
+---
+
 # Cập nhật tiếp nối 06/11/2026 — bản thử cô lập
 
 - Main vẫn ở 67ad11beb25103f9aebd8072dd1a85f29db424b3; chưa vá mã game hoặc test. Chín file game LIVE đã khớp SHA-256 với commit này; đó là bản cũ, không phải bản vá.
