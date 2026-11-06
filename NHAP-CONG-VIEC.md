@@ -1,3 +1,9 @@
+# Bổ sung về response và giới hạn — 06/11/2026, 23:16
+- Đường im lặng thứ hai: sau HTTP 200, js/gemini.js đọc data.candidates?.[0]?.content?.parts?.map(...). Nếu data là null hoặc parts là object thay vì mảng, biểu thức ném TypeError trước dòng kiểm tra nội dung và trước log Lỗi JSON; catch ngoài hiển thị lỗi kết nối chung, không phải thông báo định dạng. Đã thử riêng chính biểu thức với dữ liệu giả: hai trường hợp này đều TypeError; parts thiếu hoặc candidates rỗng trả undefined và đi tới nhánh có log. Đây chỉ là khả năng, không chứng minh response thật đã mang dạng ấy. Cần test end-to-end mạng giả và sửa nhánh.
+- Google Cloud ghi riêng model gemini-3.1-flash-lite tối đa 65.536 token đầu ra: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-lite. Đây là giới hạn của model trên Google Cloud, không chứng minh lần lỗi chạm hạn mức, cũng không chứng minh giá trị an toàn cho các model Gemini khác hay các model OpenRouter khác.
+- Google mô tả candidates[0].finishReason là lý do dừng: https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/GenerateContentResponse. OpenRouter Chat Completions chuẩn hóa choices[0].finish_reason thành stop, length, content_filter, error hoặc tool_calls; native_finish_reason giữ lý do nhà gốc: https://openrouter.ai/docs/api_reference/overview#finish-reason. Chưa có finish reason của response thật.
+- Bản chạy cũ và mô phỏng biểu thức ở trên KHÔNG phải hồi quy sau vá. Vẫn chưa vá mã, chưa test mới đủ bộ, chưa cập nhật báo cáo cuối hoặc đối chiếu LIVE. Cần tiếp tục đầy đủ yêu cầu gốc; không sửa nén, ba mức hoặc các nội dung bị cấm.
+
 # Bổ sung điều tra nhật ký thật — 06/11/2026
 
 - Chủ repo tóm tắt nhật ký Gemini gemini-3.1-flash-lite: bốn lỗi JSON có log và bốn lần một HTTP 200 không có truyện, không có log JSON. Không có response thô hay finishReason nên chưa chứng minh bị cắt, hoặc model cụ thể là nguyên nhân.
