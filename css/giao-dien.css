@@ -56,3 +56,7 @@
 /* LỊCH SỬ THAY ĐỔI: 05/11/2026 — chừa khoảng cho nút Đóng không che tiêu đề Mục lục. */
 
 /* LỊCH SỬ THAY ĐỔI: 05/11/2026 — lớp mực không chặn thao tác và phủ đúng màn chết. */
+
+/* 05/11/2026: Tô riêng lượt hành động của người chơi. */
+.story p.hanh-dong-nguoi-choi{color:#B23A2A;margin-left:14px;border-left:2px solid #B23A2A;padding-left:10px;font-style:normal}
+/* LỊCH SỬ THAY ĐỔI: 05/11/2026 — phân biệt dòng hành động người chơi. */

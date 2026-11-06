@@ -56,3 +56,11 @@ Trong phiên trình duyệt này Control+A không chọn toàn bộ editor; khi 
 ## Lỗi đổi tên tệp ảnh tải lên ngày 02/11/2026
 
 Khi chuẩn bị tải ảnh nền Truyện, bản sao được lưu lại với tên mới có 205.371 byte và SHA-256 925695da811aa07a1d39be17712e2071975c6fc00d6d73030cce532ca21ffc92, khác ảnh gốc 205.225 byte, SHA-256 481f5fe15b4ed33c7109ec24b7593e950512f8c545d8439137638d8539bcf883. Đã gỡ bản sao khỏi hàng tải lên, chưa commit ảnh hoặc HTML mới. Cần đổi tên ảnh gốc mà vẫn giữ nguyên byte, đối chiếu SHA-256 trước và sau upload; sau đó mới tiếp tục phát hành và kiểm tra Pages.
+
+## Mất bản nháp VS Code và hạn chế kiểm thử ngày 05/11/2026
+
+Khi mở lại phiên VS Code, các thay đổi chưa commit trong working tree lại biến mất; tại thời điểm kiểm tra, main vẫn ở d0fd66e và chưa có commit mới. Timeline của js/gemini.js không có lịch sử bản nháp cần phục hồi. Đã dựng lại test/bo-hoi-quy.js đúng SHA-256 trước đó và dựng lại js/truyen-ke.js cùng css/giao-dien.css theo mô tả; hai file dựng lại có hash khác bản nháp trước và chưa kiểm thử toàn diện. Các file còn thiếu cần phục hồi từ các bản lưu trước rồi đối chiếu hash.
+
+Để giảm rủi ro mất phiên, ngay sau khi phục hồi và kiểm hash từng file, lưu PDF chứa toàn bộ nội dung, bản mã hóa Base64 UTF-8 và SHA-256; không coi working tree là bản lưu bền vững. Chưa commit khi chưa có thẻ duyệt.
+
+Trong nỗ lực kiểm thử cách ly, gán srcdoc bị Trusted Types chặn và iframe dùng blob không hiển thị. Cần thử trang preview tự chứa trên origin riêng với dữ liệu giả và mạng giả, bảo vệ và khôi phục dữ liệu như quy định; không kết luận đây là lỗi GitHub Pages. Không dùng API AI hoặc key thật trong kiểm thử.
