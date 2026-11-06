@@ -1,3 +1,13 @@
+# Tiếp nối 06/11/2026 — giới hạn token bản thử V4
+
+- Runner V3 https://boba.page/B6akIOoR5EuKSQByvvgMzw/index.html thêm maxOutputTokens 32768 cho JSON của bốn model Gemini; bốn lượt 127 PASS/0 FAIL, nhưng có test chuyên Gemini và chưa phải bản commit.
+- Runner V4 https://boba.page/d9CTEpRuThTnJ6fJHFba1w/index.html thử giới hạn OpenRouter dựa vào top_provider.max_completion_tokens: cap min(16384, metadata), lưu metadata cùng cache model, báo lỗi và không gửi JSON khi thiếu metadata; có test metadata, cap và thiếu metadata. Bốn lượt 130 PASS/0 FAIL, NHƯNG runner cấp metadata giả bằng Proxy cho từng test; không được coi số này là xác nhận hệ thống hoạt động khi metadata vắng mặt.
+- Runner V5 https://boba.page/QVyegCj4pHaBvJbOaH8moQ/index.html bỏ Proxy metadata: mỗi lượt 126 PASS/4 FAIL vì bốn test OpenRouter giả không cung cấp metadata. Đây là kết quả có thật, không được che giấu; phải thêm fixture metadata cụ thể vào test cũ và mới, không giả toàn cục. V4 có rủi ro đáng kể: nếu danh mục không trả max_completion_tokens, game sẽ từ chối gửi JSON với model đó; chưa biết metadata thực của model miễn phí do tuyệt đối không gọi API AI thật. Không phát hành V4 nguyên trạng.
+- Rà thêm: metadata là của top provider, không chứng minh mọi provider định tuyến có cùng giới hạn; context trừ prompt cũng ràng buộc max_tokens. Cache kết quả fallback thiếu metadata ba ngày có thể ngăn hồi phục tự động; cần sửa và test. V4 có thể bỏ sót native_finish_reason khi finish_reason khác rỗng; cần xét tất cả lý do. Cần test cache, hai lý do, giữ retry mạng và logic nén.
+- V4 phụ thuộc V3, V2 và V1; các link sandbox hết hạn 13/11/2026. Nội dung script từng trang mô tả biến đổi trong RAM, iframe CSP không cho mạng thật, storage và IndexedDB giả. Source nền 67ad11b. Chưa sửa mã game hoặc test trên main; mọi yêu cầu gốc và hạn chế vẫn nguyên.
+
+---
+
 # Tiếp nối 06/11/2026 — bổ sung bản thử V2
 
 - Runner tạm V2 https://boba.page/ja38YHZm9FjgFz6NjBokxw/index.html (hết hạn 13/11/2026) nạp và bổ sung bản thử trước, vẫn chỉ chạy trong iframe cách ly, fetch giả, storage/IndexedDB riêng. Đã thêm log lỗi tổng quát tại story.turn, thử H.so.record ném lỗi để kiểm tra thoát busy và thông báo; test bằng fetch giả đi qua từng backend thực sự cho MAX_TOKENS/length và JSON cắt ngang rồi retry, xét nội tâm.
