@@ -1,3 +1,26 @@
+# Trạng thái tiếp nối — 06/11/2026, 20:48 (Asia/Saigon)
+
+Thông tin bên dưới mục này là trạng thái cũ lúc bắt đầu, KHÔNG còn đúng về những việc chưa làm.
+
+- Đã thực hiện các việc 1–5, cập nhật test và bàn giao trên main; mã game/test gần nhất bb70e83b959a3ca92b28b8000edbf95aba93f9c5, báo cáo da8850d1f15a05fe557875a8c70206e91e5bb8d3. Mỗi thay đổi đã đối chiếu SHA-256 raw theo commit sau lưu.
+- Đã chạy bốn lần liên tiếp bộ test hỗn hợp bằng mạng giả và dữ liệu cách ly: mỗi lần 104 PASS / 0 FAIL. Mỗi lượt gồm các phép riêng Gemini và OpenRouter; KHÔNG tuyên bố đã chạy đủ bộ riêng từng nhà hai lần, vì bộ còn mặc định Gemini cho nhiều phép. Cần mở rộng runner/thiết kế test để hoàn thành đúng yêu cầu hai lần cho từng nhà, rồi ghi kết quả từng lần. Trang sandbox tạm https://boba.page/3LUU0cCGy93C4j1n641kzA/index.html dùng mã tại bb70e83, CSP ngăn mạng thật; URL hết hạn, không phải LIVE. Dùng storage giả, IndexedDB tên riêng, không key thật.
+- Nhánh 0 mốc 5 được mô tả là lần đầu gặp Hàn Lập nhưng bộ chọn cảnh trước mốc đó không có rào cứng chống AI tự chọn Hàn Lập; rà lại, bảo toàn ba mức, thêm ràng buộc và test nếu cần. Nút 8/10 yêu cầu tin gián tiếp. Chưa kiểm Safari iPhone thật. Không chạm API/key/save thật hoặc origin LIVE khi chạy game.
+- Các file chính LIVE đối chiếu với bb70e83 lúc 20:45 đều trùng SHA-256:
+
+`index.html fcf2b8b495cd6f4e36ef7c1fca07ef76c27c210f99673dbf2161dda2b7ea365e`
+`css/giao-dien.css 16219b725632507f170eac81beb8d38a9942c9f004b6fce7f8998a68369a5304`
+`js/man-hinh.js ea163b5a14191b73fb702034e94c75126f54a6f5b888369aaab6c0f569eb495c`
+`js/muc-luc.js 30d1459c9feb47c497965debe16bc90297e4d0213ca371f0cfc85d851943a510`
+`js/khoi-thanh.js f8464d0cce72578b6c7554aeded51b5e7099ee77f66ac5808aa7eaeecb6fc0f7`
+`js/luu-tru.js 3c8a6c3458f72d7589316f6e1afbf81adc378f07128ee84757e07326707d64b0`
+`js/openrouter.js 6a07cd3b42c4c66e7b6019281601b37513f0111fb4bd0bd29ac75691c7ca73bd`
+`js/gemini.js e364f0d03bbeb2c3d39a63b3f2033681f6c95ea83ce26f059924666bb38`
+`js/truyen-ke.js b13c32165003622f5553a37149c7351f2580f2b808510d785f48bd082c3dea6e`
+
+- Khi hoàn tất các kiểm tra còn lại: cập nhật BAO-CAO-CONG-VIEC.md, commit, so hash các file chính trên LIVE với commit cuối; báo đúng số lần và kết quả. Mọi ràng buộc gốc bên dưới vẫn áp dụng. Không đổi tên file đè file, không cập nhật Art/ hay mẫu thiết kế.
+
+---
+
 # Nhật ký công việc — 06/11/2026
 
 ## Trạng thái
