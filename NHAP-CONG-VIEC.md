@@ -1,3 +1,12 @@
+# Cập nhật 06/11/2026 — đã sửa mốc gặp và chạy lại
+
+- Commit bc8c641 lọc Hàn Lập khỏi NPC hiện diện trước mốc 5 và tại mốc 8/10 của nhánh 0; nhắc AI lần gặp đầu ở mốc 5, tin mốc 8/10 chỉ gián tiếp. Vẫn giữ ba mức và bắt buộc gặp ở 5/9. Commit 0a93c5c bổ sung sáu test; SHA-256 file truyện ffcd9a206d0eb931a4d7bb9c36bf55f56f0dcd7c45d9b037157472ef9bcb1eb9; file test 82b6b1f2307d866f6264bf760c9cb670ff11c8335d9c32c9e2eaff9e4808344e, đối chiếu raw sau lưu đều khớp.
+- Runner https://boba.page/pWmLWBkC-6YRv69T33el7g/index.html hết hạn 13/11/2026 chạy mã 0a93c5c trong sandbox, không gọi AI thật và không đụng save thật. Gemini hai lần 110 PASS / 0 FAIL; OpenRouter hai lần 110 PASS / 0 FAIL. Nhà mặc định thay trong bộ nhớ runner, một số test chuyên nhà vẫn tự chọn nhà; không phải mọi phép gửi request đến từng nhà.
+- BAO-CAO-CONG-VIEC.md commit 34485fb cập nhật bàn giao. Khi kiểm LIVE lúc 20:59, 8/9 file chính trùng, riêng js/truyen-ke.js LIVE còn hash b13c32165003622f5553a37149c7351f2580f2b808510d785f48bd082c3dea6e, chưa khớp bản commit mới ffcd9a206d0eb931a4d7bb9c36bf55f56f0dcd7c45d9b037157472ef9bcb1eb9; cần tiếp tục theo dõi Pages và kiểm đủ 9 file sau commit cuối, không coi là phát hành xong khi chưa khớp. Chưa kiểm iPhone Safari thật.
+- Sửa lỗi chép thiếu ký tự trong hash Gemini ở bảng cũ phía dưới. Các mục cũ mang tính lịch sử và phần việc đã hoàn tất được thay bằng trạng thái ở đây.
+
+---
+
 # Cập nhật 06/11/2026 20:52 — kết quả theo nhà
 
 Mục 20:48 bên dưới về chưa chạy theo từng nhà đã được thay thế: runner sandbox tạm https://boba.page/vQ2eXtvc-Gk-dalQyWXMdg/index.html chạy chế độ mặc định Gemini hai lần và OpenRouter hai lần, mỗi lần 104 PASS / 0 FAIL. Test chung chạy theo nhà mặc định, test chuyên nhà tự đặt nhà; một số test Gemini cũ được cố định Gemini, không phải 104 yêu cầu mạng đến mỗi nhà. Bản test repo dùng trong sandbox đã đổi trong bộ nhớ phần khởi tạo nhà cho mỗi phép; xem BAO-CAO-CONG-VIEC.md commit 21d39a9 để biết các giới hạn và lỗi test trước khi sửa cấu hình giả. Không gọi AI thật hay dùng save thật.
@@ -22,7 +31,7 @@ Thông tin bên dưới mục này là trạng thái cũ lúc bắt đầu, KHÔ
 `js/khoi-thanh.js f8464d0cce72578b6c7554aeded51b5e7099ee77f66ac5808aa7eaeecb6fc0f7`
 `js/luu-tru.js 3c8a6c3458f72d7589316f6e1afbf81adc378f07128ee84757e07326707d64b0`
 `js/openrouter.js 6a07cd3b42c4c66e7b6019281601b37513f0111fb4bd0bd29ac75691c7ca73bd`
-`js/gemini.js e364f0d03bbeb2c3d39a63b3f2033681f6c95ea83ce26f059924666bb38`
+`js/gemini.js e364f0d03bbeb2c3d39a63b3f2033681fca51b6c95ea83ce26f059924666bb38`
 `js/truyen-ke.js b13c32165003622f5553a37149c7351f2580f2b808510d785f48bd082c3dea6e`
 
 - Khi hoàn tất các kiểm tra còn lại: cập nhật BAO-CAO-CONG-VIEC.md, commit, so hash các file chính trên LIVE với commit cuối; báo đúng số lần và kết quả. Mọi ràng buộc gốc bên dưới vẫn áp dụng. Không đổi tên file đè file, không cập nhật Art/ hay mẫu thiết kế.
