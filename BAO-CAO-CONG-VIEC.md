@@ -1,3 +1,18 @@
+## BỔ SUNG 06/11/2026 — KẾT QUẢ THEO NHÀ CUNG CẤP
+
+Bổ sung này thay thế trạng thái hồi quy còn chờ ở mục ngay dưới. Trên mã bb70e83, sandbox độc lập chặn mạng thật, dùng bộ nhớ và IndexedDB thử riêng, chạy bộ 104 phép lần lượt với nhà mặc định và những phép riêng của từng nhà:
+
+| Nhà mặc định | Lần 1 | Lần 2 |
+|---|---:|---:|
+| Gemini | 104 PASS / 0 FAIL | 104 PASS / 0 FAIL |
+| OpenRouter | 104 PASS / 0 FAIL | 104 PASS / 0 FAIL |
+
+Runner tạm https://boba.page/vQ2eXtvc-Gk-dalQyWXMdg/index.html (hết hạn 13/11/2026) nạp file test trong repo, điều chỉnh trong bộ nhớ để đặt nhà mặc định trước mỗi phép; một số phép cũ chuyên Gemini vẫn đặt Gemini, các phép chuyên OpenRouter/Gemini tự chọn nhà của chúng, các phép chung chạy theo nhà mặc định. Không tuyên bố mọi phép đều gửi request qua cả hai nhà: các phép prompt/lưu là dùng chung, phân loại được stub, kiểm nội tâm có gọi mạng giả cho từng nhà. Dữ liệu thử đã được dọn. Lần thử ban đầu với OpenRouter được 103 PASS / 1 FAIL cả hai lượt vì test quá hạn chưa có key giả OpenRouter; cấp key giả và danh sách model giả trong runner rồi chạy lại thành kết quả ở bảng, không dùng key thật.
+
+Còn rà tính chắc chắn lần gặp đầu ở nhánh 0: bộ chọn cảnh trước mốc 5 chưa có rào cứng ngăn chọn Hàn Lập; không khẳng định AI luôn tuân cốt truyện. Chưa kiểm Safari iPhone thật. Các đoạn ghi cũ về hồi quy chưa chạy đủ được giữ làm lịch sử, không phải kết quả hiện tại.
+
+---
+
 ## 06/11/2026 — BÀN GIAO NỘI TÂM, NHÁNH RIÊNG VÀ LƯU/NẠP
 
 - Đã commit trực tiếp main: nội tâm trong JSON, prompt theo thiện cảm và lịch sử; khối nghiêng thụt lề riêng; nhánh 0 có 11 mốc, tuyến ẩn, phân loại khởi thân 0/1 thử lại một lần, mặc định 1 khi lỗi hoặc save cũ, ép gặp Hàn Lập ở 5 và 9; bổ sung bối cảnh đại chiến; xuất/nạp JSON thay Công Pháp; đổi Lê Phi Vũ thành Lệ Phi Vũ và chuyển khóa thiện cảm cũ âm thầm. Không làm chương 2, không sửa nén lịch sử, không chạm mẫu giao diện hay ảnh Art.
