@@ -1,3 +1,14 @@
+# Cập nhật tiếp nối 06/11/2026 — bản thử cô lập
+
+- Main vẫn ở 67ad11beb25103f9aebd8072dd1a85f29db424b3; chưa vá mã game hoặc test. Chín file game LIVE đã khớp SHA-256 với commit này; đó là bản cũ, không phải bản vá.
+- Bản thử chưa hoàn chỉnh: https://boba.page/RqePH-S3DwTgNrG8E_I3yQ/index.html (link tạm 7 ngày, hết hạn 13/11/2026). Trang nạp source raw từ đúng commit 67ad11b, biến đổi trong RAM; iframe khóa connect-src, dùng fetch giả, localStorage Map và IndexedDB tên ngẫu nhiên riêng, xóa kho sau mỗi lượt. Không dùng API AI, key thật hay save thật. Nội dung script của trang chứa chi tiết phép biến đổi, tám bài mới và cách chạy.
+- Kết quả bản thử: Gemini lần 1: 118 PASS/0 FAIL; Gemini lần 2: 118/0; OpenRouter lần 1: 118/0; OpenRouter lần 2: 118/0. Lưu ý một số test cũ cố ý ép Gemini và test mới chủ yếu giả H.gemini.call: KHÔNG coi đây là chứng minh toàn bộ 118 bài đã kiểm thử riêng từng backend.
+- Bản thử xử lý trích JSON, retry một lần, lỗi khung chọn bối cảnh, candidates/parts dị thường, MAX_TOKENS/length, và đưa thao tác ghi sổ vào try/finally. CHƯA đủ điều kiện phát hành: chưa đặt maxOutputTokens/max_tokens theo giới hạn model; chưa test đường OpenRouter length/các request thật bằng mạng giả, chưa hoàn tất log cho các lỗi tổng quát, chưa thêm test lên repo, chưa cập nhật BAO-CAO và chưa kiểm LIVE sau commit cuối. Phải kiểm tra lại kỹ việc thay đổi và chạy lại bốn lượt hoàn chỉnh trước khi commit.
+- Tài liệu chính thức: Gemini 3.1 Flash Lite và 3.5 Flash Lite tối đa 65.536 output token: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-1-flash-lite và https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-5-flash-lite ; Gemini 3.6 Flash và 3.8 Flash công bố 64K output: https://deepmind.google/models/model-cards/gemini-3-6-flash/ và https://deepmind.google/models/model-cards/gemini-3-8-flash/ . OpenRouter có model tự do tùy ý, metadata top_provider.max_completion_tokens có thể thiếu: https://openrouter.ai/docs/api/api-reference/models/list-all-models-and-their-properties . Không giả định một mức 65.536 phù hợp mọi model OpenRouter.
+- Không thay logic nén, prompt cốt truyện, schema, 11 nút và ba mức; không đụng Chapter 2, ảnh, file thiết kế hay save thật. Tự tiếp tục, không hỏi duyệt từng bước.
+
+---
+
 # Tiếp nối 06/11/2026 — trạng thái chưa vá
 - Đã đọc lại bàn giao và GHI-CHU-LOI-GITHUB.md. Chưa sửa mã game, chưa bổ sung test mới, chưa cập nhật BAO-CAO-CONG-VIEC.md, chưa kiểm hash LIVE cho bản vá; không phát hành bản vá khi chưa có đủ bốn lượt test PASS.
 - Runner cũ https://boba.page/pWmLWBkC-6YRv69T33el7g/index.html khi mở lại chạy commit 0a93c5c, hai lượt Gemini và hai lượt OpenRouter đều 110 PASS / 0 FAIL, nhưng chỉ là test cũ, KHÔNG phải hồi quy sau vá. Runner dùng CSP connect-src none, mạng giả, localStorage Map và IndexedDB namespace riêng. Một số test chuyên nhà tự chọn Gemini.
