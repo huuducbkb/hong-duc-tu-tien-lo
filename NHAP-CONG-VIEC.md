@@ -1,3 +1,30 @@
+# Chốt mã vá 07/11/2026 — đã phát hành mã, thay thế trạng thái V7 cũ
+
+- Ba file game đã commit main: OpenRouter `564806c0b37b798ab55699d93fa04aa1fcb18375`, Gemini `b03c06993659de18f8ab3a702a44b0132f463616`, truyện `52eb82b64592cc953f72bde910a545a76a721381`. Không còn trạng thái main nguyên bản chưa vá như ghi chú lịch sử bên dưới.
+- Đã bỏ điểm nguy hiểm V7: OpenRouter thiếu metadata vẫn gửi yêu cầu, không max_tokens, log mặc định upstream; không lấy top_provider áp mọi route. Cache fallback có thể tra lại. Gemini JSON maxOutputTokens32768. Đã vá đọc JSON khoan dung/retry một lần, cả hai đường treo im lặng, malformed candidates/parts, cutoff reason kể cả native_finish_reason. Không đổi schema/prompt cốt truyện/logic nén/11 nút nhánh 1/ba mức cảnh/Art/mẫu giao diện/index.
+- Test release `8cdedef7361b402ae7d72797f8c3af3acbcacccc`: Gemini hai lần liên tiếp 132 PASS/0 FAIL mỗi lần, rồi OpenRouter hai lần liên tiếp 132 PASS/0 FAIL mỗi lần. G4 dùng chung đã sửa không ép Gemini. G1 fallback/ưu tiên chuyên Gemini và các ca chuyên backend vẫn là chuyên biệt; không phải132 request tất cả cùng nhà. Fake network, RAM Storage, IndexedDB tên riêng và cả bốn cleanup thành công; không API/key/save thật.
+- Bằng chứng `test/ket-qua-hoi-quy-cuoi.txt` tại `5f8e2c4281ca5c03a12c935c2890414c9e5f9b71`. Test SHA `dc459129bf6ce27ec1cbd1f7f369677c3fd586e51e1938413f637e8ddf923ecc`. Runner `test/chay-cach-ly.html` dùng bản sao origin thử kèm `?commit=8cdedef7361b402ae7d72797f8c3af3acbcacccc`; KHÔNG chạy trên LIVE. Bằng chứng ket-qua-hoi-quy.txt trước sửa G4 chỉ là lịch sử.
+- BAO-CAO-CONG-VIEC.md đã cập nhật kiểu bàn giao tại `b323bc9b96d93c92771fd3d86e57d95dc529c31c`, SHA `9049d735c9e76de993cbf480e2ad4eebecec179d74baea70703b222038a1a723`. Có đã/chưa làm, lỗi và giải pháp; chẩn đoán flash-lite hay sai khung JSON, khuyên thử Flash đầy đủ không lite hoặc OpenRouter; không khẳng định bảo đảm phản hồi model thật.
+
+## Đối chiếu LIVE trong lượt này
+Đã lấy byte tĩnh trực tiếp LIVE (không mở/chạy game), HTTP200 và SHA-256 cả chín file chính khớp raw commit b323bc9b lúc khoảng07:13 ngày07/11/2026 giờ Việt Nam. Pages104 đã thành công; Pages105 cho báo cáo đang chạy khi kiểm. Sau commit ghi chú này cần chờ build cuối thành công và đối chiếu lại với head cuối; kết quả chốt đó sẽ có trong báo cáo trả kết quả. Không suy ra build cuối thành công từ bảng này.
+
+| File | SHA-256 LIVE đã khớp b323bc9b |
+|---|---|
+| index.html | fcf2b8b495cd6f4e36ef7c1fca07ef76c27c210f99673dbf2161dda2b7ea365e |
+| css/giao-dien.css | 16219b725632507f170eac81beb8d38a9942c9f004b6fce7f8998a68369a5304 |
+| js/man-hinh.js | ea163b5a14191b73fb702034e94c75126f54a6f5b888369aaab6c0f569eb495c |
+| js/muc-luc.js | 30d1459c9feb47c497965debe16bc90297e4d0213ca371f0cfc85d851943a510 |
+| js/khoi-thanh.js | f8464d0cce72578b6c7554aeded51b5e7099ee77f66ac5808aa7eaeecb6fc0f7 |
+| js/luu-tru.js | 3c8a6c3458f72d7589316f6e1afbf81adc378f07128ee84757e07326707d64b0 |
+| js/openrouter.js | a6639147725be8c00ac89b5e9d478c958a31b22dbbfaeab7e568832dd11f88e3 |
+| js/gemini.js | 956f5ceb893de80a28881a69f999652128a077a4e5de1a79caa3e5cf04516aed |
+| js/truyen-ke.js | dde80837355e9483e0de5ec8beb3fa12985d337302dd0778e5853edb86412484 |
+
+Chưa kiểm AI thật/Safari iPhone thật và không hứa mọi model luôn tuân JSON hoặc không hết token. Công việc còn lại tại lúc ghi: xác nhận Pages head cuối và lấy lại hash LIVE; không cần sửa thêm game nếu không phát sinh khác biệt.
+
+---
+
 # Cập nhật 06/11/2026 — khắc phục thao tác editor
 
 - Đã tìm được cách thay toàn bộ nội dung an toàn trong GitHub editor: tập trung vào textbox, bấm Meta+A (không phải Control+A), rồi dùng type. Đã thử trên bản openrouter.js chưa lưu: chọn được toàn bộ 4.558 ký tự, gõ chuỗi thử thì chỉ còn chuỗi đó; Meta+Z khôi phục và rời trang, không commit thử nghiệm. Vẫn phải xem diff và kiểm SHA-256 sau từng lần lưu; không tin mù quáng set_code.
