@@ -1,3 +1,23 @@
+# Điểm nối mới 07/11/2026 16:41 — ĐÃ TÍCH HỢP VÀ KIỂM THỬ
+
+Mục này thay trạng thái CHƯA TÍCH HỢP bên dưới; giữ lịch sử để truy vết. Báo cáo đầy đủ, danh sách 11 giai đoạn nhánh 0 và lỗi/cách khắc phục: BAO-CAO-CONG-VIEC.md tại 44ba77d17cfb460d2d92aba8d5166714216d7910 (SHA-256 55e63bd3d9d762e17ee6fe92fdc3ffb2d9238fa9b031e597c28da765dd23e6d7).
+
+## Đã xong trên main
+- 313e023 tích hợp lịch vào lượt kể/prompt, thay riêng nhánh 0; 2a45b0d nạp script game; 40bd367 chuẩn hóa save cũ và nối cạn thọ chết hardcore; 7d5d396 + ace9684 hồ sơ/CSS. Lõi/helper 38bd465 giữ nguyên.
+- Save cũ năm 0 tháng 1, tuổi xuất thân nếu biết, không thì 16. Thời gian thiếu mặc định một ngày; thường tối đa 30, bế quan 1080; chặn tại sự kiện và hết thọ, kiểm bảng đường. Lượt xử lý bản sao, giữ kết quả chờ lưu khi retry để không cộng đôi. Prompt khóa ngày trước khi kể, chính tả tiếng Việt, ngươi/không meta.
+- Đại chiến Lạc Nhật Phong đúng 1/1 năm 8, ba mức cũ theo vị trí, Hàn Lập đánh bại được nhưng không giết được; người khác không bất tử. C2/C3 chưa kích hoạt, không làm Chương 2. Thương/bất tỉnh/giả chết không suy chết.
+- Giữ nguyên 11 nút nhánh 1, cơ chế ba mức, nén lịch sử, sửa JSON 9513f19, trường JSON cũ, Art/, mẫu thiết kế. Không tạo nhánh/đổi tên đè file.
+
+## Kiểm thử nghiệm thu đã chạy
+Nguồn cố định a881ba6b9a412beec82c60e1e15d4723e8dd7ede; runner commit d6dc4f2bed488275f88911b4a206981f9dba907e, test/chay-cach-ly.html (SHA-256 dc72bfbfc34b2c9a597592a7f85b7ac62dfe1ca1d8a004ecb1584f40ed920ac2).
+Gemini 1 → Gemini 2 → OpenRouter 1 → OpenRouter 2: mỗi lượt 132 hồi quy + 26 lõi + 15 helper + 18 tích hợp = 191 PASS, 0 FAIL. Có ca ép adapter; requestedProvider/selectedProvider đúng. Đã tái lập từ chính runner commit. Mạng AI giả, CSP chặn mạng trong iframe, Storage RAM, IndexedDB namespace thử đã xóa; không API/key/save thật. index không tham chiếu test.
+Bằng chứng tạm: https://boba.page/_-I8rToYpWeTWBUZeTnplA/index.html . Khung 414×896 đã thao tác Mục Lục → Nhân Vật → Đóng; hồ sơ lịch/tuổi/thọ đỏ không giao nút Đóng, không tràn ngang. Không tuyên bố thử AI thật hay bao phủ mọi hành vi game.
+
+## Điểm nối phát hành
+Sau commit checkpoint này, chờ GitHub Pages build head cuối thành công và đối chiếu SHA-256 các file game chính LIVE với raw tại SHA cuối. Kết quả kiểm cuối trả trong bàn giao; nếu bị ngắt thì đây là bước còn lại, không chạy lại game LIVE hoặc nhập key/save thật. Raw main từng cache cũ: dùng raw fixed SHA. Public API Pages 404 không chứng minh build lỗi: kiểm Actions/Pages và hash LIVE. Mỗi file đã xem diff, so SHA trước commit, kiểm raw sau commit; checkpoint này cũng phải làm như vậy.
+
+---
+
 # Điểm nối mới 07/11/2026 16:06 — HELPER ĐÃ TEST, GAME CHƯA TÍCH HỢP
 
 Ưu tiên mục này hơn các checkpoint lịch sử bên dưới. Đây là bàn giao TRUNG GIAN, không nghiệm thu gói tích hợp.
