@@ -1,0 +1,18 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Kiểm thử Quay lại cách ly</title><h1>Hồi quy Quay lại ba lượt</h1><p>Chỉ mở trên origin thử riêng. Cấm LIVE, key và save thật.</p><pre id="out">Đang tải runner…</pre><script>
+(async()=>{'use strict';
+if(location.hostname==='huuducbkb.github.io')throw Error('Cấm test trên LIVE');
+const commit=new URLSearchParams(location.search).get('commit')||'8d2b3b65f22a16b72a0173b239317fea41ca580d';
+if(!/^[a-f0-9]{40}$/.test(commit))throw Error('Cần SHA đầy đủ');
+const root='https://raw.githubusercontent.com/huuducbkb/hong-duc-tu-tien-lo/'+commit+'/';
+let html=await(await fetch(root+'test/chay-cach-ly.html')).text();
+const edits=[
+["'a881ba6b9a412beec82c60e1e15d4723e8dd7ede'",JSON.stringify(commit)],
+["'test/ke-hoach-lich.js'];","'test/ke-hoach-lich.js','js/quay-lai.js','test/quay-lai.js'];"],
+["await new Promise((resolve,reject)=>{const q=indexedDB.deleteDatabase(testDb)","r.undo=await HongDuc.testQuayLai();await new Promise((resolve,reject)=>{const q=indexedDB.deleteDatabase(testDb)"],
+["tag(sources['test/bo-hoi-quy-phat-hanh.js'])","tag(sources['test/quay-lai.js'])+tag(sources['test/bo-hoi-quy-phat-hanh.js'])"],
+['[r,r.core,r.helper,r.integration]','[r,r.core,r.helper,r.integration,r.undo]']];
+for(const [a,b] of edits){if(!html.includes(a))throw Error('Runner gốc đổi, cần kiểm lại: '+a);html=html.replace(a,b)}
+const frame=document.createElement('iframe');frame.width=500;frame.height=1100;frame.srcdoc=html;document.body.append(frame);
+document.getElementById('out').textContent='Nguồn cố định '+commit+'; Gemini hai lần rồi OpenRouter hai lần. Kết quả trong khung bên dưới.';
+})().catch(e=>{document.getElementById('out').textContent='LỖI: '+e.message});
+</script></html>
