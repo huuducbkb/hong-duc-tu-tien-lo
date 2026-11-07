@@ -1,3 +1,32 @@
+## 07/11/2026 16:06 — BÀN GIAO TRUNG GIAN HELPER LỊCH
+
+**Gói tích hợp CHƯA hoàn tất. Game vẫn chưa nạp lịch; chưa chữa lỗi đại chiến sớm/ép gặp Hàn Lập nhánh 0 trên bản chơi.** Phần này cập nhật checkpoint bên dưới, không thay các ràng buộc chủ repo đã chốt.
+
+### Đã làm
+
+- Main `38bd465a4309f294918700f8de03fd5843ccf033`: bổ sung giaiDoan/chuanHoa/lapKeHoach/hoSo vào cuối js/thoi-gian.js. Chia 11 giai đoạn theo ngày; giữ hành trình >30 ngày và hành trình bị sự kiện cắt ngang; xác thực điểm đi theo vị trí lưu. Lõi cũ không đổi.
+- Main `5c26e279e73923ee8bd582331f01b34b1415edcf`: thêm test/ke-hoach-lich.js với 15 ca helper độc lập, không nạp từ index.
+- SHA-256 module mới `c1d257b9b5d31f79a42137e5b08c84782c8c4ed234f2e0e57c488999be4a881b`; test mới `44bda61325a4da31eac09fca5a63ced629c183426340ff2eeb89dafe66e007a8`. Diff trước commit và raw sau commit đều đã đối chiếu.
+- Checkpoint NHAP-CONG-VIEC.md tại `38e0af936b26671ec4c56ef36a03e99d6724c408`, SHA `7e9b742e43da74429fed14d0cbd019defb6fad86a95e54ef8d9939cea4aa263f`, ghi chi tiết bước nối, lỗi thao tác và giới hạn kiểm thử.
+
+### Kiểm thử chính xác phạm vi
+
+Nguồn cố định 5c26e279e73923ee8bd582331f01b34b1415edcf, runner https://boba.page/vOXTT-3rDQpHew5HGeKehQ/index.html (tạm đến 14/11/2026). Chạy liên tiếp Gemini 1, Gemini 2, OpenRouter 1, OpenRouter 2. Mỗi lượt: hồi quy hiện có 132 PASS/0 FAIL, lõi lịch 26 PASS/0 FAIL, helper 15 PASS/0 FAIL. requestedProvider/selectedProvider khớp; ca chuyên adapter tự ép nhà riêng như thiết kế bộ thử. Cả bốn cleanup kho thử thành công. Mạng AI giả, iframe CSP khóa kết nối, RAM Storage và IndexedDB namespace riêng; không API/key/save thật. Hai lượt runner lõi riêng cũng 26+15 PASS.
+
+Đây KHÔNG phải bộ nghiệm thu lịch tích hợp: chưa thử hết thọ gọi storage.die thật trong kho giả, prompt/lượt kể mới, nhánh 0 mới, hồ sơ mới hoặc chống cộng lịch hai lần. Giới hạn hồi quy cũ vẫn tồn tại về thao tác UI, xuất tệp nhật ký, retry 503/nén/ngưỡng nhắc và cảnh/NPC đầy đủ. Không tuyên bố tính năng đã hoàn thành chỉ vì các số PASS này.
+
+### Chưa làm và hướng tiếp tục
+
+- Chín file index/CSS/game đang chơi vẫn giống byte checkpoint a876e58. Chưa nạp script game, chưa nối save, chưa sửa nodes0/tuyenAn0/ép gặp 5/9, chưa nối prompt/thoi_gian_troi/sự kiện năm 8, chưa nối chết hết thọ và hồ sơ/CSS 414x896.
+- Helper luot_lich chỉ là bộ đếm, chưa phải giao dịch chống cộng hai lần. Cần clone lượt, áp lịch một lần và xử lý save lỗi; ngày đã kẹp phải có trước khi AI kể/chọn cảnh, không chỉ sửa ngày sau khi kể vượt.
+- Giữ đúng 8 năm; năm 0 khảo thí ngoài màn với nhánh 0 tại xuất thân. Chỉ gặp Hàn Lập tại sự kiện thế giới tới ngày. Giữ nguyên 11 nút nhánh 1 và cơ chế ba mức; Hàn Lập không thể bị giết, các nhân vật khác không bất tử. C2/C3 chưa kích hoạt, không Chương 2.
+- Thêm test tích hợp đầu-cuối rồi chạy lại đủ hai lượt liên tiếp mỗi nhà với mạng giả/kho riêng; đối chiếu Pages và SHA LIVE theo head cuối. Các kiểm tra checkpoint không thay bước này.
+- Không có lỗi GitHub dịch vụ ngăn tích hợp. Lỗi Ctrl+H trong nháp đã hoàn tác và bỏ nháp, không commit truyen-ke.js; tránh phím tắt đó. Tiếp tục dùng Meta+A/type hoặc chèn đầu, xem diff và SHA trước commit.
+
+Danh sách 11 giai đoạn nhánh 0 ngay bên dưới vẫn giữ nguyên đầy đủ; yêu cầu mới đã cho phép áp dụng danh sách này, không cần xin duyệt từng bước. Trạng thái thực tế: helper có ranh giới giai đoạn, nhưng nội dung nhánh 0 trong game CHƯA thay.
+
+---
+
 ## 07/11/2026 chiều — CHECKPOINT LỊCH TÁM NĂM, CHƯA HOÀN TẤT GÓI
 
 ### Quyết định ràng buộc mới (thay thiết kế nhánh 0 cũ bên dưới)
