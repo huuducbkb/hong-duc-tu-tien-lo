@@ -1,3 +1,15 @@
+# Điểm nối 07/11/2026 17:54 — QUAY LẠI BA LƯỢT ĐÃ XONG MÃ VÀ TEST
+
+Thiết kế đã chốt: mỗi bấm Quay lại lùi đúng MỘT lượt, giữ tối đa BA mốc sâu toàn save cùng chuyện/sổ/log trước hành động. Stack chỉ RAM, refresh mất, không redo, chết H.storage.die dọn sạch và không thể hồi sinh. Hủy kết quả chờ lưu trước phục hồi, không cộng lịch hai lần. Nút ẩn khi rỗng, ở sau khối hành động.
+
+Mã/test cố định 982c36cbc18215d403b7ba10721dc9887fb967dc. Bàn giao đầy đủ tại BAO-CAO-CONG-VIEC.md commit 777c0082aa942983b395869a7d766c1a976becf4, SHA-256 edc4ecb1b12c5ce8163f570162eded5e6fbce474b98acefc975d3e19d20f5ad8; gồm đã làm, lỗi/cách xử lý, giới hạn lỗi lưu chéo Storage/IndexedDB.
+
+Đã chạy ĐỦ BỘ liên tiếp Gemini 1, Gemini 2, OpenRouter 1, OpenRouter 2: MỖI LƯỢT 213 PASS, 0 FAIL (132 hồi quy +26 lõi lịch +15 helper +18 tích hợp lịch +21 undo +1 tải document thật). Giữ ca ép backend. Mạng AI giả, Storage RAM, IDB namespace thử riêng đã dọn; không API/key/save thật. Khung 414×896 nút không tràn ngang/đè Đóng/hành động. Runner test/chay-quay-lai.html; bằng chứng tạm https://boba.page/Q_xvf4xBoIt4ndburY2KMw/index.html .
+
+Còn lại tại lúc ghi checkpoint: chờ Pages head sau commit này Success và so SHA-256 index/CSS/9 JS LIVE với raw fixed head cuối; kết quả trả trong bàn giao cuối. Không chạy game LIVE. Nếu bị ngắt, chỉ tiếp bước phát hành này, không làm lại mã/test đã PASS. Giữ nguyên phạm vi cấm sửa của yêu cầu; index không nạp test.
+
+---
+
 # Điểm nối mới 07/11/2026 16:41 — ĐÃ TÍCH HỢP VÀ KIỂM THỬ
 
 Mục này thay trạng thái CHƯA TÍCH HỢP bên dưới; giữ lịch sử để truy vết. Báo cáo đầy đủ, danh sách 11 giai đoạn nhánh 0 và lỗi/cách khắc phục: BAO-CAO-CONG-VIEC.md tại 44ba77d17cfb460d2d92aba8d5166714216d7910 (SHA-256 55e63bd3d9d762e17ee6fe92fdc3ffb2d9238fa9b031e597c28da765dd23e6d7).
