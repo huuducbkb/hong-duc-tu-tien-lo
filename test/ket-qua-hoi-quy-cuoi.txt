@@ -1,0 +1,2202 @@
+{
+  "commit": "8cdedef7361b402ae7d72797f8c3af3acbcacccc",
+  "hashes": {
+    "index.html": "fcf2b8b495cd6f4e36ef7c1fca07ef76c27c210f99673dbf2161dda2b7ea365e",
+    "css/giao-dien.css": "16219b725632507f170eac81beb8d38a9942c9f004b6fce7f8998a68369a5304",
+    "js/man-hinh.js": "ea163b5a14191b73fb702034e94c75126f54a6f5b888369aaab6c0f569eb495c",
+    "js/muc-luc.js": "30d1459c9feb47c497965debe16bc90297e4d0213ca371f0cfc85d851943a510",
+    "js/khoi-thanh.js": "f8464d0cce72578b6c7554aeded51b5e7099ee77f66ac5808aa7eaeecb6fc0f7",
+    "js/luu-tru.js": "3c8a6c3458f72d7589316f6e1afbf81adc378f07128ee84757e07326707d64b0",
+    "js/openrouter.js": "a6639147725be8c00ac89b5e9d478c958a31b22dbbfaeab7e568832dd11f88e3",
+    "js/gemini.js": "956f5ceb893de80a28881a69f999652128a077a4e5de1a79caa3e5cf04516aed",
+    "js/truyen-ke.js": "dde80837355e9483e0de5ec8beb3fa12985d337302dd0778e5853edb86412484",
+    "test/bo-hoi-quy-phat-hanh.js": "dc459129bf6ce27ec1cbd1f7f369677c3fd586e51e1938413f637e8ddf923ecc"
+  },
+  "runs": [
+    {
+      "requestedProvider": "gemini",
+      "note": "Các ca G1 riêng Gemini và G6/G7 chuyên biệt vẫn chạy đúng adapter; ca mạng JSON kiểm URL cả hai nhà, ca dùng chung theo requestedProvider.",
+      "total": 132,
+      "pass": 132,
+      "fail": 0,
+      "results": [
+        {
+          "name": "G1: Có màn bìa, ảnh và nút vào",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Có biểu mẫu tên và xuất thân tự do",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Mục lục đủ 15 mục",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Xuất nhật ký ở vị trí thứ 5",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Có nút Tiếp tục",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lưu và đọc tên, xuất thân tự do",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Đọc save không hợp lệ trả null",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Xóa save thử",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Nhật ký che khóa giả",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Nhật ký giữ tối đa 300 dòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: IndexedDB ghi và đọc nguyên văn kho cách ly",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Sổ đếm lượt thử",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Sổ reset bộ đếm",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt thiếu khóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt JSON sai",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 503",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 429",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 401",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 404",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt mạng",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Fallback bốn model bằng fetch giả",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Ưu tiên model đã lưu",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Save cũ thiếu hai trường được chuẩn hóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Nút ngoài giới hạn được chuẩn hóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Hàn Lập không chết",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Bù cơ duyên",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Không ai khác bất tử",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Không kết luận chết khi thương hoặc bất tỉnh",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Thẻ NPC hiện diện",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Bảng thiện cảm hiện tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Nút hiện tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Ba mức",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Nút 1 cố định trực tiếp",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: hoan_thanh true tăng nút",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: hoan_thanh false giữ nguyên nút",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Nút 11 dừng và đánh dấu hết chương",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm cộng dồn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm kẹp trên +5",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm kẹp dưới -5",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: JSON đầy đủ cập nhật truyện và ba hành động",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: JSON thiếu trường ẩn bị từ chối an toàn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Trường ẩn không xuất hiện trong truyện và lựa chọn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Hàm màn chết tồn tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Chết xóa save thử và mở điếu văn",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: 503 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: 429 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: mạng thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Kiểm kết nối quá hạn 60 giây tự dừng",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Mất mạng khi đọc thân phản hồi thử lại rồi đổi model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: JSON sai vẫn báo lỗi định dạng không retry",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Tắt thu gọn gửi đủ lịch sử trong save",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Sổ thiếu dữ liệu không rút gọn save",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Thu gọn bật vẫn giữ sáu lượt gần",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Tô riêng hành động người chơi",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Khởi thân nguyên văn trong lịch sử ngắn dài",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Lọc giá OpenRouter",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Nâng khóa Gemini đơn",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Che tất cả khóa hai nhà",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Gemini 429 chuyển khóa trước model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Model Gemini cũ chuyển Flash còn sống",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Gemini không còn Flash dùng dự phòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Mạng tra Gemini lỗi dùng dự phòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter 429 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter 503 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter mạng thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G7: gemini báo đổi model 404 trên màn truyện một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "G7: openrouter báo đổi model 404 trên màn truyện một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: prompt yêu cầu nội tâm theo thiện cảm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: lưu và hiển thị nội tâm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: thiếu nội tâm không gây lỗi",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: save cũ mặc định nhánh 1 và chuyển thiện cảm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xung đột tên giữ cả dữ liệu",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 2",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 3",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 4",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 5",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 6",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 7",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 9",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 10",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 11",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: ép trực tiếp Hàn Lập nhánh 0 nút 5",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: ép trực tiếp Hàn Lập nhánh 0 nút 9",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 2",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 3",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 4",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 10",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: mốc 8 nhánh 1 dùng Lệ Phi Vũ",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: mục Lưu / Nạp đúng vị trí",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini 0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini 1 => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini không hợp lệ/0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini lỗi/lỗi => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter 0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter 1 => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter không hợp lệ/0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter lỗi/lỗi => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: file sai hành động không ghi đè",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: không nạp khi lượt kể đang chạy",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: gemini kể nội tâm qua mạng giả",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: openrouter kể nội tâm qua mạng giả",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: file sai không ghi đè",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: hủy nạp giữ save",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xác nhận nạp đúng tiến trình",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xuất nguyên save JSON có tên và ngày",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: khối json",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: văn trước và sau",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: cắt ngang thử một lần và nhắc gắt",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: chọn cảnh sai khung phải log và báo lỗi",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts null",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts parts object",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts parts null",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: lý do MAX_TOKENS có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: gemini hết token có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: openrouter hết token có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: gemini thử lại đúng một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: openrouter thử lại đúng một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: lỗi ghi sổ được log và thoát trạng thái bận",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.5-flash-lite",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.8-flash",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.6-flash",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.1-flash-lite",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: metadata giới hạn theo model",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: không áp top_provider lên mọi provider",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: thiếu metadata vẫn gửi yêu cầu JSON",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: native_finish_reason không bị finish_reason che",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: cache fallback không ngăn phục hồi metadata",
+          "status": "PASS"
+        },
+        {
+          "name": "Dữ liệu gốc không đổi trước reload",
+          "status": "PASS"
+        }
+      ],
+      "cleanup": "đã xóa kho thử",
+      "uncovered": [
+        "Không tự nhấn Vào game, Tiếp tục, tạo nhân vật, mở/đóng Mục lục và nút về bìa trong môi trường thực thi này.",
+        "Không kích hoạt tải xuất nhật ký; chưa xác nhận thứ tự nội dung từ tệp tải.",
+        "Chưa kiểm tra retry 503, nén lịch sử, ngưỡng nhắc 30 lượt/3 ngày, lựa chọn cảnh và NPC mới đầy đủ.",
+        "Bản thử cô lập, không chứng minh chất lượng phản hồi AI thật."
+      ],
+      "run": 1,
+      "selectedProvider": "gemini"
+    },
+    {
+      "requestedProvider": "gemini",
+      "note": "Các ca G1 riêng Gemini và G6/G7 chuyên biệt vẫn chạy đúng adapter; ca mạng JSON kiểm URL cả hai nhà, ca dùng chung theo requestedProvider.",
+      "total": 132,
+      "pass": 132,
+      "fail": 0,
+      "results": [
+        {
+          "name": "G1: Có màn bìa, ảnh và nút vào",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Có biểu mẫu tên và xuất thân tự do",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Mục lục đủ 15 mục",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Xuất nhật ký ở vị trí thứ 5",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Có nút Tiếp tục",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lưu và đọc tên, xuất thân tự do",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Đọc save không hợp lệ trả null",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Xóa save thử",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Nhật ký che khóa giả",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Nhật ký giữ tối đa 300 dòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: IndexedDB ghi và đọc nguyên văn kho cách ly",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Sổ đếm lượt thử",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Sổ reset bộ đếm",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt thiếu khóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt JSON sai",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 503",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 429",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 401",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 404",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt mạng",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Fallback bốn model bằng fetch giả",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Ưu tiên model đã lưu",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Save cũ thiếu hai trường được chuẩn hóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Nút ngoài giới hạn được chuẩn hóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Hàn Lập không chết",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Bù cơ duyên",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Không ai khác bất tử",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Không kết luận chết khi thương hoặc bất tỉnh",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Thẻ NPC hiện diện",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Bảng thiện cảm hiện tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Nút hiện tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Ba mức",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Nút 1 cố định trực tiếp",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: hoan_thanh true tăng nút",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: hoan_thanh false giữ nguyên nút",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Nút 11 dừng và đánh dấu hết chương",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm cộng dồn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm kẹp trên +5",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm kẹp dưới -5",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: JSON đầy đủ cập nhật truyện và ba hành động",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: JSON thiếu trường ẩn bị từ chối an toàn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Trường ẩn không xuất hiện trong truyện và lựa chọn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Hàm màn chết tồn tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Chết xóa save thử và mở điếu văn",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: 503 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: 429 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: mạng thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Kiểm kết nối quá hạn 60 giây tự dừng",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Mất mạng khi đọc thân phản hồi thử lại rồi đổi model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: JSON sai vẫn báo lỗi định dạng không retry",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Tắt thu gọn gửi đủ lịch sử trong save",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Sổ thiếu dữ liệu không rút gọn save",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Thu gọn bật vẫn giữ sáu lượt gần",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Tô riêng hành động người chơi",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Khởi thân nguyên văn trong lịch sử ngắn dài",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Lọc giá OpenRouter",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Nâng khóa Gemini đơn",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Che tất cả khóa hai nhà",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Gemini 429 chuyển khóa trước model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Model Gemini cũ chuyển Flash còn sống",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Gemini không còn Flash dùng dự phòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Mạng tra Gemini lỗi dùng dự phòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter 429 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter 503 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter mạng thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G7: gemini báo đổi model 404 trên màn truyện một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "G7: openrouter báo đổi model 404 trên màn truyện một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: prompt yêu cầu nội tâm theo thiện cảm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: lưu và hiển thị nội tâm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: thiếu nội tâm không gây lỗi",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: save cũ mặc định nhánh 1 và chuyển thiện cảm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xung đột tên giữ cả dữ liệu",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 2",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 3",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 4",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 5",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 6",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 7",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 9",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 10",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 11",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: ép trực tiếp Hàn Lập nhánh 0 nút 5",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: ép trực tiếp Hàn Lập nhánh 0 nút 9",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 2",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 3",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 4",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 10",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: mốc 8 nhánh 1 dùng Lệ Phi Vũ",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: mục Lưu / Nạp đúng vị trí",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini 0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini 1 => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini không hợp lệ/0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini lỗi/lỗi => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter 0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter 1 => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter không hợp lệ/0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter lỗi/lỗi => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: file sai hành động không ghi đè",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: không nạp khi lượt kể đang chạy",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: gemini kể nội tâm qua mạng giả",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: openrouter kể nội tâm qua mạng giả",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: file sai không ghi đè",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: hủy nạp giữ save",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xác nhận nạp đúng tiến trình",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xuất nguyên save JSON có tên và ngày",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: khối json",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: văn trước và sau",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: cắt ngang thử một lần và nhắc gắt",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: chọn cảnh sai khung phải log và báo lỗi",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts null",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts parts object",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts parts null",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: lý do MAX_TOKENS có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: gemini hết token có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: openrouter hết token có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: gemini thử lại đúng một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: openrouter thử lại đúng một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: lỗi ghi sổ được log và thoát trạng thái bận",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.5-flash-lite",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.8-flash",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.6-flash",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.1-flash-lite",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: metadata giới hạn theo model",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: không áp top_provider lên mọi provider",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: thiếu metadata vẫn gửi yêu cầu JSON",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: native_finish_reason không bị finish_reason che",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: cache fallback không ngăn phục hồi metadata",
+          "status": "PASS"
+        },
+        {
+          "name": "Dữ liệu gốc không đổi trước reload",
+          "status": "PASS"
+        }
+      ],
+      "cleanup": "đã xóa kho thử",
+      "uncovered": [
+        "Không tự nhấn Vào game, Tiếp tục, tạo nhân vật, mở/đóng Mục lục và nút về bìa trong môi trường thực thi này.",
+        "Không kích hoạt tải xuất nhật ký; chưa xác nhận thứ tự nội dung từ tệp tải.",
+        "Chưa kiểm tra retry 503, nén lịch sử, ngưỡng nhắc 30 lượt/3 ngày, lựa chọn cảnh và NPC mới đầy đủ.",
+        "Bản thử cô lập, không chứng minh chất lượng phản hồi AI thật."
+      ],
+      "run": 2,
+      "selectedProvider": "gemini"
+    },
+    {
+      "requestedProvider": "openrouter",
+      "note": "Các ca G1 riêng Gemini và G6/G7 chuyên biệt vẫn chạy đúng adapter; ca mạng JSON kiểm URL cả hai nhà, ca dùng chung theo requestedProvider.",
+      "total": 132,
+      "pass": 132,
+      "fail": 0,
+      "results": [
+        {
+          "name": "G1: Có màn bìa, ảnh và nút vào",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Có biểu mẫu tên và xuất thân tự do",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Mục lục đủ 15 mục",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Xuất nhật ký ở vị trí thứ 5",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Có nút Tiếp tục",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lưu và đọc tên, xuất thân tự do",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Đọc save không hợp lệ trả null",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Xóa save thử",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Nhật ký che khóa giả",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Nhật ký giữ tối đa 300 dòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: IndexedDB ghi và đọc nguyên văn kho cách ly",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Sổ đếm lượt thử",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Sổ reset bộ đếm",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt thiếu khóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt JSON sai",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 503",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 429",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 401",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 404",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt mạng",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Fallback bốn model bằng fetch giả",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Ưu tiên model đã lưu",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Save cũ thiếu hai trường được chuẩn hóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Nút ngoài giới hạn được chuẩn hóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Hàn Lập không chết",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Bù cơ duyên",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Không ai khác bất tử",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Không kết luận chết khi thương hoặc bất tỉnh",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Thẻ NPC hiện diện",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Bảng thiện cảm hiện tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Nút hiện tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Ba mức",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Nút 1 cố định trực tiếp",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: hoan_thanh true tăng nút",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: hoan_thanh false giữ nguyên nút",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Nút 11 dừng và đánh dấu hết chương",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm cộng dồn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm kẹp trên +5",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm kẹp dưới -5",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: JSON đầy đủ cập nhật truyện và ba hành động",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: JSON thiếu trường ẩn bị từ chối an toàn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Trường ẩn không xuất hiện trong truyện và lựa chọn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Hàm màn chết tồn tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Chết xóa save thử và mở điếu văn",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: 503 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: 429 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: mạng thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Kiểm kết nối quá hạn 60 giây tự dừng",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Mất mạng khi đọc thân phản hồi thử lại rồi đổi model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: JSON sai vẫn báo lỗi định dạng không retry",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Tắt thu gọn gửi đủ lịch sử trong save",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Sổ thiếu dữ liệu không rút gọn save",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Thu gọn bật vẫn giữ sáu lượt gần",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Tô riêng hành động người chơi",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Khởi thân nguyên văn trong lịch sử ngắn dài",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Lọc giá OpenRouter",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Nâng khóa Gemini đơn",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Che tất cả khóa hai nhà",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Gemini 429 chuyển khóa trước model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Model Gemini cũ chuyển Flash còn sống",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Gemini không còn Flash dùng dự phòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Mạng tra Gemini lỗi dùng dự phòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter 429 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter 503 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter mạng thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G7: gemini báo đổi model 404 trên màn truyện một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "G7: openrouter báo đổi model 404 trên màn truyện một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: prompt yêu cầu nội tâm theo thiện cảm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: lưu và hiển thị nội tâm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: thiếu nội tâm không gây lỗi",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: save cũ mặc định nhánh 1 và chuyển thiện cảm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xung đột tên giữ cả dữ liệu",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 2",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 3",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 4",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 5",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 6",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 7",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 9",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 10",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 11",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: ép trực tiếp Hàn Lập nhánh 0 nút 5",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: ép trực tiếp Hàn Lập nhánh 0 nút 9",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 2",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 3",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 4",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 10",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: mốc 8 nhánh 1 dùng Lệ Phi Vũ",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: mục Lưu / Nạp đúng vị trí",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini 0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini 1 => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini không hợp lệ/0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini lỗi/lỗi => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter 0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter 1 => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter không hợp lệ/0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter lỗi/lỗi => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: file sai hành động không ghi đè",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: không nạp khi lượt kể đang chạy",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: gemini kể nội tâm qua mạng giả",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: openrouter kể nội tâm qua mạng giả",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: file sai không ghi đè",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: hủy nạp giữ save",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xác nhận nạp đúng tiến trình",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xuất nguyên save JSON có tên và ngày",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: khối json",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: văn trước và sau",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: cắt ngang thử một lần và nhắc gắt",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: chọn cảnh sai khung phải log và báo lỗi",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts null",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts parts object",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts parts null",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: lý do MAX_TOKENS có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: gemini hết token có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: openrouter hết token có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: gemini thử lại đúng một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: openrouter thử lại đúng một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: lỗi ghi sổ được log và thoát trạng thái bận",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.5-flash-lite",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.8-flash",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.6-flash",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.1-flash-lite",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: metadata giới hạn theo model",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: không áp top_provider lên mọi provider",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: thiếu metadata vẫn gửi yêu cầu JSON",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: native_finish_reason không bị finish_reason che",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: cache fallback không ngăn phục hồi metadata",
+          "status": "PASS"
+        },
+        {
+          "name": "Dữ liệu gốc không đổi trước reload",
+          "status": "PASS"
+        }
+      ],
+      "cleanup": "đã xóa kho thử",
+      "uncovered": [
+        "Không tự nhấn Vào game, Tiếp tục, tạo nhân vật, mở/đóng Mục lục và nút về bìa trong môi trường thực thi này.",
+        "Không kích hoạt tải xuất nhật ký; chưa xác nhận thứ tự nội dung từ tệp tải.",
+        "Chưa kiểm tra retry 503, nén lịch sử, ngưỡng nhắc 30 lượt/3 ngày, lựa chọn cảnh và NPC mới đầy đủ.",
+        "Bản thử cô lập, không chứng minh chất lượng phản hồi AI thật."
+      ],
+      "run": 3,
+      "selectedProvider": "openrouter"
+    },
+    {
+      "requestedProvider": "openrouter",
+      "note": "Các ca G1 riêng Gemini và G6/G7 chuyên biệt vẫn chạy đúng adapter; ca mạng JSON kiểm URL cả hai nhà, ca dùng chung theo requestedProvider.",
+      "total": 132,
+      "pass": 132,
+      "fail": 0,
+      "results": [
+        {
+          "name": "G1: Có màn bìa, ảnh và nút vào",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Có biểu mẫu tên và xuất thân tự do",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Mục lục đủ 15 mục",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Xuất nhật ký ở vị trí thứ 5",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Có nút Tiếp tục",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lưu và đọc tên, xuất thân tự do",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Đọc save không hợp lệ trả null",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Xóa save thử",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Nhật ký che khóa giả",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Nhật ký giữ tối đa 300 dòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: IndexedDB ghi và đọc nguyên văn kho cách ly",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Sổ đếm lượt thử",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Sổ reset bộ đếm",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt thiếu khóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt JSON sai",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 503",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 429",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 401",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt 404",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Lỗi tiếng Việt mạng",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Fallback bốn model bằng fetch giả",
+          "status": "PASS"
+        },
+        {
+          "name": "G1: Ưu tiên model đã lưu",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Save cũ thiếu hai trường được chuẩn hóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Nút ngoài giới hạn được chuẩn hóa",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Hàn Lập không chết",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Bù cơ duyên",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Không ai khác bất tử",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Không kết luận chết khi thương hoặc bất tỉnh",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Thẻ NPC hiện diện",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Bảng thiện cảm hiện tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Nút hiện tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Ba mức",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Prompt Nút 1 cố định trực tiếp",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: hoan_thanh true tăng nút",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: hoan_thanh false giữ nguyên nút",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Nút 11 dừng và đánh dấu hết chương",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm cộng dồn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm kẹp trên +5",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Thiện cảm kẹp dưới -5",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: JSON đầy đủ cập nhật truyện và ba hành động",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: JSON thiếu trường ẩn bị từ chối an toàn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Trường ẩn không xuất hiện trong truyện và lựa chọn",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Hàm màn chết tồn tại",
+          "status": "PASS"
+        },
+        {
+          "name": "G3: Chết xóa save thử và mở điếu văn",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: 503 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: 429 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: mạng thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Kiểm kết nối quá hạn 60 giây tự dừng",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Mất mạng khi đọc thân phản hồi thử lại rồi đổi model",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: JSON sai vẫn báo lỗi định dạng không retry",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Tắt thu gọn gửi đủ lịch sử trong save",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Sổ thiếu dữ liệu không rút gọn save",
+          "status": "PASS"
+        },
+        {
+          "name": "G4: Thu gọn bật vẫn giữ sáu lượt gần",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Tô riêng hành động người chơi",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Khởi thân nguyên văn trong lịch sử ngắn dài",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Lọc giá OpenRouter",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Nâng khóa Gemini đơn",
+          "status": "PASS"
+        },
+        {
+          "name": "G5: Che tất cả khóa hai nhà",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Gemini 429 chuyển khóa trước model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Model Gemini cũ chuyển Flash còn sống",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Gemini không còn Flash dùng dự phòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: Mạng tra Gemini lỗi dùng dự phòng",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter 429 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter 503 thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G6: OpenRouter mạng thử lại rồi chuyển model",
+          "status": "PASS"
+        },
+        {
+          "name": "G7: gemini báo đổi model 404 trên màn truyện một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "G7: openrouter báo đổi model 404 trên màn truyện một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: prompt yêu cầu nội tâm theo thiện cảm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: lưu và hiển thị nội tâm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: thiếu nội tâm không gây lỗi",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: save cũ mặc định nhánh 1 và chuyển thiện cảm",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xung đột tên giữ cả dữ liệu",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 2",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 3",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 4",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 5",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 6",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 7",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 9",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 10",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: nhánh 0 mốc 11",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: ép trực tiếp Hàn Lập nhánh 0 nút 5",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: ép trực tiếp Hàn Lập nhánh 0 nút 9",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 2",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 3",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 4",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 8",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: giữ mốc gặp nhánh 0 nút 10",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: mốc 8 nhánh 1 dùng Lệ Phi Vũ",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: mục Lưu / Nạp đúng vị trí",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini 0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini 1 => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini không hợp lệ/0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại gemini lỗi/lỗi => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter 0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter 1 => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter không hợp lệ/0 => 0",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: phân loại openrouter lỗi/lỗi => 1",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: file sai hành động không ghi đè",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: không nạp khi lượt kể đang chạy",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: gemini kể nội tâm qua mạng giả",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: openrouter kể nội tâm qua mạng giả",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: file sai không ghi đè",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: hủy nạp giữ save",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xác nhận nạp đúng tiến trình",
+          "status": "PASS"
+        },
+        {
+          "name": "Mới: xuất nguyên save JSON có tên và ngày",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: khối json",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: văn trước và sau",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: cắt ngang thử một lần và nhắc gắt",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: chọn cảnh sai khung phải log và báo lỗi",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts null",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts parts object",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: candidates/parts parts null",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: lý do MAX_TOKENS có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: gemini hết token có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: openrouter hết token có log",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: gemini thử lại đúng một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mạng giả: openrouter thử lại đúng một lần",
+          "status": "PASS"
+        },
+        {
+          "name": "JSON mới: lỗi ghi sổ được log và thoát trạng thái bận",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.5-flash-lite",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.8-flash",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.6-flash",
+          "status": "PASS"
+        },
+        {
+          "name": "Giới hạn JSON Gemini: gemini-3.1-flash-lite",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: metadata giới hạn theo model",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: không áp top_provider lên mọi provider",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: thiếu metadata vẫn gửi yêu cầu JSON",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: native_finish_reason không bị finish_reason che",
+          "status": "PASS"
+        },
+        {
+          "name": "OpenRouter: cache fallback không ngăn phục hồi metadata",
+          "status": "PASS"
+        },
+        {
+          "name": "Dữ liệu gốc không đổi trước reload",
+          "status": "PASS"
+        }
+      ],
+      "cleanup": "đã xóa kho thử",
+      "uncovered": [
+        "Không tự nhấn Vào game, Tiếp tục, tạo nhân vật, mở/đóng Mục lục và nút về bìa trong môi trường thực thi này.",
+        "Không kích hoạt tải xuất nhật ký; chưa xác nhận thứ tự nội dung từ tệp tải.",
+        "Chưa kiểm tra retry 503, nén lịch sử, ngưỡng nhắc 30 lượt/3 ngày, lựa chọn cảnh và NPC mới đầy đủ.",
+        "Bản thử cô lập, không chứng minh chất lượng phản hồi AI thật."
+      ],
+      "run": 4,
+      "selectedProvider": "openrouter"
+    }
+  ],
+  "notes": "Mạng giả/CSP connect-src none; Storage RAM; IndexedDB namespace riêng. Ca chuyên biệt hai adapter vẫn được chạy trong mỗi lượt."
+}
