@@ -1,3 +1,46 @@
+## 07/11/2026 — BÀN GIAO VÁ ĐỊNH DẠNG AI
+
+Phần này thay thế trạng thái “V7 chỉ thử, main chưa vá” và các số đếm cũ bên dưới.
+
+### Đã làm
+- Đã commit thẳng main: `564806c` (OpenRouter), `b03c069` (Gemini), `52eb82b` (truyện). Bộ đọc JSON bóc fence và thử phần từ ngoặc nhọn đầu đến ngoặc nhọn cuối; giữ kiểm tra schema cũ. Sai định dạng thử lại đúng một lần với nhắc chỉ JSON, sau đó báo lỗi tiếng Việt.
+- Vá cả chọn bối cảnh sai khung không ghi log và candidates/parts null/dị thường gây TypeError. Lỗi được ghi nhật ký; lỗi ghi sổ cũng thoát trạng thái bận.
+- Kiểm finishReason/stopReason/finish_reason/native_finish_reason; hết token có lý do trong log. Gemini yêu cầu JSON đặt maxOutputTokens=32768, dưới mức tối đa 65536 của Flash-lite đã đối chiếu tài liệu. Không đổi giới hạn cho lời gọi nén.
+- OpenRouter KHÔNG từ chối model thiếu metadata. Không gửi max_tokens, để mặc định upstream; ghi log. Không dùng top_provider làm giới hạn chung mọi provider. Không hứa upstream sẽ không cắt câu trả lời.
+- Không sửa schema, prompt cốt truyện, thuật nén lịch sử, 11 nút nhánh 1, ba mức bối cảnh, mẫu giao diện, Art/ hay index.html.
+
+### Hồi quy bản phát hành
+Mã được chạy: `8cdedef7361b402ae7d72797f8c3af3acbcacccc`. File `test/bo-hoi-quy-phat-hanh.js` SHA-256 `dc459129bf6ce27ec1cbd1f7f369677c3fd586e51e1938413f637e8ddf923ecc`.
+
+| Nhà chọn | Lượt 1 | Lượt 2 |
+|---|---|---|
+| Gemini | 132 PASS / 0 FAIL | 132 PASS / 0 FAIL |
+| OpenRouter | 132 PASS / 0 FAIL | 132 PASS / 0 FAIL |
+
+Chạy tuần tự bốn lượt mới, mạng giả, CSP connect-src none, Storage RAM, IndexedDB namespace riêng; cả bốn đã xóa kho thử. Không gọi API AI thật, không đọc key/save thật. Ca G4 dùng chung đã bỏ ép Gemini và theo nhà chọn. Ca G1 fallback/ưu tiên model chuyên Gemini, G6/G7 và ca riêng từng adapter vẫn kiểm đúng nhà của chúng; không diễn giải 132 phép là 132 request của nhà chọn. Ca JSON mạng giả kiểm URL backend cả hai nhà.
+
+Bằng chứng đầy đủ: `test/ket-qua-hoi-quy-cuoi.txt` (commit `5f8e2c4`). Kết quả cũ `ket-qua-hoi-quy.txt` là lượt trước chỉnh G4, giữ làm lịch sử. Runner `test/chay-cach-ly.html` nhận `?commit=8cdedef7361b402ae7d72797f8c3af3acbcacccc`; chỉ mở bản sao ở localhost/origin thử, tuyệt đối không chạy trên LIVE. Không tham chiếu test từ index.
+
+Phủ thêm fence, văn trước/sau JSON, JSON cắt ngang, noi_tam hợp lệ, chọn cảnh sai khung, candidates/parts dị thường, hết token, khôi phục cache, thiếu metadata OpenRouter và native reason. Một số mô tả CHƯA PHỦ trong đầu/đuôi bộ test được kế thừa lịch sử, không thay thế danh sách kết quả chi tiết từng phép.
+
+### Chẩn đoán và cách xử lý nếu còn lỗi
+Flash-lite hay trả sai khung JSON là chẩn đoán chính từ điều tra trước; không có đo tần suất bằng API thật trong đợt này. Bản vá xử lý định dạng và tránh treo im lặng, không bảo đảm chất lượng mọi phản hồi AI. Nếu vẫn lỗi, nên thử model Flash đầy đủ (không lite) hoặc OpenRouter, rồi đọc nhật ký tiếng Việt/lý do hết token.
+
+### Chưa làm và giới hạn
+- Không thử AI/key/save thật theo yêu cầu; không kiểm Safari iPhone thật hay bảo đảm cốt truyện do model kể luôn đúng.
+- Không tuyên bố đã kiểm mọi thao tác giao diện thực, mọi nội dung file xuất hoặc mọi ngưỡng nhắc sao lưu.
+- Đối chiếu build Pages và SHA-256 LIVE cuối đợt được ghi vào phần chốt phát hành trong NHAP-CONG-VIEC.md và báo cáo trả kết quả; không lấy bảng LIVE lịch sử bên dưới làm bằng chứng bản vá này.
+
+### Lỗi kỹ thuật đã giải quyết
+V7 cũ chặn OpenRouter thiếu metadata đã bỏ. Test cũ ép Gemini được sửa để tách nhà đúng. Editor GitHub cần kiểm diff và hash toàn văn; GitHub có thể thêm newline. Công cụ tải .js/JSON bị từ chối thì dùng .txt để lưu bằng chứng, không đưa test vào index. Mọi file game đã đối chiếu hash raw sau commit.
+
+### SHA-256 ba file vá trên main
+- js/truyen-ke.js: `dde80837355e9483e0de5ec8beb3fa12985d337302dd0778e5853edb86412484`
+- js/gemini.js: `956f5ceb893de80a28881a69f999652128a077a4e5de1a79caa3e5cf04516aed`
+- js/openrouter.js: `a6639147725be8c00ac89b5e9d478c958a31b22dbbfaeab7e568832dd11f88e3`
+
+---
+
 ## 06/11/2026 — BÀN GIAO CẬP NHẬT CUỐI
 
 - Đã làm: nội tâm theo thiện cảm, nhánh 0 với 11 mốc và tuyến ẩn, phân loại xuất thân và lưu nhánh, cảnh bắt buộc 5/9, bối cảnh đại chiến nhánh 1, xuất/nạp JSON có xác nhận, đổi tên Lệ Phi Vũ và chuyển thiện cảm save cũ. Giữ màn chết xóa save, cho phép nạp file cũ. Không làm Chương 2, không đổi thuật nén lịch sử hay file mẫu và ảnh Art.
