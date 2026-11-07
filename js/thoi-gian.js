@@ -64,3 +64,28 @@ function boiCanh(s){const t=doc(s),l=lich(s),ke=suKienKe(s),gan=bangSuKien.find(
  ].join('\n')}
 H.thoiGian={NAM,THANG,bangSuKien,thoMenh,diaDanh,doc,lich,tuoi,gioiHan,conLaiNgay,suKienKe,trangThai,ngayDuong,deXuat,cong,boiCanh};
 })();
+/* TÍCH HỢP: chỉ thao tác bản sao lượt; không đọc kho hay gọi AI. */
+(function(){
+'use strict';
+const H=window.HongDuc,T=H.thoiGian;
+T.giaiDoan=function(s){const d=T.doc(s).tong_ngay;return d===0?1:d<90?2:d<360?3:d<720?4:d<1080?5:d<1440?6:d<1800?7:d<2520?8:d<2880?9:d===2880?10:11};
+T.chuanHoa=function(s){const t=T.doc(s);if(!t.vi_tri){const origin=String(s.nhanvat?.xuatthan||'');t.vi_tri=Object.keys(T.diaDanh).sort((a,b)=>b.length-a.length).find(n=>origin.includes(n))||''}if(s.nhanh===0){s.nut_hien_tai=T.giaiDoan(s);if(s.nut_hien_tai<11)s.chuong_1_hoan_thanh=false}return s};
+/* Từ chối điểm đi AI tự bịa. Hành trình dài lưu số ngày còn lại;
+ * vị trí chỉ đổi sau khi đi đủ, kể cả khi bị sự kiện cắt giữa đường. */
+T.lapKeHoach=function(s,raw,action='',move,opening=false){
+ T.chuanHoa(s);const t=T.doc(s),before=t.tong_ngay;
+ if(opening)return {ngay:0,kichHoat:[],hetTho:T.conLaiNgay(s)<=0,lich:T.lich(s)};
+ let route=t.hanh_trinh;
+ if(!route||typeof route.tu!=='string'||route.tu!==t.vi_tri||!Number.isInteger(route.con_lai)||route.con_lai<=0||route.con_lai>T.ngayDuong(route.tu,route.den))route=null;
+ if(!route&&move&&move.tu===t.vi_tri&&typeof move.den==='string'){
+  const days=T.ngayDuong(t.vi_tri,move.den);
+  if(days!==null&&days>0)route={tu:t.vi_tri,den:move.den,con_lai:days};
+ }
+ let elapsed=route?Math.min(30,route.con_lai):T.deXuat(raw,action);
+ const result=T.cong(s,{ngay:elapsed},route?'đi đường':action);
+ if(route){route={...route,con_lai:route.con_lai-result.ngay};if(route.con_lai<=0){t.vi_tri=route.den;delete t.hanh_trinh}else t.hanh_trinh=route}else delete t.hanh_trinh;
+ t.luot_lich=(Number.isSafeInteger(t.luot_lich)?t.luot_lich:0)+1;
+ T.chuanHoa(s);return {...result,tu_ngay:before};
+};
+T.hoSo=function(s){T.chuanHoa(s);const l=T.lich(s),left=T.conLaiNgay(s);return {text:'Năm '+l.nam+' · Tháng '+l.thang+' · Ngày '+l.ngay+' — Tuổi '+T.tuoi(s)+' — Thọ mạng còn '+(left/360).toFixed(2)+' năm',canhBao:left<=10*360}};
+})();
