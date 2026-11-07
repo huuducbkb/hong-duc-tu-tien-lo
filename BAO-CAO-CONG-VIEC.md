@@ -1,3 +1,48 @@
+## 07/11/2026 chiều — CHECKPOINT LỊCH TÁM NĂM, CHƯA HOÀN TẤT GÓI
+
+### Quyết định ràng buộc mới (thay thiết kế nhánh 0 cũ bên dưới)
+- Chủ repo chốt nguyên văn: “a theo nguyên tác, b được, c tính là chết hardcore”. Lịch ĐÚNG 8 NĂM từ khảo thí tới đại chiến, không phải 10 năm.
+- Nhánh 0 mở ngày đầu ở nơi xuất thân; khảo thí ngoài màn; chỉ gặp Hàn Lập trong sự kiện thế giới tới ngày. Tái dùng nguyên cơ chế TRỰC TIẾP/GIÁN TIẾP/ĐI QUA theo vị trí, không ép kéo nhân vật xa tới núi.
+- Cạn thọ mạng dùng luồng chết thật H.storage.die; không suy chết từ thương/bất tỉnh/giả chết. Thêm nhắc chính tả tiếng Việt, không hứa hết lỗi AI.
+
+### Đã lưu main trong lượt này
+- `1590eecf0e855517eb62d66e4573aeccc64a7ecf`: thêm `js/thoi-gian.js`, namespace HongDuc.thoiGian. API doc/lich/tuoi/gioiHan/conLaiNgay/cong/suKienKe/boiCanh; trạng thái mới `thoi_gian`, mặc định năm 0 tháng 1 ngày 1, tuổi theo xuất thân hoặc 16. Không tự đọc kho thật.
+- Quy ước game 30 ngày/tháng, 360 ngày/năm; đại chiến 1/1 năm 8 (=2880 ngày). Ngày/tháng cụ thể là quy ước thiết kế, KHÔNG giả là nguyên tác chốt ngày đó. Bảng C2/C3 chỉ dự kiến chưa kích hoạt. Bối cảnh đại chiến tái dùng nội dung đã có trong prompt nhánh 1.
+- Bảng thọ nguyên 100/150/250/500/1000; bảng ngày đường gồm Thất Huyền Môn/Thái Hà Sơn, Thanh Vân Tông, bảy phái Việt Quốc và thành trấn. Ngày đường là số cân bằng game có ghi chú, không giả số liệu nguyên tác.
+- Kẹp thường 30 ngày, bế quan do người chơi chọn tối đa 1080 ngày; thiếu trường dùng 1 ngày; dừng đúng mốc sự kiện hoặc cạn thọ mạng. Hiện chỉ trả cờ `hetTho`, CHƯA nối H.storage.die.
+- `4095be364e3a76f75d51b5a5acc75028d35717d3`: thêm `test/thoi-gian.js`, 26 ca lõi độc lập. Hai lượt liên tiếp mỗi lượt 26 PASS/0 FAIL trên origin riêng; chỉ module lịch, KHÔNG phải Gemini/OpenRouter hai lượt mỗi nhà. Mạng khóa sau tải mã công khai, Storage RAM, IndexedDB tắt; không nạp adapter AI, không key/save thật.
+- SHA-256 module: `e9b5080f9bd37ec7883f87faf5a0124b5c80a6b68fc567a911897762f9df33de`; test: `57949dd40ae336407b2890c89f89eaf07607f3bab26e8064dccf59dd202a796f`. Đã kiểm preview và raw theo commit khớp.
+- Runner bằng chứng tạm (hết hạn 14/11/2026): https://boba.page/O9CPjtAuzGuwu8Tzy8UKDw/index.html . Chỉ chạy lõi thuần, không dùng làm bằng chứng hồi quy toàn game.
+
+### 11 giai đoạn nhánh 0 ĐỀ XUẤT để duyệt tổng — CHƯA ÁP DỤNG vào truyen-ke.js
+1. Ngày 1/1 năm 0: NGÀY ĐẦU Ở NƠI XUẤT THÂN — vào sinh hoạt đúng môn phái/thân phận; khảo thí Thất Huyền Môn ngoài màn, không mặc định nghe tin ở xa.
+2. Tháng 1–3 năm 0: AN THÂN LẬP NGHIỆP — chỗ ở, quan hệ, việc thường nhật của môn phái hoặc tán tu.
+3. Tháng 4–12 năm 0: CĂN CƠ TU LUYỆN — công pháp phù hợp, tích tài nguyên, không tự bảo đảm đột phá.
+4. Năm 1: NHIỆM VỤ ĐẦU ĐỜI — nhận việc/tự mưu sinh theo xuất thân, rủi ro và lựa chọn riêng.
+5. Năm 2: CƠ DUYÊN CỦA NGƯƠI — kỳ ngộ riêng; mất cơ duyên được bù hợp lý, không cướp quyền quyết định của người chơi.
+6. Năm 3: GIAO TÌNH VÀ ÂN OÁN — đồng môn, đồng đạo, đối thủ của riêng nhân vật; không màn gặp Hàn Lập định sẵn.
+7. Năm 4: KHỔ TU VÀ TIẾN CẢNH — có thể bế quan, kiểm tuổi/thọ nguyên; tiến cảnh cần điều kiện, không tự nâng cảnh giới.
+8. Năm 5–6: TIN TỨC TỪ XA — nhiệm vụ/đường riêng tiếp diễn, tin giang hồ rỉ ra đúng năm và đường truyền tin hợp lý; không tiết lộ bí mật Hàn Lập.
+9. Năm 7 tới trước 1/1 năm 8: GIÓ TRƯỚC CƠN BÃO — biến động thương lộ/môn phái; KHÔNG kể đại chiến đã nổ ra.
+10. Đúng 1/1 năm 8: ĐẠI CHIẾN DÃ LANG BANG — sự kiện thế giới tại Lạc Nhật Phong; ba mức theo vị trí. Hàn Lập không chết, ngoài hắn không ai bất tử.
+11. Sau sự kiện: HẬU QUẢ TRÊN ĐƯỜNG RIÊNG — xử lý ảnh hưởng và khép Chương 1; không làm nội dung/kích hoạt Chương 2.
+
+### Chưa làm — điểm nối bắt buộc
+- `index.html` CHƯA nạp module; game LIVE vẫn chạy mã cũ. Chưa sửa truyen-ke.js, luu-tru.js, muc-luc.js, CSS. Không coi lỗi đại chiến sớm hay gặp Hàn Lập nhánh 0 đã được chữa.
+- Cần thay nodes0/tuyenAn0 và mọi ép gặp nhánh 0 mốc 5/9; ghim tiến mốc theo lịch, xử lý save cũ mốc cao nhưng lịch mới năm 0. GIỮ NGUYÊN mảng 11 nodes nhánh 1 và bộ chọn ba mức.
+- Chèn lịch/tuổi/thọ mạng/sự kiện vào cả prompt chọn cảnh và kể; chỉ thêm JSON tùy chọn, giữ nguyên readJSON/retry của 9513f19. Bối cảnh đại chiến chỉ gửi khi tới ngày; không giữ câu vô điều kiện khiến AI nhảy sớm.
+- Cần thiết kế giao dịch lượt: AI lỗi/retry/save lỗi không cộng lịch hai lần; sự kiện tới ngày được kể với prompt đúng ngày, không để AI kể vượt rồi mới kẹp số. Mở màn giữ ngày đầu tại nơi xuất thân.
+- Nối đọc/ghi save chuẩn hóa, nối cờ cạn thọ vào luồng H.storage.die và màn chết cũ. Không sửa thuật nén.
+- Nối hồ sơ và CSS cảnh báo đỏ khi gần cạn; thử 414x896, không đè Đóng. Chưa thử UI này.
+- Quãng đường hiện chỉ kẹp từng lượt; cần thêm tiến độ hành trình nhiều lượt cho tuyến trên 30 ngày và tuyến bị sự kiện cắt giữa đường; xác thực điểm đi theo vị trí đã lưu, không để AI bịa điểm đi.
+- Tích hợp test mới vào runner toàn bộ, thêm ca H.storage.die thật trên kho thử, hồi quy đủ hai lượt LIÊN TIẾP MỖI NHÀ Gemini/OpenRouter với fake network, RAM Storage, IndexedDB riêng. Không lấy 26 PASS lõi làm bằng chứng đủ gói.
+- Sau tích hợp mới thêm script GAME vào index (không script test), chờ Pages, đối chiếu SHA-256 các file chính LIVE với commit cuối. Chưa có bản phát hành gói mới được xác nhận.
+
+### Lỗi editor và an toàn
+set_code tiếp tục nối thêm mã thay vì thay toàn văn. Đã phát hiện trước commit, sửa bằng Meta+A rồi type; preview và raw đã khớp hash. Không commit bản nối lỗi. Không sửa Art/, mẫu giao diện, nhánh 1, nén lịch sử, JSON cũ; không gọi API/key/save thật, không tạo nhánh hay đổi tên đè file.
+
+---
+
 ## 07/11/2026 — BÀN GIAO VÁ ĐỊNH DẠNG AI
 
 Phần này thay thế trạng thái “V7 chỉ thử, main chưa vá” và các số đếm cũ bên dưới.
