@@ -1,3 +1,67 @@
+## 08/11/2026 — BÀN GIAO MODULE MỞ MÀN
+
+Phần mới nhất này thay trạng thái CHƯA KIỂM THỬ trong NHAP-CONG-VIEC.md. Nguồn mã nghiệm thu: commit 216e6fdffa59cdad3a7c823f6482d8196f5a7d3e; head trước báo cáo 120b3a60ccc7501fdf32a76ee9e37b51303b50e4. Các phần lịch sử bên dưới được giữ nguyên.
+
+### Đã làm
+- Thêm đúng sáu file mới trong Art/anh-mo-man/: kiep-cu-1.jpg (mắt), kiep-cu-2.jpg (giơ kiếm trên núi), kiep-cu-3.jpg (trăm kiếm), kiep-moi-1.jpg (cổng tiên môn biển mây), kiep-moi-2.jpg (thiếu niên bậc thang), kiep-moi-3.jpg (phượng hoàng từ kiếm). Không đè file có sẵn, không re-upload ảnh Art cũ. Lưu ý minh bạch: công cụ đổi tên/lưu JPEG đã chuẩn hóa byte ảnh; ảnh đúng nội dung đã duyệt nhưng không tuyên bố đồng nhất byte với tệp chat gốc.
+- js/mo-man.js mới: lấy HTML/CSS/JS từ bản duyệt https://boba.page/_0sxqEYgvupyvMcqNfVS-g/index.html làm nền, đóng gói HongDuc.moMan và Shadow DOM để không rò CSS vào game. Ghi chú thiết kế tiếng Việt, MỤC LỤC MODULE ở đầu và LỊCH SỬ THAY ĐỔI ở cuối.
+- Giữ nguyên sáu câu thoại và hai chữ kết theo yêu cầu. Chữ từng TỪ nguyên vẹn, cột từ trên xuống rồi sang trái, lệch phải 28px, 32px đậm màu #E8D7B2, fade/scale .95→1, triện đỏ trống 40px; Ken Burns và mực loang; hai tông crimson/gold của bản duyệt. Font Ngo Manh/Noto Serif/serif và màu nền #0E0B08; nút Bỏ qua luôn trên cùng, không bị chữ đè.
+- js/man-hinh.js chỉ bọc hai callback trong hộp Một kiếp chưa dứt: old→tiepTuc, new→khoiThan; kết thúc hoặc Bỏ qua mới gọi callback gốc đúng một lần. Có fallback gốc nếu module không tải. index.html chỉ thêm script mo-man trước man-hinh, không tham chiếu test.
+- Mỗi lượt tạo Audio mới; đường dẫn tương đối Art/nhac-mo-man/1.mp3 và 2.mp3, ảnh Art/anh-mo-man/. Gain .8; offset cũ 2.5s, mới 3s; mốc 0/3.5/7/10.2, tự kết thúc 11.2s tính từ offset, fade .8s ở cuối. Skip pause/remove src/disconnect trước callback. Chặn nhấp kép; Escape và chuyển tab dọn nhạc/thoát an toàn.
+- NHAP-CONG-VIEC.md đã lưu checkpoint giữa chừng. Commit lần lượt: 373c01c (ảnh), 1e6f60f (module), e1a3e12 (callback), 216e6fd (script), 120b3a6 (nháp). Tất cả main, thông điệp tiếng Việt. Không phát sinh thẻ xin duyệt GitHub.
+
+### Hồi quy — HAI LẦN LIÊN TIẾP MỖI NHÀ CUNG CẤP GIẢ
+Runner theo test/chay-quay-lai.html và các bộ sẵn có, thêm nguồn mo-man vào danh sách tải trong runner cách ly, KHÔNG sửa bộ thử trong repo. Nguồn cố định 216e6fd. Bằng chứng chạy: https://boba.page/nsUuKgIoU2MrA2U7sABIog/index.html (liên kết thử tạm, không phải LIVE).
+
+| Lượt | Hồi quy | Lõi lịch | Helper | Tích hợp lịch | Quay lại | Tải document thật | Tổng PASS | FAIL |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Gemini 1 |132|26|15|18|21|1|213|0|
+| Gemini 2 |132|26|15|18|21|1|213|0|
+| OpenRouter 1 |132|26|15|18|21|1|213|0|
+| OpenRouter 2 |132|26|15|18|21|1|213|0|
+
+Tổng 852 phép kiểm PASS, 0 FAIL. Bao gồm 429, 503, mất mạng, 404, retry hai nhà, lỗi/chuyển model, nén, Lưu/Nạp, nhật ký, lịch và undo. Các ca ép adapter vẫn giữ nguyên: không diễn giải tất cả ca đều dùng nhà đang chọn. Storage chỉ RAM, CSP connect-src none, IndexedDB namespace thử riêng xóa sau mỗi lượt; không AI thật, không key thật.
+
+### Kiểm tra thủ công 414×896
+Harness nguồn đúng 216e6fd: https://boba.page/AEpGdZqDPb3VLGciT2r35A/index.html . Save nhân vật thử trong RAM, IDB mo-man-test-*, fetch chặn/giả và CSP connect none. Không thao tác LIVE game.
+- Có save giả: hộp Một kiếp chưa dứt hiện, hai nút thật chạy đúng đoạn. Tiếp tục cũ chạy xong nạp đúng nhân vật/chuyện cũ; mới chạy xong vào tạo nhân vật, chưa xóa save cũ trước khi khởi thân thành công.
+- Cũ chạy trọn: Audio bắt đầu 2.505333s, gain .8000000119; cảnh 2 ghi ở elapsed 3.797333s, cảnh 3 ở 7.248s, kết 10.206872s; fade .8s đạt 0, dừng tại 13.705333s (elapsed 11.205333s), vào story.
+- Mới chạy trọn: bắt đầu 3.004752s, gain .8; cảnh 2 3.807202s, cảnh 3 7.246996s, kết 10.213333s; fade .8s đạt 0, dừng 14.215511s (elapsed 11.215511s), vào create.
+- Ngưỡng code đúng 3.5/7/10.2/11.2; thời điểm quan sát rAF/media có trễ lấy mẫu như trên, KHÔNG tuyên bố đo chính xác 3.5 và 7. Tải nhạc ban đầu có độ chờ khoảng một giây; thời lượng tính từ lúc bắt đầu nhạc tại offset.
+- Bỏ qua cả hai đoạn: Audio paused=true trước sự kiện skip/callback khoảng 1ms; cũ vào story, mới vào create. Năm Audio đã dùng là năm phần tử khác nhau, sau dọn đều paused và không còn src, không lỗi JS.
+- Sáu cảnh ảnh tải đủ; khối chữ y143.36, từ thấp nhất <=658.06; triện đáy <=738.49; nút skip đáy52. Không giao nút, không tràn 414×896. Đã kiểm hình học từng từ/cột và từng cảnh, ảnh đúng ánh mắt/núi/kiếm/cổng/thiếu niên/phượng hoàng.
+- Khởi thân thử tên Kiếp mới thử/xuất thân nông dân thử: save mới đúng, chương1, lịch sử rỗng, gọi story.turn('',true). Ở bước này AI phân loại và mở truyện được stub; không coi đó là thử nội dung AI thật.
+- Tiếp tục ngoài hộp vẫn nạp save cũ. Mục Lục mở đủ15 mục. Lưu game ra file tạo download; Nạp file sai bị từ chối và giữ save, file giả đúng cấu trúc vai ai hiện xác nhận và nạp đúng chuyện cũ. Xuất nhật ký tải hongduc-nhat-ky.txt, đã đọc lại nội dung thử và dấu che khóa.
+- Kiểm tra kết nối: bấm khi không khóa báo thiếu khóa, sau cấu hình giả báo Kết nối Gemini thành công; chỉ smoke test UI giả, các adapter/lỗi mạng thực thi trong bốn lượt hồi quy ở trên.
+- Quay lại thủ công: khôi phục module kể/quay-lai thật trong harness, mạng đáp JSON giả; bấm ba hành động thật tạo stack1→2→3, bấm ba lần Quay lại về2→1→0; chuyện cũ/save phục hồi, nút ẩn khi rỗng, lỗi JS=[]; không AI thật. IDB thử mo-man-test-yubzo90mzk đã yêu cầu xóa sau kiểm tra.
+
+### Đối chiếu SHA-256 và phạm vi an toàn
+Mỗi commit mã đã kiểm toàn văn/byte, Preview diff rồi đối chiếu raw fixed SHA. Trước commit báo cáo kiểm lại các file quan trọng tại head120b3a6. So compare với nền96a6a8a chỉ có sáu ảnh mới, module mới, hai file tích hợp và NHAP; báo cáo này là thay đổi tài liệu tiếp theo.
+- mo-man: f3470aea470ea4a83e60e123ce182dc79bab0049f7807563783eaa43230f639c
+- man-hinh: 0ac58003321ad8554ce39d43e6fca88367a8fa893cc8bc52313e5187ccea3cf8
+- index: 166467a5d5e847a9c6da3dd614b18bb294279d96adf49e3242383f8b73ab98b2
+- Nhạc1 không đổi: 2cf1388e9e059bd1b6014d127f5e75bdaa53dba99ec1ab9e3306793604cd7b7a
+- Nhạc2 không đổi: 62d2601b1a54d976f4ee546cbbbd4373ca805672cbaf12585fe2c022e3c941d2
+- Mẫu thiết kế không đổi: 01c6a4ee7941986ddafaf6adf7a9bded176ebf6b25621cacd4a207f11bb3b2c2
+- truyen-ke/gemini/luu-tru/thoi-gian/quay-lai/CSS đều SHA khớp nền96a6a8a. Không đụng 11 nút C1, cơ chế TRỰC TIẾP/GIÁN TIẾP/ĐI QUA, logic nén, save/log/IDB thật hay API key. Không thêm nhạc, xóa/đổi tên hai MP3 hay tạo nhánh khác.
+- Ảnh cũ1 b64d255dfe73f3be3738067ea242e70f52ea820c355f2955b025670ba8b44c4a
+- Ảnh cũ2 78df4d2521b2e0946a91202433cd98a1c774137a34395a0a89d9d10355986ff2
+- Ảnh cũ3 ed415446b410d01e5c2c729b47e3f291b2576e53c1d47ca6f1dbe3b3bc2069af
+- Ảnh mới1 c64dfa5b0de1b56593d0ec969d95253aa8837ae40252d7fdff14f20ab3994abc
+- Ảnh mới2 9bec5044f2df6fcb8308fe07573f3f59feedbe9936a900d35179f9c5ba73f472
+- Ảnh mới3 db46663421feefaea5fcc82d9a487b46668178e01de786f437018081e7bae11e
+LIVE https://huuducbkb.github.io/hong-duc-tu-tien-lo/ đã trả200 và SHA khớp index, mo-man, man-hinh cùng cả sáu ảnh tại thời điểm chốt báo cáo; chỉ fetch tài nguyên, không chạy game LIVE. Sau commit tài liệu sẽ xác minh head và báo kết quả cuối.
+
+### Lỗi gặp, xử lý, phần chưa làm / đang dở
+- Runner đầu thiếu mo-man trong danh sách nguồn cách ly: đã sửa runner rồi chạy lại đủ4 lượt PASS; không phải lỗi mã game. Fixture save ban đầu dùng vai model nên import từ chối đúng; đổi fixture thành ai rồi nạp thành công, không sửa luật import.
+- Công cụ tải bản save JSON báo application/octet-stream và không lưu được attachment; đã kiểm file giả hợp lệ bằng upload riêng. Game có tạo download; không tuyên bố đã đọc lại byte download save. Nhật ký TXT tải/đọc bình thường.
+- Khung công cụ nhìn588px trong khi iframe896px: đổi vị trí iframe thử để bấm điều khiển dưới màn; không đổi kích thước414×896 và không sửa CSS game.
+- Không thử Safari/iOS thật, mạng AI thật, save thật, hoặc nghe đánh giá âm nhạc bằng tai; đã xác minh phần tử phát, offset, gain, fade bằng sự kiện/media thật. Không lặp phân tích RMS vì dùng đúng hai bản nhạc đã duyệt, hash không đổi.
+- Rủi ro còn biết: watchdog15s xử lý nhạc chưa bắt đầu; nếu mạng đứng sau khi đã phát thì timeline dựa media có thể chờ, Bỏ qua vẫn dừng và đi tiếp. Chưa bổ sung chính sách timeout giữa bản nhạc vì ngoài luồng bình thường đã duyệt. Không coi bộ thử là bảo đảm mọi lỗi thiết bị/mạng.
+- Không có thay đổi mã chức năng đang để nháp. Phần còn lại sau commit này: xác nhận tài liệu raw khớp editor, kiểm head phát hành và bàn giao link LIVE để duyệt tổng; không yêu cầu duyệt từng commit. Không tự sửa nội dung/cơ chế game khác.
+
+---
+
 ## 07/11/2026 17:49 — BÀN GIAO QUAY LẠI BA LƯỢT
 
 ### Thiết kế đã chốt và đã làm
