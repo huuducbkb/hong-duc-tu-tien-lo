@@ -1,3 +1,27 @@
+# Điểm nối 07/11/2026 chiều — LỊCH TÁM NĂM CHƯA TÍCH HỢP
+
+- Đây là checkpoint trung gian, KHÔNG phải hoàn tất gói. Chốt mã vá sáng bên dưới vẫn đúng với bản game cũ; không lấy làm bằng chứng tính năng lịch mới.
+- Main đã có `1590eecf0e855517eb62d66e4573aeccc64a7ecf` (lõi `js/thoi-gian.js`) và `4095be364e3a76f75d51b5a5acc75028d35717d3` (26 ca `test/thoi-gian.js`). Chưa nạp module trong index, chưa đổi luồng truyện/save/hồ sơ/CSS. Lỗi đại chiến sớm và gặp Hàn Lập cố định nhánh 0 CHƯA được sửa trên game.
+- Báo cáo chi tiết + danh sách 11 giai đoạn nhánh 0 ĐỀ XUẤT, chưa áp dụng: BAO-CAO-CONG-VIEC.md tại `37a648dc132d9143e5f73476da6246a726e8e2fa`, SHA-256 `3a3ba6cc5ea7fd689728c8f758c4b16ff1a014fb68dfe58ce67c47596d59dd3f`.
+- SHA module `e9b5080f9bd37ec7883f87faf5a0124b5c80a6b68fc567a911897762f9df33de`; test `57949dd40ae336407b2890c89f89eaf07607f3bab26e8064dccf59dd202a796f`. Preview và raw đã đối chiếu khớp.
+
+## Hồi quy CHECKPOINT bổ sung sau báo cáo
+
+- Mã nguồn cố định `37a648dc132d9143e5f73476da6246a726e8e2fa`; origin thử https://boba.page/h_ZBlQAdeFf5eG9HL0ZSEw/index.html (link tạm hết hạn 14/11/2026). Tải nguồn công khai rồi iframe CSP connect-src none, RAM Storage, IndexedDB namespace riêng; không key/save/API AI thật.
+- Chạy liên tiếp Gemini lượt 1: 132 PASS/0 FAIL + 26 PASS/0 FAIL lõi lịch; Gemini lượt 2: 132/0 + 26/0; OpenRouter lượt 1: 132/0 + 26/0; OpenRouter lượt 2: 132/0 + 26/0. requestedProvider đúng từng lượt. Ca chuyên adapter vẫn tự chọn backend của nó, không diễn giải mọi request đều theo nhà đang chọn.
+- Phạm vi: bộ game hiện có 132 ca và lõi lịch 26 ca được nạp bổ sung TRONG RUNNER THỬ, không trong index. Chưa kiểm tích hợp H.storage.die do hết thọ, nhánh 0 mới, hồ sơ hay prompt mới. Sau tích hợp phải chạy lại đầy đủ hai lượt mỗi nhà; không dùng checkpoint này để tuyên bố xong tính năng.
+
+## Việc nối tiếp bắt buộc
+
+1. Giữ đúng 8 năm; nhánh 0 mở ngày đầu tại xuất thân, khảo thí ngoài màn, không ép gặp Hàn Lập trước sự kiện. Thay nodes0/tuyenAn0 và điều kiện ép mốc 5/9; ghim giai đoạn theo thời gian, xử lý save cũ mốc cao nhưng lịch mới năm 0. Giữ NGUYÊN 11 nodes nhánh 1 và cơ chế ba mức.
+2. Thiết kế giao dịch lượt lịch: không cộng hai lần khi retry/lỗi save; prompt kể phải biết ngày đã kẹp trước khi kể, không để kể vượt rồi chỉ sửa con số. Cả chọn cảnh/kể kèm lịch, tuổi, thọ, sự kiện; chỉ thêm trường JSON tùy chọn; giữ readJSON/retry 9513f19 và logic nén.
+3. Nối chuẩn hóa save, nối hetTho vào H.storage.die thật và màn chết cũ. Hiện chỉ có cờ, chưa xóa save vì hết thọ. Thương/bất tỉnh/giả chết không suy thành chết.
+4. Sửa hành trình: tiến độ nhiều lượt cho tuyến >30 ngày, bị cắt giữa đường bởi sự kiện; xác thực điểm đi theo vị trí lưu, không tin AI bịa điểm đi. Bảng khoảng cách là số thiết kế game, không giả số nguyên tác.
+5. Hồ sơ/CSS ngày-tháng-tuổi-thọ, cảnh báo đỏ; kiểm 414x896 không đè Đóng. Chỉ thêm script GAME khi tích hợp xong; không tham chiếu test từ index.
+6. Tích hợp test mới và ca chết thật kho thử; chạy đủ bộ hai lượt liên tiếp mỗi Gemini/OpenRouter với mạng giả; cập nhật báo cáo; chờ Pages và hash LIVE so head cuối. Chưa xác nhận phát hành tính năng mới.
+
+- Không sửa Art/, thiet-ke/mau-giao-dien.html, nén lịch sử, JSON cũ, nhánh 1 hay ba mức; không tạo nhánh/đổi tên đè. Editor phải Meta+A rồi type, không tin set_code; xem diff và SHA trước commit, raw sau commit.
+
 # Chốt mã vá 07/11/2026 — đã phát hành mã, thay thế trạng thái V7 cũ
 
 - Ba file game đã commit main: OpenRouter `564806c0b37b798ab55699d93fa04aa1fcb18375`, Gemini `b03c06993659de18f8ab3a702a44b0132f463616`, truyện `52eb82b64592cc953f72bde910a545a76a721381`. Không còn trạng thái main nguyên bản chưa vá như ghi chú lịch sử bên dưới.
