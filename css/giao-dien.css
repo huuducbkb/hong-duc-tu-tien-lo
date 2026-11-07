@@ -60,3 +60,7 @@
 /* 05/11/2026: Tô riêng lượt hành động của người chơi. */
 .story p.hanh-dong-nguoi-choi{color:#B23A2A;margin-left:14px;border-left:2px solid #B23A2A;padding-left:10px;font-style:normal}
 /* LỊCH SỬ THAY ĐỔI: 05/11/2026 — phân biệt dòng hành động người chơi. */
+/* 07/11/2026 — Lịch và thọ mạng gọn trong hồ sơ, giữ khoảng trống nút Đóng. */
+#profile-data{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.thoi-gian-ho-so{display:block;margin-top:8px;font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+.thoi-gian-ho-so.canh-bao-tho{color:var(--red);font-weight:700}
