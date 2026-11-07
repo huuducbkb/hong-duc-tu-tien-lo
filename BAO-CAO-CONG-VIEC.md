@@ -1,3 +1,39 @@
+## 07/11/2026 17:49 — BÀN GIAO QUAY LẠI BA LƯỢT
+
+### Thiết kế đã chốt và đã làm
+- Phương án a: Quay lại MỘT lượt vừa chơi mỗi lần bấm, mở rộng giữ tối đa BA lượt. Chụp sâu toàn save trước hành động nút/ô tự do và trước nén; giữ cả lịch, tuổi, thọ, giai đoạn, sự kiện, hành trình, chỉ số, vật phẩm. Lưu mốc sổ IndexedDB và bản log để xóa đúng phần phát sinh.
+- Stack chỉ ở RAM, không ghi vào save/localStorage; đầy thì bỏ mốc cũ nhất, không redo. Hành động mới sau hoàn tác push bình thường. Đổi nhân vật hoặc tải document mới không mang stack cũ.
+- Nút Quay lại (n) đặt ngay sau khối lựa chọn, dùng triện cổ trang hiện có; ẩn khi rỗng, khóa khi bận. Một bấm pop đúng một mốc, phục hồi save/chuyện/sổ/log và hồ sơ ngày/tuổi/thọ/giai đoạn.
+- H.storage.die dọn stack ngay; chết AI hoặc cạn thọ xóa save theo hardcore và không thể quay lại. Không vượt cửa chết.
+- Undo hủy kết quả choLuu trước phục hồi; retry kết quả chờ lưu không push thêm mốc hay gọi lại AI. Ghi save/khôi phục sổ lỗi thì giữ mốc, khóa hành động mới và cho bấm Quay lại thử lại; không pop nhầm.
+- Các commit mã: 9d0c64f module js/quay-lai.js; 8149e80 nạp sau truyen-ke; 8d2b3b6 CSS; 7a12dde + 1438805 test; fd74826 + 982c36c runner. Không sửa 11 nút nhánh 1, cơ chế ba mức, thuật nén, JSON cũ/bản vá 9513f19, Art/ hay thiet-ke/mau-giao-dien.html. index không tham chiếu test.
+
+### Kiểm thử nghiệm thu
+Nguồn cố định 982c36cbc18215d403b7ba10721dc9887fb967dc; runner test/chay-quay-lai.html, SHA-256 8cb38537ef83895e0943c0614675b27f273f8d6215b2316031625df8e7bd9aeb. Runner bọc bộ cách ly cũ, kiểm tra chuỗi thay thế trước chạy; dùng ?commit=SHA đầy đủ khi tái lập trên origin thử riêng, tuyệt đối không chạy LIVE.
+
+| Lượt liên tiếp | Hồi quy | Lõi lịch | Helper | Tích hợp lịch | Undo | Tải document | FAIL |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Gemini 1 |132|26|15|18|21|1|0|
+| Gemini 2 |132|26|15|18|21|1|0|
+| OpenRouter 1 |132|26|15|18|21|1|0|
+| OpenRouter 2 |132|26|15|18|21|1|0|
+
+Mỗi lượt 213 PASS, 0 FAIL. Toàn bộ mạng AI giả, CSP connect-src none trong game, Storage RAM, IndexedDB namespace thử riêng được xóa sau lượt. Các ca tự ép adapter vẫn giữ nguyên, không diễn giải mọi ca đều dùng nhà đang chọn. Không gọi API AI thật, không đọc/đổi key/save thật.
+
+22 ca mới gồm deep save/ngày/tuổi/thọ/giai đoạn; xóa chuyện và nội tâm; sổ/meta/log; giới hạn ba; hành động mới sau undo; sự kiện/hành trình; pending undo/retry không cộng đôi; trước nén; lỗi save/sổ và retry; khóa bận/nhấp kép; nút/ô tự do; chết AI/cạn thọ; đổi nhân vật; không serialize; hồ sơ đỏ; khung hẹp; thay hai document thật giữ save giả nhưng stack mất. Ca vòng đời dùng module thật với lõi kể/kho save giả, không phải API thật.
+
+Khung 414×896: bốn lượt không tràn ngang, hồ sơ không giao nút Đóng; ca undo xác nhận nút hiện có chiều rộng dương, nằm trong 414px và không giao nút Đóng/các hành động. Bằng chứng chạy tạm (đến 14/11/2026): https://boba.page/Q_xvf4xBoIt4ndburY2KMw/index.html . Không phải bản chơi LIVE.
+
+### Lỗi gặp, xử lý và giới hạn
+- GitHub editor: phím Meta không chọn/đi cuối tài liệu như kỳ vọng, CSS chèn nhầm vào giữa bản nháp. Đã xóa đoạn nhầm TRƯỚC commit, dùng Find/Replace, so toàn văn expected và SHA-256 khớp; preview chỉ còn một dòng CSS dự kiến. Không commit bản nháp hỏng.
+- File hiện có sửa bằng Find/Replace chính xác; file mới kiểm lại toàn nội dung/cú pháp/preview. Mỗi thay đổi kiểm hash trước commit và raw fixed SHA sau commit, tránh raw main cache.
+- Save và IndexedDB không có transaction chung: nếu khôi phục sổ/log lỗi sau ghi save, module giữ mốc RAM và chặn lượt mới để retry. Không làm cơ chế backup bền vững ngoài phạm vi stack RAM đã chốt; tải lại giữa lỗi không giữ mốc. Bộ test không chứng minh mọi lỗi thiết bị hay AI thật.
+
+### Còn lại lúc ghi tài liệu
+Mã và 4 lượt kiểm thử đã xong. Sau commit tài liệu/checkpoint, chờ Pages head cuối Success và so SHA-256 index/CSS/9 module JS trên LIVE với raw commit cuối; kết quả cuối trả trong bàn giao. Không thao tác game LIVE/key/save thật. Không có phần chức năng đã chốt nào chủ động bỏ qua.
+
+---
+
 ## 07/11/2026 16:39 — BÀN GIAO TÍCH HỢP LỊCH TÁM NĂM
 
 Phần này thay trạng thái CHƯA TÍCH HỢP ở các checkpoint lịch sử bên dưới. Mã và bộ thử đã tích hợp trên main; xác minh phát hành Pages/head cuối thực hiện sau hai commit tài liệu, kết quả trả trong bàn giao cuối.
