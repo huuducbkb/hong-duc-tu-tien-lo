@@ -63,4 +63,4 @@
 /* 07/11/2026 — Lịch và thọ mạng gọn trong hồ sơ, giữ khoảng trống nút Đóng. */
 #profile-data{min-width:0;max-width:100%;overflow-wrap:anywhere}
 .thoi-gian-ho-so{display:block;margin-top:8px;font-size:13px;line-height:1.55;overflow-wrap:anywhere}
-.thoi-gian-ho-so.canh-bao-tho{color:var(--red);font-weight:700}
+.thoi-gian-ho-so.canh-bao-tho{color:var(--red);font-weight:700} /* 07/11/2026 — Triện Quay lại ba lượt trong luồng trang. */ #quay-lai{display:block;width:100%;max-width:100%;min-width:0;margin:12px 0 0;white-space:normal;overflow-wrap:anywhere;font-size:14px}
