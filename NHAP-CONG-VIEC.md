@@ -1,3 +1,34 @@
+# Điểm nối mới 07/11/2026 16:06 — HELPER ĐÃ TEST, GAME CHƯA TÍCH HỢP
+
+Ưu tiên mục này hơn các checkpoint lịch sử bên dưới. Đây là bàn giao TRUNG GIAN, không nghiệm thu gói tích hợp.
+
+## Đã commit main trong lượt nối tiếp
+
+- `38bd465a4309f294918700f8de03fd5843ccf033`: nối thêm helper thuần vào cuối js/thoi-gian.js, giữ nguyên lõi cũ. Có giaiDoan/chuanHoa/lapKeHoach/hoSo; chia 11 giai đoạn theo ngày, nhận diện nơi xuất thân đã biết, giữ phần hành trình còn lại qua nhiều lượt và khi sự kiện cắt ngang, không tin điểm đi AI bịa. SHA-256 module mới: `c1d257b9b5d31f79a42137e5b08c84782c8c4ed234f2e0e57c488999be4a881b`.
+- `5c26e279e73923ee8bd582331f01b34b1415edcf`: thêm test/ke-hoach-lich.js, 15 ca helper thuần. SHA-256: `44bda61325a4da31eac09fca5a63ced629c183426340ff2eeb89dafe66e007a8`.
+- Cả hai đã xem diff, đối chiếu SHA bản dự kiến trước commit và raw sau commit. Không tạo nhánh, không đụng Art hay mẫu thiết kế.
+
+## Bằng chứng kiểm thử checkpoint, KHÔNG thay nghiệm thu tích hợp
+
+Nguồn cố định 5c26e279e73923ee8bd582331f01b34b1415edcf. Runner tạm đến 14/11/2026: https://boba.page/vOXTT-3rDQpHew5HGeKehQ/index.html . Chạy liên tiếp Gemini 1, Gemini 2, OpenRouter 1, OpenRouter 2: MỖI LƯỢT 132 PASS/0 FAIL hồi quy hiện có, 26 PASS/0 FAIL lõi lịch, 15 PASS/0 FAIL helper mới. requestedProvider và selectedProvider khớp từng lượt. Ca chuyên adapter vẫn tự ép backend của nó; không diễn giải 132 ca đều gửi cùng một nhà. Bốn lượt báo cleanup đã xóa kho thử.
+
+Runner tải nguồn công khai vào iframe thử, CSP connect-src none, fetch AI giả, Storage RAM, IndexedDB namespace riêng. Không chạy game LIVE, không gọi API AI thật, không đọc key/save thật. Test chỉ nạp thêm trong iframe, index vẫn không tham chiếu test. Runner thuần riêng https://boba.page/ij6s6gPHgyt57m_0WnITcA/index.html cũng chạy hai lần 26+15 PASS.
+
+Giới hạn: chưa kiểm tích hợp hết thọ gọi storage.die, lượt kể/prompt mới, UI mới hoặc giao dịch chống cộng lịch hai lần. Các ca giới hạn của bộ hồi quy cũ vẫn còn: thao tác giao diện thực, xuất tệp nhật ký, retry 503/nén/ngưỡng nhắc và cảnh/NPC đầy đủ. Không lấy PASS checkpoint để tuyên bố xong yêu cầu chủ repo.
+
+## Điểm nối bắt buộc tiếp theo
+
+1. index.html, css/giao-dien.css và bảy file game man-hinh/muc-luc/khoi-thanh/luu-tru/openrouter/gemini/truyen-ke đã so byte với a876e58: toàn bộ CHƯA ĐỔI. Module lịch CHƯA nạp; nhánh 0 vẫn cũ, ép gặp Hàn Lập 5/9 và lỗi đại chiến sớm CHƯA sửa.
+2. Phải sửa truyen-ke.js: nodes0/tuyenAn0 và các điều kiện ép gặp, giữ nguyên 11 nodes nhánh 1 và nguyên cơ chế ba mức. Dùng đúng danh sách 11 giai đoạn trong báo cáo; mở tại xuất thân ngày đầu, khảo thí ngoài màn, chỉ gặp Hàn Lập tại sự kiện ghim năm 8.
+3. Thiết kế giao dịch lượt trước khi nối lapKeHoach: helper hiện chỉ tăng luot_lich, KHÔNG tự chống retry/lưu lỗi cộng hai lần. Làm trên bản sao, chỉ nhận một lần; prompt kể và chọn cảnh phải biết lịch đã kẹp trước khi kể. Không kể vượt rồi chỉ sửa số ngày sau. Xử lý thoi_gian_troi tùy chọn thiếu mặc định 1 ngày, thường 30, bế quan 1080, đường theo bảng; giữ readJSON/retry 9513f19, schema cũ, nén lịch sử.
+4. Nối chuẩn hóa vào save cũ, nạp script game, nối hetTho vào H.storage.die và màn chết thật. Chưa có bước nào trong số này được thực hiện. Thương/bất tỉnh/giả chết không suy ra chết. C2/C3 chỉ chưa kích hoạt, không làm Chương 2.
+5. Nối hồ sơ ngày/tháng/tuổi/thọ và CSS đỏ, kiểm 414x896 không đè Đóng. Sau tích hợp thêm test đầu-cuối, chạy lại ĐỦ BỘ hai lượt liên tiếp mỗi nhà; bằng chứng hiện tại chỉ là helper/checkpoint.
+6. Cập nhật báo cáo và kiểm Pages/head cuối cùng cùng SHA LIVE. Việc phát hành tính năng lịch chưa được xác nhận ở checkpoint này.
+
+Lưu ý editor: Meta+Home để chèn đầu; Meta+A rồi type nếu thay toàn bộ. Không dùng Ctrl+H tìm-thay thế: nó đã xóa một ký tự trong bản nháp, đã Meta+Z và bỏ nháp, không commit truyen-ke.js. Không có lỗi dịch vụ GitHub chặn tích hợp; công việc còn lại chưa thực hiện, không phải tính năng đã xong.
+
+---
+
 # Điểm nối 07/11/2026 chiều — LỊCH TÁM NĂM CHƯA TÍCH HỢP
 
 - Đây là checkpoint trung gian, KHÔNG phải hoàn tất gói. Chốt mã vá sáng bên dưới vẫn đúng với bản game cũ; không lấy làm bằng chứng tính năng lịch mới.
