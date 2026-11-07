@@ -1,3 +1,25 @@
+# Điểm nối 08/11/2026 00:39 — MỞ MÀN ĐÃ NỐI, CHƯA KIỂM THỬ
+
+Ưu tiên mục này cho công việc mở màn; các kết quả PASS bên dưới thuộc nhiệm vụ cũ, KHÔNG phải kiểm thử thay đổi mở màn.
+
+## Đã lưu main
+- 373c01cc3f9664070ef5eead1bf95783410b1666: sáu ảnh mới Art/anh-mo-man/kiep-cu-1.jpg đến kiep-moi-3.jpg. Không ghi đè ảnh cũ hoặc nhạc. Công cụ lưu ảnh đã chuẩn hóa JPEG: không khẳng định byte ảnh trùng tệp đính kèm gốc; đã nhận diện nội dung sáu ảnh đúng thứ tự.
+- 1e6f60f7f4a0d121ba511a1038d69c346a394433: js/mo-man.js độc lập, dựa HTML/CSS/JS bản xem trước đã duyệt; Shadow DOM cách ly CSS. SHA-256 f3470aea470ea4a83e60e123ce182dc79bab0049f7807563783eaa43230f639c.
+- e1a3e12512c7b30a2375710339ee0a0db2b58359: js/man-hinh.js chỉ nối hai callback cũ vào H.moMan.play; SHA-256 0ac58003321ad8554ce39d43e6fca88367a8fa893cc8bc52313e5187ccea3cf8.
+- 216e6fdffa59cdad3a7c823f6482d8196f5a7d3e: index nạp mo-man.js trước man-hinh.js, không nạp test. SHA-256 166467a5d5e847a9c6da3dd614b18bb294279d96adf49e3242383f8b73ab98b2.
+- Đã xem diff web editor và so toàn văn/SHA-256 các bản mã trước commit; module và man-hinh đã kiểm lại raw fixed commit. Chưa nghiệm thu Pages.
+
+## Việc tiếp theo, không được bỏ
+1. Kiểm lại byte ảnh đã commit; đọc quy trình test/chay-quay-lai.html và bộ test hiện có.
+2. Chạy đủ hai lượt liên tiếp Gemini giả rồi hai lượt OpenRouter giả, đủ 429/503/mất mạng/404/retry; không dùng API/save/key thật. Các kết quả 213 PASS lịch sử bên dưới không thay thế bước này.
+3. Test cách ly 414×896: hộp thoại khi có save, trọn hai film/skip/auto callback, thời điểm nhạc 2.5/3 và gain .8, chữ dọc nguyên từ/triện/không tràn; save cũ và khởi thân mới; Quay lại 3 lượt, kết nối, Mục lục, Lưu/Nạp, xuất nhật ký.
+4. Rà nguy cơ media đứng sau khi đã bắt đầu: watchdog hiện chỉ xử lý khởi phát thất bại, chưa thử trường hợp đang phát bị stall. Rà Shadow DOM SVG filter và focus.
+5. Cập nhật BAO-CAO-CONG-VIEC.md bàn giao đầy đủ, commit cuối, kiểm triển khai LIVE theo SHA cố định.
+
+Không đụng save thật, log thật, IndexedDB thật hoặc API key; không gọi AI thật. Không sửa 11 nút C1/ba mức/nén lịch sử/mẫu thiết kế. Chưa tuyên bố hoàn tất.
+
+---
+
 # Điểm nối 07/11/2026 17:54 — QUAY LẠI BA LƯỢT ĐÃ XONG MÃ VÀ TEST
 
 Thiết kế đã chốt: mỗi bấm Quay lại lùi đúng MỘT lượt, giữ tối đa BA mốc sâu toàn save cùng chuyện/sổ/log trước hành động. Stack chỉ RAM, refresh mất, không redo, chết H.storage.die dọn sạch và không thể hồi sinh. Hủy kết quả chờ lưu trước phục hồi, không cộng lịch hai lần. Nút ẩn khi rỗng, ở sau khối hành động.
