@@ -1,3 +1,56 @@
+## 07/11/2026 16:39 — BÀN GIAO TÍCH HỢP LỊCH TÁM NĂM
+
+Phần này thay trạng thái CHƯA TÍCH HỢP ở các checkpoint lịch sử bên dưới. Mã và bộ thử đã tích hợp trên main; xác minh phát hành Pages/head cuối thực hiện sau hai commit tài liệu, kết quả trả trong bàn giao cuối.
+
+### Đã làm
+- 313e023: thay riêng 11 giai đoạn nhánh 0 theo lịch cá nhân; ngày đầu tại xuất thân, khảo thí ngoài màn, bỏ ép gặp Hàn Lập mốc 5/9. Không đổi 11 nodes nhánh 1. Tái dùng ba mức TRỰC TIẾP/GIÁN TIẾP/ĐI QUA, không tạo cơ chế mới.
+- 2a45b0d: index nạp js/thoi-gian.js trước module game; không tham chiếu test. 40bd367: save cũ chuẩn hóa lịch năm 0 tháng 1; tuổi từ xuất thân nếu nhận diện được, không có thì 16.
+- Lượt kể dùng bản sao: lấy đề xuất thời gian, kẹp lịch rồi kể kết quả tại ngày khóa; bản kể nháp không hiển thị. Thiếu thoi_gian_troi dùng một ngày; thường tối đa 30 ngày, bế quan do hành động người chơi tối đa 1080 ngày. Di chuyển theo bảng ngày đường, giữ phần đường còn lại; không tin điểm đi AI bịa. Bảng đường là thiết kế game, không phải số địa lý nguyên tác.
+- Save lỗi giữ kết quả chờ lưu để thử lại không gọi AI/cộng lịch lần hai. Prompt chọn cảnh và kể có ngày, tuổi, thọ còn, sự kiện; cấm kể tương lai, yêu cầu tiếng Việt chuẩn chính tả, xưng ngươi, không meta/không tự nhận AI. Giữ bộ sửa JSON 9513f19 và thuật nén cũ.
+- Đại chiến ghim ngày 1/1 năm 8 (ngày tổng 2880), dừng đúng ngày, tái dùng bối cảnh Lạc Nhật Phong đã duyệt. Hàn Lập đánh bại được nhưng không giết được; ngoài hắn không ai bất tử. C2 Huyết Sát năm 11 và C3 Ma Đạo chỉ chưa kích hoạt, không làm Chương 2.
+- Cạn thọ gọi H.storage.die và xóa save theo luồng hardcore. Không suy chết từ thương tích/bất tỉnh/giả chết.
+- 7d5d396 + ace9684: hồ sơ hiển thị năm/tháng/ngày, tuổi, thọ còn; đỏ khi còn tối đa 10 năm. CSS chỉ thêm vào giao-dien.css.
+
+### Kiểm thử đủ bộ, không dữ liệu thật
+Nguồn cố định a881ba6b9a412beec82c60e1e15d4723e8dd7ede; trình chạy lưu tại d6dc4f2bed488275f88911b4a206981f9dba907e/test/chay-cach-ly.html. Trình chạy mặc định nguồn a881ba6; có thể truyền ?commit=SHA_đầy_đủ. Chỉ chạy ở localhost/origin riêng, cấm LIVE.
+
+| Lượt liên tiếp | Hồi quy | Lõi | Helper | Tích hợp | FAIL |
+|---|---:|---:|---:|---:|---:|
+| Gemini 1 |132|26|15|18|0|
+| Gemini 2 |132|26|15|18|0|
+| OpenRouter 1 |132|26|15|18|0|
+| OpenRouter 2 |132|26|15|18|0|
+
+Mỗi lượt 191 PASS. Đã tái lập từ chính runner commit, SHA-256 dc72bfbfc34b2c9a597592a7f85b7ac62dfe1ca1d8a004ecb1584f40ed920ac2. requestedProvider/selectedProvider khớp; ca chuyên biệt tự ép từng adapter được giữ nguyên, không diễn giải mọi ca đều gọi cùng backend. Fetch AI giả, CSP connect-src none, Storage RAM, IndexedDB namespace thử riêng đã xóa. Không gọi API AI thật, không đọc/sửa key/save thật.
+
+18 ca tích hợp gồm nạp save cũ/tuổi, mở màn, mặc định thời gian, kẹp thường/bế quan/chống AI tự bế quan, trước/đúng ngày sự kiện, không kích hoạt hai lần/C2C3, đi đường và cắt ngang hành trình, cạn thọ xóa save, không suy chết khi thương, retry lưu không cộng đôi, prompt và hồ sơ đỏ. Giới hạn: không chứng minh AI thật luôn tuân lời nhắc; không thử API thật theo lệnh cấm. Không tuyên bố bộ thử bao phủ mọi hành vi game.
+
+Khung 414×896: đã bấm Mục Lục → Nhân Vật, thấy lịch/tuổi/thọ, mở được nút “✥ Đóng” và bấm đóng. Khi mở menu: hồ sơ x20 y164 rộng167 cao123.95; nút Đóng x342 y8 rộng64 cao44, không giao nhau, không tràn ngang. Bốn lượt tự động cũng không giao nhau/tràn ngang.
+
+Bằng chứng chạy tạm đến 14/11/2026: https://boba.page/_-I8rToYpWeTWBUZeTnplA/index.html . Đây là origin thử, không phải bản chơi LIVE.
+
+### 11 giai đoạn nhánh 0 đã áp dụng — để duyệt tổng
+1. Ngày 1/1 năm 0: NGÀY ĐẦU Ở NƠI XUẤT THÂN — sinh hoạt đúng thân phận; khảo thí ngoài màn, không mặc định nghe tin xa.
+2. Tháng 1–3 năm 0 sau ngày mở đầu: AN THÂN LẬP NGHIỆP — chỗ ở, quan hệ, việc thường nhật.
+3. Tháng 4–12 năm 0: CĂN CƠ TU LUYỆN — công pháp/tài nguyên, không bảo đảm đột phá.
+4. Năm 1: NHIỆM VỤ ĐẦU ĐỜI — mưu sinh, rủi ro và lựa chọn riêng.
+5. Năm 2: CƠ DUYÊN CỦA NGƯƠI — kỳ ngộ riêng, bù cơ duyên hợp lý, giữ quyền quyết định.
+6. Năm 3: GIAO TÌNH VÀ ÂN OÁN — quan hệ/đối thủ riêng, không ép gặp Hàn Lập.
+7. Năm 4: KHỔ TU VÀ TIẾN CẢNH — bế quan, kiểm tuổi/thọ; không tự nâng cảnh giới.
+8. Năm 5–6: TIN TỨC TỪ XA — đường riêng, tin đúng lịch/truyền tin hợp lý, không tiết lộ bí mật Hàn Lập.
+9. Năm 7 đến trước 1/1 năm 8: GIÓ TRƯỚC CƠN BÃO — biến động, chưa kể đại chiến nổ ra.
+10. Đúng 1/1 năm 8: ĐẠI CHIẾN DÃ LANG BANG — sự kiện thế giới Lạc Nhật Phong, ba mức theo vị trí, giữ luật sinh tử đã chốt.
+11. Sau sự kiện: HẬU QUẢ TRÊN ĐƯỜNG RIÊNG — hậu quả và khép Chương 1; không mở Chương 2.
+
+### Lỗi gặp, cách xử lý và phần còn lại
+- set_code fallback chèn cả bản mới trước bản cũ thay vì thay toàn văn; phát hiện trước commit, xóa phần HTML cũ bằng tìm/thay regex, chỉ còn một tài liệu. Xem diff và kiểm SHA trước/sau commit; không commit bản lỗi.
+- Runner thử ban đầu dùng nhầm id menu-toggle; sửa thành toc-toggle, chạy lại đủ bốn lượt rồi lưu đúng vào repo. Click UI ban đầu không cuộn tới vì JSON kết quả quá dài; ẩn phần kết quả trên origin thử rồi kiểm UI thành công, không sửa game vì lỗi trình thử.
+- Raw main có cache cũ: luôn đối chiếu raw theo SHA cố định. Public API Pages trả 404 không đồng nghĩa build lỗi; kiểm giao diện Actions/Pages và hash LIVE riêng.
+- Không đổi Art/, mẫu thiết kế, 11 nút nhánh 1, thuật nén, trường JSON cũ; không tạo nhánh/đổi tên đè file.
+- Còn bước phát hành sau tài liệu: chờ build head cuối thành công và đối chiếu SHA-256 file chính LIVE với head đó. Không cần anh nhập key hay chạy thử bằng save thật để hoàn thành bước kiểm này.
+
+---
+
 ## 07/11/2026 16:06 — BÀN GIAO TRUNG GIAN HELPER LỊCH
 
 **Gói tích hợp CHƯA hoàn tất. Game vẫn chưa nạp lịch; chưa chữa lỗi đại chiến sớm/ép gặp Hàn Lập nhánh 0 trên bản chơi.** Phần này cập nhật checkpoint bên dưới, không thay các ràng buộc chủ repo đã chốt.
